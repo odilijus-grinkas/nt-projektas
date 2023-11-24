@@ -3,7 +3,7 @@ import {
 } from "nt.js";
 
 class Butas extends NT {
-    constructor(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas, aukstas, kambariu_sk, ) {
+    constructor(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas, aukstas, kambariu_sk) {
         super(id, kaina, aprasymas, adresas, galerija, agentas)
         this.patalpu_plotas = patalpu_plotas;
         this.aukstas = aukstas;
@@ -11,8 +11,7 @@ class Butas extends NT {
     }
     isvedimasPilnas() {
         let div = document.createElement("div");
-        div.append(this.id);
-        div.append(this.kaina);
+        div.append(kainaIsvedimas());
         div.append(this.aprasymas);
         div.append(this.adresas);
         div.append(this.galerija);
@@ -31,9 +30,16 @@ class Butas extends NT {
         return div;
     }
 }
+class NuomaButas extends Butas {
+    constructor(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas, aukstas, kambariu_sk) {
+    super(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas, aukstas, kambariu_sk)
+    }
+    kainaIsvedimas(){
+    return `${this.kaina}€/mėn.`
+    }
+}
 
 let butoObjektas = new Butas(
-    "123",
     "100,000$",
     "blablabla",
     "Pieniu gatve, Kaunas",
@@ -44,3 +50,8 @@ let butoObjektas = new Butas(
     "aukstas",
     "3"
 );
+
+export {
+    Butas,
+    NuomaButas,
+};
