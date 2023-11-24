@@ -11,7 +11,7 @@ class Butas extends NT {
     }
     isvedimasPilnas() {
         let div = document.createElement("div");
-        div.append(kainaIsvedimas());
+        div.append(this.kaina);
         div.append(this.aprasymas);
         div.append(this.adresas);
         div.append(this.galerija);
@@ -32,10 +32,10 @@ class Butas extends NT {
 }
 class NuomaButas extends Butas {
     constructor(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas, aukstas, kambariu_sk) {
-    super(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas, aukstas, kambariu_sk)
+        super(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas, aukstas, kambariu_sk)
     }
-    kainaIsvedimas(){
-    return `${this.kaina}€/mėn.`
+    kainaIsvedimas() {
+        return `${this.kaina}€/mėn.`
     }
 }
 
