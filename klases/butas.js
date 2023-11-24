@@ -24,7 +24,7 @@ class Butas extends NT {
     isvedimasKatalogui() {
         let div = document.createElement("div");
         div.append(this.adresas);
-        div.append(this.kaina);
+        div.append(kainaIsvedimas());
         div.append(this.galerija);
         div.append(this.agentas);
         return div;
