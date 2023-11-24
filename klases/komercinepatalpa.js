@@ -5,7 +5,7 @@ import {
 class KomercinesPatalpos extends NT {
     constructor(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas) {
         super(id, kaina, aprasymas, adresas, galerija, agentas)
-        this.patalpu_plotas;
+        this.patalpu_plotas = patalpu_plotas;
     }
     isvedimasPilnas() {
         let div = document.createElement("div");
@@ -15,8 +15,6 @@ class KomercinesPatalpos extends NT {
         div.append(this.galerija);
         div.append(this.agentas);
         div.append(this.patalpu_plotas);
-        div.append(this.aukstas);
-        div.append(this.kambariu_sk);
         return div;
     }
     isvedimasKatalogui() {
@@ -28,6 +26,7 @@ class KomercinesPatalpos extends NT {
         return div;
     }
 }
+
 // Abi naujas klasės extendina KomercinesPatalpos
 class GamybinesPatalpos extends KomercinesPatalpos {
     constructor(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas) {
@@ -37,10 +36,9 @@ class GamybinesPatalpos extends KomercinesPatalpos {
 class Garazas extends KomercinesPatalpos {
     constructor(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas) {
         super(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas)
-
     }
 }
-
+// Nuomos klasė skirta trumpinti kainą
 class NuomaButas extends KomercinesPatalpos {
     constructor(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas, aukstas, kambariu_sk) {
         super(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas, aukstas, kambariu_sk)
@@ -49,3 +47,18 @@ class NuomaButas extends KomercinesPatalpos {
         return `${this.kaina}€/mėn.`
     }
 }
+// Informacija laikoma objekte
+let komercinisObjektas = new KomercinesPatalpos(
+    "100,000$",
+    "blablabla",
+    "Pieniu gatve, Kaunas",
+    "galerija",
+    "Petriukas",
+    "332",
+    "patalpu_plotas",
+);
+// Eksportavimas
+export {
+    KomercinesPatalpos,
+    komercinisObjektas
+};
