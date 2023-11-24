@@ -7,6 +7,9 @@ class NT {
     this.galerija = galerija;
     this.agentas = agentas;
   }
+  kainaIsvedimas(){
+    return `${this.kaina}€`
+  }
 }
 
 export {NT}
