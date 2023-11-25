@@ -1,21 +1,119 @@
-class Galerija{
-  constructor(url1="Nera Nuotrauku", url2=null, url3=null){
-    this.url1 = url1;
-    this.url2 = url2;
-    this.url3 = url3;
-  };
-  isvedimasKataloguiNT(){
+class Galerija {
+  constructor(
+    url1 = "Nera Nuotrauku",
+    url2 = undefined,
+    url3 = undefined
+  ) {
+    this.imageArray = [];
+    if (url1) this.imageArray.push(url1);
+    if (url2) this.imageArray.push(url2);
+    if (url3) this.imageArray.push(url3);
+  }
+  isvedimasKataloguiNT() {
     let img = document.createElement("img");
-    img.src=this.url1;
-    return img
+    img.src = this.imageArray[0];
+    img.height = "200";
+    return img;
   }
-  isvedimasKataloguiAgento(){
+  /**
+   * Requires styles for things to appear properly
+   * @returns gallery div element
+   */
+  galerijaNT() {
+    // Change default height & width as needed
+    let height = "15em";
+    let width = "18em";
+    const galleryDiv = document.createElement("div");
+    galleryDiv.style.height = height;
+    galleryDiv.style.width = width;
+    galleryDiv.classList.add("image-gallery");
+
+    const imgDiv = imageGalleryImgDiv(this.imageArray[0]);
+    galleryDiv.append(imgDiv);
+
+    const buttons = imageGalleryAddButtons(galleryDiv);
+    //Adding events to image buttons:
+    buttons[0].addEventListener(
+      "click",
+      imageGalleryButtonFunction("left", imgDiv, this.imageArray)
+    );
+    buttons[1].addEventListener(
+      "click",
+      imageGalleryButtonFunction("right", imgDiv, this.imageArray)
+    );
+
+    return galleryDiv;
+  }
+  isvedimasKataloguiAgento() {
     return -1;
   }
-  galerijaNT(){
-    return -1;
-  }
-  isvdeimasProfilis(){
+  isvdeimasProfilis() {
     return -1;
   }
 }
+
+// Returns img element
+function imageGalleryImgDiv(imageLink, height = "15em", width = "18em") {
+  const container = document.createElement("img");
+  container.style.height = height;
+  container.style.width = width;
+  container.src = imageLink;
+
+  return container;
+}
+
+// Changes img element's source
+function imageGalleryReplace(imgDiv, newImageLink) {
+  imgDiv.src = newImageLink;
+}
+
+// Adds left and right arrow buttons to gallery div and returns [left,right] buttons
+function imageGalleryAddButtons(galleryDiv) {
+  const left = document.createElement("div");
+  const right = document.createElement("div");
+  left.append("◀");
+  right.append("▶");
+  left.classList.add("arrow", "left-arrow");
+  right.classList.add("arrow", "right-arrow");
+
+  galleryDiv.append(left);
+  galleryDiv.append(right);
+  return [left, right];
+}
+
+// Function to put into buttons
+function imageGalleryButtonFunction(
+  arrowDirection = "left",
+  imgDiv,
+  allImagesArray
+) {
+  return function () {
+    let index = findIndex(imgDiv.src, allImagesArray);
+    if (allImagesArray[0] == "Nera Nuotrauku") {
+      throw new Error("Nera Nuotrauku");
+    } else if (arrowDirection == "left") {
+      // clicked left
+      index--;
+      if (index < 0) index = allImagesArray.length - 1;
+    } else {
+      // clicked right
+      index++;
+      if (index > allImagesArray.length - 1) index = 0;
+    }
+
+    imageGalleryReplace(imgDiv, allImagesArray[index]);
+  };
+}
+// Finds what index in image array image is located
+function findIndex(searchedElem, array) {
+  index = 0;
+  for (let e of array) {
+    if (e == searchedElem) {
+      return index;
+    } else {
+      index++;
+    }
+  }
+}
+
+export{Galerija}
