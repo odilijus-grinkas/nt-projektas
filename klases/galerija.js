@@ -9,11 +9,12 @@ class Galerija {
     if (url2) this.imageArray.push(url2);
     if (url3) this.imageArray.push(url3);
   }
+  /**
+   * 
+   * @returns small img element
+   */
   isvedimasKataloguiNT() {
-    let img = document.createElement("img");
-    img.src = this.imageArray[0];
-    img.height = "200";
-    return img;
+    return imageGalleryImgDiv(this.imageArray[0],"200","300")
   }
   /**
    * Requires styles for things to appear properly
