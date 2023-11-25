@@ -10,18 +10,18 @@ class Galerija {
     if (url3) this.imageArray.push(url3);
   }
   /**
-   * 
+   * Change size values if needed
    * @returns small img element
    */
   isvedimasKataloguiNT() {
-    return imageGalleryImgDiv(this.imageArray[0],"200","300")
+    return imageGalleryImgDiv(this.imageArray[0],"10em","13em")
   }
   /**
    * Requires styles for things to appear properly
    * @returns gallery div element
    */
   galerijaNT() {
-    // Change default height & width as needed
+    // Change default height & width of gallery as needed
     let height = "15em";
     let width = "18em";
     const galleryDiv = document.createElement("div");
@@ -46,10 +46,12 @@ class Galerija {
     return galleryDiv;
   }
   isvedimasKataloguiAgento() {
-    return -1;
+    let img = imageGalleryImgDiv(this.imageArray[0], "4em", "4em");
+    img.classList.add('katalogui-agento');
+    return img;
   }
   isvdeimasProfilis() {
-    return -1;
+    return this.galerijaNT();
   }
 }
 
@@ -105,9 +107,9 @@ function imageGalleryButtonFunction(
     imageGalleryReplace(imgDiv, allImagesArray[index]);
   };
 }
-// Finds what index in image array image is located
+// Finds at what index in imageArray image is located
 function findIndex(searchedElem, array) {
-  index = 0;
+  let index = 0;
   for (let e of array) {
     if (e == searchedElem) {
       return index;
@@ -116,5 +118,4 @@ function findIndex(searchedElem, array) {
     }
   }
 }
-
 export{Galerija}

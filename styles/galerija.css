@@ -1,3 +1,4 @@
+/* Big Gallery */
 .image-gallery {
   position: relative;
 }
@@ -26,4 +27,9 @@
 .left-arrow {
   padding-right: 2.5px;
   left: 0.5em;
+}
+/* Agent */
+.katalogui-agento{
+  border-radius: 50%;
+  border: gray solid;
 }
