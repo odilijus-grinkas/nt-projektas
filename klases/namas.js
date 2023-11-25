@@ -1,6 +1,9 @@
 
 
 import { NT } from "../klases/nt.js";
+import { Galerija } from "../klases/galerija.js"
+
+const galerija = new Galerija("https://wallpapers.com/images/featured/house-u7pcf18vqolaatio.jpg")
 
 class Namas extends NT {
     constructor(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas, aukstu_sk, kambariu_sk, sklypo_plotas) {
@@ -19,7 +22,7 @@ class Namas extends NT {
         div.append(`Kaina:${this.kainaIsvedimas()}`, document.createElement("br"))
         div.append (`Aprasymas:${this.aprasymas}`, document.createElement("br"))
         div.append(`Adresas:${this.adresas}`, document.createElement("br"))
-        div.append(`Galerija:${this.agentas}`, document.createElement("br"))
+        div.append(galerija.isvedimasKataloguiNT(),document.createElement("br") )
         div.append(`Agentas:${this.agentas}`, document.createElement("br"))
         div.append(`Patalpų plotas:${this.patalpu_plotas}`, document.createElement("br"))
         div.append(`Aukštų skaičius: ${this.aukstu_sk}`, document.createElement("br"))
@@ -32,7 +35,7 @@ class Namas extends NT {
         div.append(`Kaina:${this.kainaIsvedimas()}`,document.createElement("br"))
         div.append (`Aprasymas:${this.aprasymas}`,document.createElement("br"))
         div.append(`Adresas:${this.adresas}`,document.createElement("br"))
-        div.append(`Galerija:${this.agentas}`,document.createElement("br"))
+        div.append(galerija.isvedimasKataloguiNT(),document.createElement("br"))
         return div
     }
 }
@@ -59,7 +62,7 @@ class NuomaNamas extends Namas{
         div.append(`Kaina:${this.kainaIsvedimas()}`, document.createElement("br"))
         div.append (`Aprasymas:${this.aprasymas}`, document.createElement("br"))
         div.append(`Adresas:${this.adresas}`, document.createElement("br"))
-        div.append(`Galerija:${this.agentas}`, document.createElement("br"))
+        div.append(galerija.isvedimasKataloguiNT())
         div.append(`Agentas:${this.agentas}`, document.createElement("br"))
         div.append(`Patalpų plotas:${this.patalpu_plotas}`, document.createElement("br"))
         div.append(`Aukštų skaičius: ${this.aukstu_sk}`, document.createElement("br"))
@@ -72,7 +75,7 @@ class NuomaNamas extends Namas{
         div.append(`Kaina:${this.kainaIsvedimas()}`,document.createElement("br"))
         div.append (`Aprasymas:${this.aprasymas}`,document.createElement("br"))
         div.append(`Adresas:${this.adresas}`,document.createElement("br"))
-        div.append(`Galerija:${this.agentas}`,document.createElement("br"))
+        div.append(galerija.isvedimasKataloguiNT())
         return div
     }
 }
