@@ -4,44 +4,84 @@ import { NT } from "../klases/nt.js";
 
 class Namas extends NT {
     constructor(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas, aukstu_sk, kambariu_sk, sklypo_plotas) {
-        super(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas);
+        super(id, kaina, aprasymas, adresas, galerija, agentas);
+        this.patalpu_plotas = patalpu_plotas;
         this.aukstu_sk = aukstu_sk;
         this.kambariu_sk = kambariu_sk;
         this.sklypo_plotas = sklypo_plotas;
     }
+    kainaIsvedimas(){
+        return `${this.kaina}€`
+    }
     isvedimasPilnas() {
         const div = document.createElement("div");
-        div.innerHTML = `
-            <div>${this.id}</div>
-            <div>${this.kaina}€<div>
-            <div>${this.aprasymas}</div>
-            <div>${this.adresas}</div>
-            <div>${this.galerija}</div>
-            <div>${this.agentas}</div>
-            <div>${this.patalpu_plotas}</div>
-            <div>${this.aukstu_sk}</div>
-            <div>${this.kambariu_sk}</div>
-            <div>${this.sklypo_plotas}</div>
-        `;
-        return div;
+        div.append (`ID:${this.id}`, document.createElement("br"))
+        div.append(`Kaina:${this.kainaIsvedimas()}`, document.createElement("br"))
+        div.append (`Aprasymas:${this.aprasymas}`, document.createElement("br"))
+        div.append(`Adresas:${this.adresas}`, document.createElement("br"))
+        div.append(`Galerija:${this.agentas}`, document.createElement("br"))
+        div.append(`Agentas:${this.agentas}`, document.createElement("br"))
+        div.append(`Patalpų plotas:${this.patalpu_plotas}`, document.createElement("br"))
+        div.append(`Aukštų skaičius: ${this.aukstu_sk}`, document.createElement("br"))
+        div.append(`Kambarių skaičius: ${this.kambariu_sk}`, document.createElement("br"))
+        div.append(`Sklypo plotas: ${this.sklypo_plotas}`)
+        return div 
     }
     isvedimasTrumpas(){
         const div = document.createElement("div")
-        div.innerHTML = `
-        <div>${this.kaina}</div>
-        <div>${this.adresas}</div>
-        <div>${this.galerija}</div>
-        <div>${this.agentas}</div>
-        `;
+        div.append(`Kaina:${this.kainaIsvedimas()}`,document.createElement("br"))
+        div.append (`Aprasymas:${this.aprasymas}`,document.createElement("br"))
+        div.append(`Adresas:${this.adresas}`,document.createElement("br"))
+        div.append(`Galerija:${this.agentas}`,document.createElement("br"))
         return div
     }
 }
+//testavimas
+/*const patalpos = new Namas(1, 25, "gražus namas", "Rožių g. 125, Kretinga", null, "Džeronimas Stiltonas", "45 kvadratiniai metrai", 
+3, 10, "15 hektarų")
 
-const namas = new Namas(
-    1, 25, "wefwefwef", "wffefef", "", "wfwdwdwdwd", 125, 3, 2, 500
-);
+const isvedimas = document.getElementById('namas')
 
+isvedimas.appendChild(patalpos.isvedimasPilnas())
+isvedimas.appendChild(document.createElement("br"))
+isvedimas.appendChild(patalpos.isvedimasTrumpas())*/
 
-const outputElement = document.getElementById("namas");
+class NuomaNamas extends Namas{
+    constructor(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas, aukstu_sk, kambariu_sk, sklypo_plotas){
+        super(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas, aukstu_sk, kambariu_sk, sklypo_plotas)
+    }
+    kainaIsvedimas(){
+        return `${this.kaina}€ per mėnesį`
+    }
+    isvedimasPilnas() {
+        const div = document.createElement("div");
+        div.append (`ID:${this.id}`, document.createElement("br"))
+        div.append(`Kaina:${this.kainaIsvedimas()}`, document.createElement("br"))
+        div.append (`Aprasymas:${this.aprasymas}`, document.createElement("br"))
+        div.append(`Adresas:${this.adresas}`, document.createElement("br"))
+        div.append(`Galerija:${this.agentas}`, document.createElement("br"))
+        div.append(`Agentas:${this.agentas}`, document.createElement("br"))
+        div.append(`Patalpų plotas:${this.patalpu_plotas}`, document.createElement("br"))
+        div.append(`Aukštų skaičius: ${this.aukstu_sk}`, document.createElement("br"))
+        div.append(`Kambarių skaičius: ${this.kambariu_sk}`, document.createElement("br"))
+        div.append(`Sklypo plotas: ${this.sklypo_plotas}`)
+        return div ;
+    }
+    isvedimasTrumpas(){
+        const div = document.createElement("div")
+        div.append(`Kaina:${this.kainaIsvedimas()}`,document.createElement("br"))
+        div.append (`Aprasymas:${this.aprasymas}`,document.createElement("br"))
+        div.append(`Adresas:${this.adresas}`,document.createElement("br"))
+        div.append(`Galerija:${this.agentas}`,document.createElement("br"))
+        return div
+    }
+}
+//testavimas
+/*const patalpos = new NuomaNamas(1, 25, "gražus namas", "Rožių g. 125, Kretinga", null, "Džeronimas Stiltonas", "45 kvadratiniai metrai", 
+3, 10, "15 hektarų")
 
-outputElement.appendChild(namas.isvedimasTrumpas());
+const isvedimas = document.getElementById('namas')
+
+isvedimas.appendChild(patalpos.isvedimasPilnas())
+isvedimas.appendChild(document.createElement("br"))
+isvedimas.appendChild(patalpos.isvedimasTrumpas())*/
