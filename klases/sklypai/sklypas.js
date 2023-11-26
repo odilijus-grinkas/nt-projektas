@@ -1,13 +1,26 @@
 import { NT } from "../nt.js";
-import { Adresas } from "../adresas.js";
-import { Galerija } from "../galerija.js";
-
-
+/**
+ * Klase skirta suformuoti Sklypo isvedima.
+ */
 class Sklypas extends NT{
+    /**
+     * 
+     * @param {number} id 
+     * @param {number} kaina 
+     * @param {string} aprasymas 
+     * @param {object} adresas 
+     * @param {number} sklypo_plotas 
+     * @param {object} galerija 
+     * @param {object} agentas 
+     */
     constructor(id, kaina, aprasymas, adresas,sklypo_plotas, galerija, agentas){
         super(id, kaina, aprasymas, adresas, galerija, agentas);
         this.plotas = sklypo_plotas;
     }
+    /**
+     * suformuoja komponenta su pilna informacija apie sklypa
+     * @returns html "div" element 
+     */
     isvedimasPilnas(){
         let isvedimas = document.createElement("div");
         isvedimas.className = "nt-pilnas"
@@ -32,7 +45,10 @@ class Sklypas extends NT{
         
         return isvedimas
     };
-    
+    /**
+     * suformuoja komponenta su informacija apie sklypa katalogui
+     * @returns html "div" element 
+     */
     isvedimasKatalogui(){
         let isvedimas = document.createElement("div");
         isvedimas.className = "nt-katalogui";
