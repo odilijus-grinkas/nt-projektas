@@ -1,0 +1,37 @@
+/* Big Gallery */
+.image-gallery {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.arrow {
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.566);
+  height: 2em;
+  width: 2em;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: black;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.arrow:hover {
+  background-color: white;
+}
+.right-arrow {
+  padding-left: 2.5px;
+  right: 0.5em;
+}
+.left-arrow {
+  padding-right: 2.5px;
+  left: 0.5em;
+}
+/* Agent */
+.katalogui-agento{
+  border-radius: 50%;
+  border: gray solid;
+}
