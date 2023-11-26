@@ -1,4 +1,10 @@
 class Galerija {
+  /**
+   * Add image links
+   * @param {string} url1 "https://picsum.photos/id/20/500"
+   * @param {string} url2 "https://picsum.photos/id/21/500"
+   * @param {string} url3 "https://picsum.photos/id/22/500"
+   */
   constructor(
     url1 = "Nera Nuotrauku",
     url2 = undefined,
@@ -21,13 +27,13 @@ class Galerija {
    * @returns gallery div element
    */
   galerijaNT() {
-    // Change default height & width of gallery as needed
+    // Change default height & width of gallery if needed
     let height = "15em";
     let width = "18em";
     const galleryDiv = document.createElement("div");
     galleryDiv.style.height = height;
-    galleryDiv.style.width = width;
-    galleryDiv.classList.add("image-gallery");
+    // galleryDiv.style.width = width;
+    galleryDiv.classList.add("image-gallery","nt-galerija");
 
     const imgDiv = imageGalleryImgDiv(this.imageArray[0]);
     galleryDiv.append(imgDiv);
@@ -45,6 +51,10 @@ class Galerija {
 
     return galleryDiv;
   }
+  /**
+   * 
+   * @returns small round img element
+   */
   isvedimasKataloguiAgento() {
     let img = imageGalleryImgDiv(this.imageArray[0], "4em", "4em");
     img.classList.add('katalogui-agento');

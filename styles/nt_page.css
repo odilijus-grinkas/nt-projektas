@@ -1,0 +1,25 @@
+body{
+  background-color: #333;
+  color: white;
+}
+.nt-stats{
+  display:flex;
+  justify-content: space-between;
+}
+.nt-pilnas{
+  padding: 0 20em;
+  display:grid;
+  gap: 1em;
+  grid-template-areas: 
+  "kaina adresas adresas"
+  "galerija galerija galerija"
+  "agentas agentas agentas"
+  "stats stats stats"
+  "aprasymas aprasymas aprasymas"
+}
+.nt-kaina{grid-area:kaina;}
+.nt-adresas{grid-area: adresas;} 
+.nt-galerija{grid-area: galerija;}
+.nt-agentas{grid-area: agentas;}
+.nt-stats{grid-area: stats;}
+.nt-aprasymas{grid-area: aprasymas;}
