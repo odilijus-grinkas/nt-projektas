@@ -1,7 +1,6 @@
 
 
 import { NT } from "../klases/nt.js";
-import { Galerija } from "../klases/galerija.js"
 
 const galerija = new Galerija("https://wallpapers.com/images/featured/house-u7pcf18vqolaatio.jpg")
 
@@ -18,24 +17,24 @@ class Namas extends NT {
     }
     isvedimasPilnas() {
         const div = document.createElement("div");
-        div.append (`ID:${this.id}`, document.createElement("br"))
-        div.append(`Kaina:${this.kainaIsvedimas()}`, document.createElement("br"))
-        div.append (`Aprasymas:${this.aprasymas}`, document.createElement("br"))
-        div.append(`Adresas:${this.adresas}`, document.createElement("br"))
-        div.append(galerija.isvedimasKataloguiNT(),document.createElement("br") )
-        div.append(`Agentas:${this.agentas}`, document.createElement("br"))
-        div.append(`Patalpų plotas:${this.patalpu_plotas}`, document.createElement("br"))
-        div.append(`Aukštų skaičius: ${this.aukstu_sk}`, document.createElement("br"))
-        div.append(`Kambarių skaičius: ${this.kambariu_sk}`, document.createElement("br"))
+        div.append (`ID:${this.id}`)
+        div.append(`Kaina:${this.kainaIsvedimas()}`)
+        div.append (`Aprasymas:${this.aprasymas}`)
+        div.append(`Adresas:${this.adresas}`)
+        div.append(galerija.isvedimasKataloguiNT())
+        div.append(`Agentas:${this.agentas}`)
+        div.append(`Patalpų plotas:${this.patalpu_plotas}`)
+        div.append(`Aukštų skaičius: ${this.aukstu_sk}`)
+        div.append(`Kambarių skaičius: ${this.kambariu_sk}`)
         div.append(`Sklypo plotas: ${this.sklypo_plotas}`)
         return div 
     }
     isvedimasTrumpas(){
         const div = document.createElement("div")
-        div.append(`Kaina:${this.kainaIsvedimas()}`,document.createElement("br"))
-        div.append (`Aprasymas:${this.aprasymas}`,document.createElement("br"))
-        div.append(`Adresas:${this.adresas}`,document.createElement("br"))
-        div.append(galerija.isvedimasKataloguiNT(),document.createElement("br"))
+        div.append(`Kaina:${this.kainaIsvedimas()}`)
+        div.append (`Plotas:${this.patalpu_plotas}`)
+        div.append(`Adresas:${this.adresas}`)
+        div.append(galerija.isvedimasKataloguiNT())
         return div
     }
 }
@@ -58,23 +57,23 @@ class NuomaNamas extends Namas{
     }
     isvedimasPilnas() {
         const div = document.createElement("div");
-        div.append (`ID:${this.id}`, document.createElement("br"))
-        div.append(`Kaina:${this.kainaIsvedimas()}`, document.createElement("br"))
-        div.append (`Aprasymas:${this.aprasymas}`, document.createElement("br"))
-        div.append(`Adresas:${this.adresas}`, document.createElement("br"))
+        div.append (`ID:${this.id}`)
+        div.append(`Kaina:${this.kainaIsvedimas()}`)
+        div.append (`Aprasymas:${this.aprasymas}`)
+        div.append(`Adresas:${this.adresas}`)
         div.append(galerija.isvedimasKataloguiNT())
-        div.append(`Agentas:${this.agentas}`, document.createElement("br"))
-        div.append(`Patalpų plotas:${this.patalpu_plotas}`, document.createElement("br"))
-        div.append(`Aukštų skaičius: ${this.aukstu_sk}`, document.createElement("br"))
-        div.append(`Kambarių skaičius: ${this.kambariu_sk}`, document.createElement("br"))
+        div.append(`Agentas:${this.agentas}`)
+        div.append(`Patalpų plotas:${this.patalpu_plotas}`)
+        div.append(`Aukštų skaičius: ${this.aukstu_sk}`)
+        div.append(`Kambarių skaičius: ${this.kambariu_sk}`)
         div.append(`Sklypo plotas: ${this.sklypo_plotas}`)
         return div ;
     }
     isvedimasTrumpas(){
         const div = document.createElement("div")
-        div.append(`Kaina:${this.kainaIsvedimas()}`,document.createElement("br"))
-        div.append (`Aprasymas:${this.aprasymas}`,document.createElement("br"))
-        div.append(`Adresas:${this.adresas}`,document.createElement("br"))
+        div.append(`Kaina:${this.kainaIsvedimas()}`)
+        div.append (`Plotas:${this.patalpu_plotas}`)
+        div.append(`Adresas:${this.adresas}`)
         div.append(galerija.isvedimasKataloguiNT())
         return div
     }

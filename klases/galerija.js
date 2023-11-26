@@ -1,5 +1,5 @@
 class Galerija{
-  constructor(url1="Nera Nuotrauku", url2, url3){
+  constructor(url1="Nera Nuotrauku", url2=null, url3=null){
     this.url1 = url1;
     this.url2 = url2;
     this.url3 = url3;
@@ -19,4 +19,3 @@ class Galerija{
     return -1;
   }
 }
-export { Galerija };
