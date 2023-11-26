@@ -38,9 +38,14 @@ class KomercinesPatalpos extends NT {
 
         ntNouns.append("Plotas:");
         ntNumbers.append(`${this.patalpu_plotas}m²`);
+        // Example, remove later 👇
+        ntNouns.innerHTML += "<br>";
+        ntNouns.append("Nusikalstamumas:");
+        ntNumbers.innerHTML += "<br>";
+        ntNumbers.append("20%");
+        // Example, remove later 👆
         ntAprasymas.append(this.aprasymas);
         ntStats.append(ntNouns, ntNumbers);
-
         ntPilnas.append(ntKaina,ntAprasymas,ntStats,ntAdresas,ntGalerija,ntAgentas);
 
         return ntPilnas;

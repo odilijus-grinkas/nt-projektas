@@ -7,19 +7,33 @@ body{
   justify-content: space-between;
 }
 .nt-pilnas{
-  padding: 0 20em;
+  padding: 0 20%;
   display:grid;
   gap: 1em;
   grid-template-areas: 
   "kaina adresas adresas"
-  "galerija galerija galerija"
+  ". galerija ."
   "agentas agentas agentas"
   "stats stats stats"
   "aprasymas aprasymas aprasymas"
 }
-.nt-kaina{grid-area:kaina;}
+
+.nt-kaina{grid-area:kaina; font-size: 2.5em;}
 .nt-adresas{grid-area: adresas;} 
 .nt-galerija{grid-area: galerija;}
 .nt-agentas{grid-area: agentas;}
 .nt-stats{grid-area: stats;}
 .nt-aprasymas{grid-area: aprasymas;}
+
+.nt-agentas::before{
+  content: "Agentas:";
+  font-size: 2em;
+}
+.nt-stats::before{
+  content:"Bruozai:";
+  font-size: 2em;
+}
+.nt-aprasymas::before{
+  content:"Aprasymas:";
+  font-size: 2em;
+}
