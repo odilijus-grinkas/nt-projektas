@@ -1,4 +1,13 @@
 class NT {
+  /**
+   * 
+   * @param {number} id 1
+   * @param {number} kaina 9999
+   * @param {string} aprasymas "Lorem Ipsum"
+   * @param {Adresas} adresas adresasObject
+   * @param {Galerija} galerija galerijaObject
+   * @param {Agentas} agentas agentasObject
+   */
   constructor(id, kaina, aprasymas, adresas, galerija, agentas){
     this.id = id;
     this.kaina = kaina;
@@ -8,7 +17,10 @@ class NT {
     this.agentas = agentas;
   }
   kainaIsvedimas(){
-    return `${this.kaina}€`
+    let kainaDiv = document.createElement("div");
+    kainaDiv.classList.add("nt-kaina");
+    kainaDiv.append(`${this.kaina}€`)
+    return kainaDiv
   }
 }
 
