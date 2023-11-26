@@ -1,10 +1,22 @@
 
-
+import { Galerija } from "../klases/galerija.js";
 import { NT } from "../klases/nt.js";
 
 const galerija = new Galerija("https://wallpapers.com/images/featured/house-u7pcf18vqolaatio.jpg")
 
 class Namas extends NT {
+    /**
+     * @param {number} id 1
+     * @param {number} kaina 100000
+     * @param {string} aprasymas "grazus namas"
+     * @param {Object} adresas "Klaipėdos apskritis, Klaipėdos rajono savivaldybė, Klaipėda,  Puodžių g. 10"
+     * @param {Object} galerija "https://wallpapers.com/images/featured/house-u7pcf18vqolaatio.jpg"
+     * @param {Object} agentas  "Jonas, Jonaitis ,"https://upload.wikimedia.org/wikipedia/en/e/ee/Agent_J_MIB11.jpg"
+     * @param {number} patalpu_plotas "45 kvadratiniai metrai "
+     * @param {number} aukstu_sk 5
+     * @param {number} kambariu_sk 6
+     * @param {sklypo_plotas} sklypo_plotas "15 hektarų"
+     */
     constructor(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas, aukstu_sk, kambariu_sk, sklypo_plotas) {
         super(id, kaina, aprasymas, adresas, galerija, agentas);
         this.patalpu_plotas = patalpu_plotas;
