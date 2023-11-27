@@ -3,17 +3,18 @@
  */
 class Adresas {
   /**
-   *
-   * @param {Regionas} regionas
-   * @param {string} rajonas
-   * @param {string} miestas
-   * @param {string} gatve
+   * @constructor
+   * @param {Object} data - The data object containing specific parameters.
+   * @param {Regionas} data.regionas - The ID.
+   * @param {string} data.rajonas
+   * @param {string} data.miestas
+   * @param {string} data.gatve
    */
-  constructor(regionas, rajonas, miestas, gatve) {
-    this.regionas = regionas;
-    this.rajonas = rajonas;
-    this.miestas = miestas;
-    this.gatve = gatve;
+  constructor(data) {
+    this.regionas = data.regionas;
+    this.rajonas = data.rajonas;
+    this.miestas = data.miestas;
+    this.gatve = data.gatve;
   }
   isvedimasPilnas() {
     let ntAdresas = document.createElement("div");
