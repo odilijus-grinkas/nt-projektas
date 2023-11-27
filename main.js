@@ -1,7 +1,6 @@
 import { KomercinesPatalpos } from "./klases/komercinepatalpa.js";
 import { Agentas } from "./klases/agentas.js";
 
-let agentoGalerijaExample = ["https://picsum.photos/id/69/150"];
 let agentasExample = new Agentas("James", "Bond", "https://picsum.photos/id/69/150");
 let adresasData = {
   regionas: "Regionas Placeholder",
