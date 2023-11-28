@@ -1,35 +1,29 @@
 class Galerija {
   /**
-   * Add image links
-   * @param {string} url1 "https://picsum.photos/id/20/500"
-   * @param {string} url2 "https://picsum.photos/id/21/500"
-   * @param {string} url3 "https://picsum.photos/id/22/500"
+   * Add image links to an array, can handle any amount of links ["https://link","https://link"]
+   * @constructor
+   * @param {Array<string>} array array with imageURLs
    */
-  constructor(
-    url1 = "Nera Nuotrauku",
-    url2 = undefined,
-    url3 = undefined
-  ) {
-    this.imageArray = [];
-    if (url1) this.imageArray.push(url1);
-    if (url2) this.imageArray.push(url2);
-    if (url3) this.imageArray.push(url3);
+  constructor(array) {
+    this.imageArray = array;
   }
   /**
-   * Change size values if needed
+   * NT katalogui nuotrauka
    * @returns small img element
    */
   isvedimasKataloguiNT() {
+    //Change size values if needed
     return imageGalleryImgDiv(this.imageArray[0],"10em","13em")
   }
   /**
-   * Requires styles for things to appear properly
+   * Didele galerija NT puslapiui (Reikalinga galerija.css kad atvaizduotu gerai)
    * @returns gallery div element
    */
   galerijaNT() {
     // Change default height & width of gallery if needed
+    // Commented out width because the current nt_page.css requires it to have an unrestricted width
     let height = "15em";
-    let width = "18em";
+    // let width = "18em";
     const galleryDiv = document.createElement("div");
     galleryDiv.style.height = height;
     // galleryDiv.style.width = width;
@@ -67,6 +61,7 @@ class Galerija {
 
 // Returns img element
 function imageGalleryImgDiv(imageLink, height = "15em", width = "18em") {
+  if (imageLink == undefined) throw Error("Nera nuotrauku");
   const container = document.createElement("img");
   container.style.height = height;
   container.style.width = width;
@@ -102,7 +97,7 @@ function imageGalleryButtonFunction(
 ) {
   return function () {
     let index = findIndex(imgDiv.src, allImagesArray);
-    if (allImagesArray[0] == "Nera Nuotrauku") {
+    if (allImagesArray.length == 0) {
       throw new Error("Nera Nuotrauku");
     } else if (arrowDirection == "left") {
       // clicked left
