@@ -2,6 +2,16 @@ import {
     NT
 } from "nt.js";
 
+// @class
+// @constructor
+// @param {number} kaina specific
+// @param {Adresas} adresas imported
+// @param {Galerija} galerija imported
+// @param {Object} agentas
+// @param {number} plotas 
+// @param {string} aprasymas
+// ?  @param {Array<string>} array array with imageURLs
+
 class Butas extends NT {
     constructor(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas, aukstas, kambariu_sk) {
         super(id, kaina, aprasymas, adresas, galerija, agentas)
