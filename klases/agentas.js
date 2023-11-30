@@ -1,17 +1,15 @@
-/**
- * UNFINISHED
- */
+import { Galerija } from "./galerija.js";
 class Agentas {
   /**
    *
    * @param {string} vardas
    * @param {string} pavarde
-   * @param {Galerija} Galerija
+   * @param {string} nuotraukaURL pvz "https://picsum.photos/id/15/500"
    */
-  constructor(vardas, pavarde, galerija) {
+  constructor(vardas, pavarde, nuotraukaURL=[]) {
     this.vardas = vardas;
     this.pavarde = pavarde;
-    this.galerija = galerija;
+    this.galerija = new Galerija([nuotraukaURL]);
   }
   nt() {
     const ntAgentas = document.createElement("div");
