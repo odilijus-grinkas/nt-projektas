@@ -1,15 +1,15 @@
 import { NT } from "../klases/nt.js";
 import { Adresas } from "../klases/adresas.js";
 import { Agentas } from "../klases/agentas.js";
-import { Regionas } from "./regionas.js";
 
+//sukuriame regionu masiva su objektais
 const regionai = [
   {
     pavadinimas: "Klaipeda",
     aprasymas: "Trecias pagal dydi miestas Lietuvoje",
   },
 ];
-
+// priskiriame masyvo pirma elementa prie regionas
 const adresas2 = {
   regionas: regionai[0],
   rajonas: "Klaipėdos rajono savivaldybė",
