@@ -97,7 +97,7 @@ class Garazas extends KomercinesPatalpos {
   }
 }
 
-class KomercinesPatalposNuomai extends KomercinesPatalpos {
+class KomercinesPatalposNuoma extends KomercinesPatalpos {
   constructor(data) {
     super(data);
   }
@@ -108,21 +108,21 @@ class KomercinesPatalposNuomai extends KomercinesPatalpos {
     return kainaDiv;
   }
 }
-class GarazasNuomai extends KomercinesPatalposNuomai {
+class GarazasNuoma extends KomercinesPatalposNuoma {
   constructor(data) {
     super(data);
   }
 }
-class GamybinePatalpaNuomai extends KomercinesPatalposNuomai {
+class GamybinePatalpaNuoma extends KomercinesPatalposNuoma {
   constructor(data) {
     super(data);
   }
 }
 export {
   KomercinesPatalpos,
-  KomercinesPatalposNuomai,
+  KomercinesPatalposNuoma,
   Garazas,
-  GarazasNuomai,
+  GarazasNuoma,
   GamybinePatalpa,
-  GamybinePatalpaNuomai
+  GamybinePatalpaNuoma
 };

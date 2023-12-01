@@ -1,4 +1,4 @@
-import { Galerija } from "../galerija.js";
+import { Galerija } from "./galerija.js";
 // import { agentai} from "./agentai.js"
 class Agentas {
   /**

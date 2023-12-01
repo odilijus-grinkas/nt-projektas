@@ -69,7 +69,7 @@ class NTSvetaine {
     ];
     for (let klase of klases) {
       this.objektai(klase, 5, false);
-      this.objektai(klase + "Nuomai", 5, false);
+      this.objektai(klase + "Nuoma", 5, false);
     }
   }
 }
@@ -128,7 +128,7 @@ function leftButtonObjectEvents() {
   for (let i = 0; i < classNames.length; i++) {
     buttons[i].addEventListener("click", () => {
       NTSvetaine.objektai(classNames[i]);
-      NTSvetaine.objektai(classNames[i] + "Nuomai", 0, false);
+      NTSvetaine.objektai(classNames[i] + "Nuoma", 0, false);
       document.getElementById("token").innerHTML = classNames[i];
       hidePirktiNuomaButtons(false);
     });
@@ -144,7 +144,8 @@ function pirkti_nuoma_buttonEvents() {
   });
   nuomai.addEventListener("click", () => {
     if (token.innerHTML != "Neliesti") {
-      NTSvetaine.objektai(token.innerHTML + "Nuomai", 0);
+      NTSvetaine.objektai(token.innerHTML + "Nuoma", 0);
+      console.log(token.innerHTML + "Nuoma")
     }
   });
 }

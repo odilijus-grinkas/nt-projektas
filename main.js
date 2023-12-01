@@ -1,11 +1,12 @@
 import {
   KomercinesPatalpos,
-  KomercinesPatalposNuomai,
+  KomercinesPatalposNuoma,
   Garazas,
-  GarazasNuomai,
+  GarazasNuoma,
   GamybinePatalpa,
-  GamybinePatalpaNuomai,
+  GamybinePatalpaNuoma,
 } from "./klases/komercinepatalpa.js";
+import { Sklypas, SklypasNuoma } from "./klases/sklypas.js";
 import { Agentas } from "./klases/agentas.js";
 
 let agentai = [
@@ -77,7 +78,7 @@ let objektai = [
     agentas: agentai[1],
     plotas: 55100,
   }),
-  new KomercinesPatalposNuomai({
+  new KomercinesPatalposNuoma({
     id: 2,
     kaina: 390,
     aprasymas:
@@ -96,7 +97,7 @@ let objektai = [
     agentas: agentai[0],
     plotas: 200,
   }),
-  new KomercinesPatalposNuomai({
+  new KomercinesPatalposNuoma({
     id: 5,
     kaina: 555,
     aprasymas:
@@ -153,7 +154,7 @@ let objektai = [
     agentas: agentai[0],
     plotas: 200,
   }),
-  new GarazasNuomai({
+  new GarazasNuoma({
     id: 2,
     kaina: 2,
     aprasymas:
@@ -191,7 +192,7 @@ let objektai = [
     agentas: agentai[2],
     plotas: 300,
   }),
-  new GamybinePatalpaNuomai({
+  new GamybinePatalpaNuoma({
     id: 2,
     kaina: 123,
     aprasymas:
@@ -211,4 +212,4 @@ let objektai = [
     plotas: 200,
   }),
 ];
-export{objektai}
+export { objektai };
