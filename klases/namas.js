@@ -1,9 +1,17 @@
 import { NT } from "../klases/nt.js";
 import { Adresas } from "../klases/adresas.js";
 import { Agentas } from "../klases/agentas.js";
+import { Regionas } from "./regionas.js";
+
+const regionai = [
+  {
+    pavadinimas: "Klaipeda",
+    aprasymas: "Trecias pagal dydi miestas Lietuvoje",
+  },
+];
 
 const adresas2 = {
-  regionas: "Klaipėdos apskritis",
+  regionas: regionai[0],
   rajonas: "Klaipėdos rajono savivaldybė",
   miestas: "Klaipėda",
   gatve: "Puodžių g. 10",
@@ -30,9 +38,7 @@ class Namas extends NT {
    * @param {number} kambariu_sk - kambariu skaicius
    * @param {string} sklypo_plotas - sklypo plotas su matavimo vienetais(hektarais)
    */
-  constructor(
-    data
-  ) {
+  constructor(data) {
     super(data);
     this.patalpu_plotas = data.patalpu_plotas;
     this.aukstu_sk = data.aukstu_sk;
@@ -86,10 +92,13 @@ class Namas extends NT {
       document.createElement("br")
     );
     ntAprasymas.append(this.aprasymas);
+    const ntAdresas = this.adresas.nt();
+    ntAdresas.append(this.regionai.nt());
     ntStats.append(ntNumbers, ntNouns);
     ntPilnas.append(
       ntStats,
       ntAprasymas,
+      ntAdresas,
       this.galerija.galerijaNT(),
       this.kainaIsvedimas(),
       this.adresas.isvedimasPilnas(),
@@ -101,12 +110,14 @@ class Namas extends NT {
     let katalogas = document.createElement("div");
     katalogas.append(this.adresas.isvedimasPilnas());
     katalogas.append(this.kainaIsvedimas());
-    katalogas.append(this.galerija.isvedimasKataloguiNT(), document.createElement("br"));
+    katalogas.append(
+      this.galerija.isvedimasKataloguiNT(),
+      document.createElement("br")
+    );
     katalogas.append(this.patalpu_plotas);
     return katalogas;
   }
 }
-
 
 const namas = {
   id: 1,
@@ -216,7 +227,10 @@ class NamasNuoma extends Namas {
     let katalogas = document.createElement("div");
     katalogas.append(this.adresas.isvedimasPilnas());
     katalogas.append(this.kainaIsvedimas());
-    katalogas.append(this.galerija.isvedimasKataloguiNT(), document.createElement("br"),);
+    katalogas.append(
+      this.galerija.isvedimasKataloguiNT(),
+      document.createElement("br")
+    );
     katalogas.append(this.patalpu_plotas);
     return katalogas;
   }
@@ -226,4 +240,7 @@ let isvedimasNuoma = new NamasNuoma(namas);
 
 const isvedimas2 = document.getElementById("namas");
 
-isvedimas2.append(isvedimasNuoma.isvedimasPilnas(),isvedimasNuoma.isvedimasTrumpas())
+isvedimas2.append(
+  isvedimasNuoma.isvedimasPilnas(),
+  isvedimasNuoma.isvedimasTrumpas()
+);

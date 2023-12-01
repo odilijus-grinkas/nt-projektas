@@ -1,3 +1,4 @@
+import { Regionas } from "./regionas.js";
 /**
  * UNFINISHED
  */
@@ -11,7 +12,7 @@ class Adresas {
    * @param {string} data.gatve
    */
   constructor(data) {
-    this.regionas = data.regionas;
+    this.regionas = new Regionas(data.regionas);
     this.rajonas = data.rajonas;
     this.miestas = data.miestas;
     this.gatve = data.gatve;
@@ -19,7 +20,7 @@ class Adresas {
   isvedimasPilnas() {
     let ntAdresas = document.createElement("div");
     ntAdresas.classList.add("nt-adresas");
-    ntAdresas.append(this.regionas);
+    ntAdresas.append(this.regionas.nt());
     ntAdresas.innerHTML += "<br>";
     ntAdresas.append(this.rajonas);
     ntAdresas.innerHTML += "<br>";
