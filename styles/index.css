@@ -77,6 +77,8 @@ main{
   background-color: unset;
   color: orange;
   font-style: italic;
+  font-size: large;
+  text-decoration: underline;
 }
 .nt-katalogas button:hover{
   color: blue;
