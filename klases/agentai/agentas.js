@@ -6,8 +6,11 @@ class Agentas {
    * @param {string} vardas
    * @param {string} pavarde
    * @param {string} nuotraukaURL pvz "https://picsum.photos/id/15/500"
+   * @param {string} aprasas 
+   * @param {Regionai} nuotraukaURL Regionai object
+   * 
    */
-  constructor(vardas, pavarde, nuotraukaURL=[], aprasas, regionas, agentai) {
+  constructor(vardas, pavarde, nuotraukaURL=[], aprasas, regionas) {
     this.vardas = vardas;
     this.pavarde = pavarde;
     this.galerija = new Galerija([nuotraukaURL]);
@@ -46,7 +49,11 @@ class Agentas {
 
     return ntAgentas
   };
-  
+  /**
+   * 
+   * @param {array} agentai 
+   * @returns container div with multiple divs containing info on agentas.
+   */
   static isvedimasAgentuSarasui(agentai){
     const sarasas = document.createElement("div");
     sarasas.classList.add("agentu-sarasas");

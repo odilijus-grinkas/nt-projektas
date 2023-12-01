@@ -1,7 +1,9 @@
 import { Agentas } from "./agentas.js";
 import { foto_agentas } from "./img_agentai.js";
 
-
+/**
+ * array with agentai objects
+ */
 const agentai = [];
 
 agentai.push( new Agentas("Jonas", "Jomaitis", foto_agentas[0],
