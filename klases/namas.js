@@ -5,7 +5,7 @@ import { Agentas } from "../klases/agentas.js";
 //sukuriame regionu masiva su objektais
 const regionai = [
   {
-    pavadinimas: "Klaipeda",
+    pavadinimas: "Vilnius",
     aprasymas: "Trecias pagal dydi miestas Lietuvoje",
   },
 ];
@@ -15,6 +15,9 @@ const adresas2 = {
   rajonas: "Klaipėdos rajono savivaldybė",
   miestas: "Klaipėda",
   gatve: "Puodžių g. 10",
+  //koordinates: "82828, 8828582",
+  //namo_nr: 5,
+  //buto_nr: 5
 };
 
 const agentas = new Agentas(
