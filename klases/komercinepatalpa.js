@@ -54,16 +54,22 @@ class KomercinesPatalpos extends NT {
     }
     isvedimasKatalogui() {
         let div = document.createElement("div");
-        div.append(this.adresas);
-        div.append(kainaIsvedimas());
-        div.append(this.galerija);
-        div.append(this.agentas);
+        div.append(this.galerija.isvedimasKataloguiNT());
+        div.append(this.kainaIsvedimas());
+        // div.append(this.adresas);
+        // Testing v
+        let randomDiv = document.createElement('div');
+        randomDiv.append("Klaipeda Str");
+        div.append(randomDiv)
+        // testing ^
+        // div.append(this.agentas);
+        div.append("Agentas JamesBond")
         return div;
     }
 }
 
 // Abi naujas klasės extendina KomercinesPatalpos
-class GamybinesPatalpos extends KomercinesPatalpos {
+class GamybinePatalpa extends KomercinesPatalpos {
     constructor(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas) {
         super(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas)
     }
@@ -73,16 +79,6 @@ class Garazas extends KomercinesPatalpos {
         super(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas)
     }
 }
-// Nuomos klasė skirta trumpinti kainą
-class NuomaButas extends KomercinesPatalpos {
-    constructor(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas, aukstas, kambariu_sk) {
-        super(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas, aukstas, kambariu_sk)
-    }
-    kainaIsvedimas() {
-        return `${this.kaina}€/mėn.`
-    }
-}
-
 export {
     KomercinesPatalpos
 };
