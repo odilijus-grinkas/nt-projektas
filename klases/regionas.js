@@ -1,4 +1,10 @@
 class Regionas {
+  /**
+   * 
+   * @constructor
+   * @param {string} data.pavadinimas
+   * @param {string} data.aprasymas
+   */
   constructor(data) {
     this.pavadinimas = data.pavadinimas;
     this.aprasymas = data.aprasymas;

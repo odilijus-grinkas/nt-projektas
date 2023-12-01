@@ -16,7 +16,7 @@ const adresas2 = {
   miestas: "Klaipėda",
   gatve: "Puodžių g. 10",
   //koordinates: "82828, 8828582",
-  //namo_nr: 5,
+  namo_nr: 5,
   //buto_nr: 5
 };
 

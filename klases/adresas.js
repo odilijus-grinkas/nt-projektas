@@ -10,18 +10,18 @@ class Adresas {
    * @param {string} data.rajonas
    * @param {string} data.miestas
    * @param {string} data.gatve
-   * @param {string} data.koordinates
-   * @param {number} data.namo_nr
-   * @param {number} data.buto_nr
+   * @param {number} data.namo_nr - sito, gali ir nebuti jei reikia galima prirasyt
+   * @param {number} data.buto_nr -sito, gali ir nebuti jei reikia galima prirasyt. Butinai turi buti su namo_nr
+   * @param {string} data.koordinates - sito, gali ir nebuti jei reikia galima prirasyt
    */
   constructor(data) {
     this.regionas = new Regionas(data.regionas);
     this.rajonas = data.rajonas;
     this.miestas = data.miestas;
     this.gatve = data.gatve;
-    this.koordinates = data.koordinates;
     this.namo_nr = data.namo_nr;
     this.buto_nr = data.buto_nr;
+    this.koordinates = data.koordinates;
   }
   isvedimasKoordinaciu() {
     return this.koordinates;
@@ -43,16 +43,11 @@ class Adresas {
       this.koordinates === undefined
     ) {
       return ntAdresas;
-    } else if (this.koordinates && this.namo_nr && this.buto_nr === undefined) {
-      ntAdresas.innerHTML += "<br>";
-      ntAdresas.append(this.koordinates);
-      ntAdresas.innerHTML += "<br>";
-      ntAdresas.append(this.namo_nr);
     } else if (this.namo_nr && this.buto_nr && this.koordinates === undefined) {
       ntAdresas.innerHTML += "<br>";
-      ntAdresas.append(this.buto_nr);
+      ntAdresas.append("Namo numeris: ", this.buto_nr);
       ntAdresas.innerHTML += "<br>";
-      ntAdresas.append(this.namo_nr);
+      ntAdresas.append("Buto numeris: ",this.namo_nr);
       return ntAdresas;
     } else if (
       this.namo_nr === undefined &&
@@ -60,7 +55,7 @@ class Adresas {
       this.koordinates
     ) {
       ntAdresas.innerHTML += "<br>";
-      ntAdresas.append(this.koordinates);
+      ntAdresas.append("Koordinates: ",this.koordinates);
       return ntAdresas;
     } else if (
       this.koordinates === undefined &&
@@ -68,7 +63,7 @@ class Adresas {
       this.namo_nr
     )
       ntAdresas.innerHTML += "<br>";
-    ntAdresas.append(this.namo_nr);
+    ntAdresas.append("Namo numeris: ", this.namo_nr);
     return ntAdresas;
   }
   isvedimasKatalogui() {
