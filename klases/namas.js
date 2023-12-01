@@ -1,60 +1,43 @@
 import { NT } from "../klases/nt.js";
-import { Galerija } from "../klases/galerija.js";
 import { Adresas } from "../klases/adresas.js";
 import { Agentas } from "../klases/agentas.js";
 
-const galerija_agentas = new Galerija(
-    "https://upload.wikimedia.org/wikipedia/en/e/ee/Agent_J_MIB11.jpg",
-)
-
-const galerija = new Galerija(
-  "https://wallpapers.com/images/featured/house-u7pcf18vqolaatio.jpg",
-  "https://images7.alphacoders.com/436/thumb-1920-436350.jpg",
-  "https://wallpapers.com/images/featured/beautiful-house-x1yu28g8twzle26l.jpg",
-);
-
-const adresas2 = new Adresas(
-  "Klaipėdos apskritis",
-  "Klaipėdos rajono savivaldybė",
-  "Klaipėda",
-  "Puodžių g. 10"
-);
+const adresas2 = {
+  regionas: "Klaipėdos apskritis",
+  rajonas: "Klaipėdos rajono savivaldybė",
+  miestas: "Klaipėda",
+  gatve: "Puodžių g. 10",
+};
 
 const agentas = new Agentas(
   "Jonas",
-  "Jonaitis",galerija_agentas
+  "Jonaitis",
+  "https://upload.wikimedia.org/wikipedia/en/e/ee/Agent_J_MIB11.jpg"
 );
 
 class Namas extends NT {
   /**
-   * @param {number} id 1
-   * @param {number} kaina 100000
-   * @param {string} aprasymas "grazus namas"
-   * @param {Object} adresas adresas 2
-   * @param {Object} galerija galerija
-   * @param {Object} agentas  agentas
-   * @param {string} patalpu_plotas "45 kvadratiniai metrai"
-   * @param {number} aukstu_sk 5
-   * @param {number} kambariu_sk 6
-   * @param {string} sklypo_plotas "15 hektarų"
+   * @constructor
+   * @param {Object} data - The data object containing specific parameters.
+   * @param {string} data.id - The ID.
+   * @param {number} data.kaina - The price
+   * @param {string} data.aprasymas - The description
+   * @param {Adresas} data.adresas - The address info.
+   * @param {Array<string>} array array with imageURLs
+   * @param {Object} data.agentas - The agent object.
+   * @param {number} data.sklypo_plotas - Plotas
+   * @param {number} data.aukstu_sk - Aukstu skaicius
+   * @param {number} kambariu_sk - kambariu skaicius
+   * @param {string} sklypo_plotas - sklypo plotas su matavimo vienetais(hektarais)
    */
   constructor(
-    id,
-    kaina,
-    aprasymas,
-    adresas,
-    galerija,
-    agentas,
-    patalpu_plotas,
-    aukstu_sk,
-    kambariu_sk,
-    sklypo_plotas
+    data
   ) {
-    super(id, kaina, aprasymas, adresas, galerija, agentas);
-    this.patalpu_plotas = patalpu_plotas;
-    this.aukstu_sk = aukstu_sk;
-    this.kambariu_sk = kambariu_sk;
-    this.sklypo_plotas = sklypo_plotas;
+    super(data);
+    this.patalpu_plotas = data.patalpu_plotas;
+    this.aukstu_sk = data.aukstu_sk;
+    this.kambariu_sk = data.kambariu_sk;
+    this.sklypo_plotas = data.sklypo_plotas;
   }
   kainaIsvedimas() {
     let kainaDiv = document.createElement("div");
@@ -118,145 +101,129 @@ class Namas extends NT {
     let katalogas = document.createElement("div");
     katalogas.append(this.adresas.isvedimasPilnas());
     katalogas.append(this.kainaIsvedimas());
-    katalogas.append(this.galerija.isvedimasKataloguiNT());
+    katalogas.append(this.galerija.isvedimasKataloguiNT(), document.createElement("br"));
     katalogas.append(this.patalpu_plotas);
     return katalogas;
+  }
 }
-}
+
+
+const namas = {
+  id: 1,
+  kaina: 25,
+  aprasymas: "gražus namas",
+  adresas: adresas2,
+  galerija: [
+    "https://images7.alphacoders.com/436/thumb-1920-436350.jpg",
+    "https://wallpapers.com/images/featured/house-u7pcf18vqolaatio.jpg",
+    "https://w.forfun.com/fetch/06/06e40a0a673edfcb9aaa5194cfb684a3.jpeg",
+  ],
+  agentas: agentas,
+  patalpu_plotas: "45 kvadratiniai metrai",
+  aukstu_sk: 3,
+  kambariu_sk: 10,
+  sklypo_plotas: "15 hektarų",
+};
+
 //testavimas
-/*const patalpos = new Namas(
-  1,
-  25,
-  "gražus namas",
-  adresas2,
-  galerija,
-  agentas,
-  "45 kvadratiniai metrai",
-  3,
-  10,
-  "15 hektarų"
-);
+
+/*let NamasIsvedimas = new Namas(namas);
 
 const isvedimas = document.getElementById("namas");
 
-isvedimas.append(patalpos.isvedimasPilnas(),patalpos.isvedimasTrumpas());*/
+isvedimas.append(NamasIsvedimas.isvedimasTrumpas());*/
 
 /**
  * NamasNuoma klasė, kuri pakeičia namas klasę, kad rodytų nuomos kainą.
  */
 class NamasNuoma extends Namas {
-    /**
-     * @param {number} id 1
-     * @param {number} kaina 100000
-     * @param {string} aprasymas "grazus namas"
-     * @param {Object} adresas adresas 2
-     * @param {Object} galerija galerija
-     * @param {Object} agentas  agentas
-     * @param {string} patalpu_plotas "45 kvadratiniai metrai"
-     * @param {number} aukstu_sk 5
-     * @param {number} kambariu_sk 6
-     * @param {string} sklypo_plotas "15 hektarų"
-     */
-    constructor(
-      id,
-      kaina,
-      aprasymas,
-      adresas,
-      galerija,
-      agentas,
-      patalpu_plotas,
-      aukstu_sk,
-      kambariu_sk,
-      sklypo_plotas
-    ) {
-      super(id, kaina, aprasymas, adresas, galerija, agentas);
-      this.patalpu_plotas = patalpu_plotas;
-      this.aukstu_sk = aukstu_sk;
-      this.kambariu_sk = kambariu_sk;
-      this.sklypo_plotas = sklypo_plotas;
-    }
-    kainaIsvedimas() {
-      let kainaDiv = document.createElement("div");
-      kainaDiv.classList.add("nt-kaina");
-      kainaDiv.append(`${this.kaina}€ per mėnesį`);
-      return kainaDiv;
-    }
-    isvedimasPilnas() {
-      const ntPilnas = document.createElement("div");
-      ntPilnas.classList.add("nt-pilnas");
-      const ntNouns = document.createElement("div");
-      ntNouns.classList.add("nt-nouns");
-      const ntNumbers = document.createElement("div");
-      ntNumbers.classList.add("nt-numbers");
-      const ntStats = document.createElement("div");
-      ntStats.classList.add("nt-stats");
-      const ntAprasymas = document.createElement("div");
-      ntAprasymas.classList.add("nt-aprasymas");
-      const ntNouns1 = document.createTextNode("ID:");
-      const ntNouns2 = document.createTextNode("Patalpų plotas:");
-      const ntNouns3 = document.createTextNode("Aukstu skaičius:");
-      const ntNouns4 = document.createTextNode("Kambarių skaičius:");
-      const ntNouns5 = document.createTextNode("Sklypo plotas:");
-      ntNouns.append(
-        ntNouns1,
-        document.createElement("br"),
-        ntNouns2,
-        document.createElement("br"),
-        ntNouns3,
-        document.createElement("br"),
-        ntNouns4,
-        document.createElement("br"),
-        ntNouns5,
-        document.createElement("br")
-      );
-      ntNumbers.append(
-        this.id,
-        document.createElement("br"),
-        this.patalpu_plotas,
-        document.createElement("br"),
-        this.aukstu_sk,
-        document.createElement("br"),
-        this.kambariu_sk,
-        document.createElement("br"),
-        this.sklypo_plotas,
-        document.createElement("br")
-      );
-      ntAprasymas.append(this.aprasymas);
-      ntStats.append(ntNumbers, ntNouns);
-      ntPilnas.append(
-        ntStats,
-        ntAprasymas,
-        this.galerija.galerijaNT(),
-        this.kainaIsvedimas(),
-        this.adresas.isvedimasPilnas(),
-        this.agentas.nt()
-      );
-      return ntPilnas;
-    }
-    isvedimasTrumpas() {
-      let katalogas = document.createElement("div");
-      katalogas.append(this.adresas.isvedimasPilnas());
-      katalogas.append(this.kainaIsvedimas());
-      katalogas.append(this.galerija.isvedimasKataloguiNT());
-      katalogas.append(this.patalpu_plotas);
-      return katalogas;
+  /**
+   * @constructor
+   * @param {Object} data - The data object containing specific parameters.
+   * @param {string} data.id - The ID.
+   * @param {number} data.kaina - The price
+   * @param {string} data.aprasymas - The description
+   * @param {Adresas} data.adresas - The address info.
+   * @param {Array<string>} array array with imageURLs
+   * @param {Object} data.agentas - The agent object.
+   * @param {number} data.patalpu_plotas- Plotas
+   * @param {number} data.aukstu_sk - Aukstu skaicius
+   * @param {number} data.kambariu_sk - kambariu skaicius
+   * @param {string} data.sklypo_plotas - sklypo plotas su matavimo vienetais(hektarais)
+   */
+  constructor(data) {
+    super(data);
   }
+  kainaIsvedimas() {
+    let kainaDiv = document.createElement("div");
+    kainaDiv.classList.add("nt-kaina");
+    kainaDiv.append(`${this.kaina}€ per mėnesį`);
+    return kainaDiv;
   }
+  isvedimasPilnas() {
+    const ntPilnas = document.createElement("div");
+    ntPilnas.classList.add("nt-pilnas");
+    const ntNouns = document.createElement("div");
+    ntNouns.classList.add("nt-nouns");
+    const ntNumbers = document.createElement("div");
+    ntNumbers.classList.add("nt-numbers");
+    const ntStats = document.createElement("div");
+    ntStats.classList.add("nt-stats");
+    const ntAprasymas = document.createElement("div");
+    ntAprasymas.classList.add("nt-aprasymas");
+    const ntNouns1 = document.createTextNode("ID:");
+    const ntNouns2 = document.createTextNode("Patalpų plotas:");
+    const ntNouns3 = document.createTextNode("Aukstu skaičius:");
+    const ntNouns4 = document.createTextNode("Kambarių skaičius:");
+    const ntNouns5 = document.createTextNode("Sklypo plotas:");
+    ntNouns.append(
+      ntNouns1,
+      document.createElement("br"),
+      ntNouns2,
+      document.createElement("br"),
+      ntNouns3,
+      document.createElement("br"),
+      ntNouns4,
+      document.createElement("br"),
+      ntNouns5,
+      document.createElement("br")
+    );
+    ntNumbers.append(
+      this.id,
+      document.createElement("br"),
+      this.patalpu_plotas,
+      document.createElement("br"),
+      this.aukstu_sk,
+      document.createElement("br"),
+      this.kambariu_sk,
+      document.createElement("br"),
+      this.sklypo_plotas,
+      document.createElement("br")
+    );
+    ntAprasymas.append(this.aprasymas);
+    ntStats.append(ntNumbers, ntNouns);
+    ntPilnas.append(
+      ntStats,
+      ntAprasymas,
+      this.galerija.galerijaNT(),
+      this.kainaIsvedimas(),
+      this.adresas.isvedimasPilnas(),
+      this.agentas.nt()
+    );
+    return ntPilnas;
+  }
+  isvedimasTrumpas() {
+    let katalogas = document.createElement("div");
+    katalogas.append(this.adresas.isvedimasPilnas());
+    katalogas.append(this.kainaIsvedimas());
+    katalogas.append(this.galerija.isvedimasKataloguiNT(), document.createElement("br"),);
+    katalogas.append(this.patalpu_plotas);
+    return katalogas;
+  }
+}
 
-//testavimas
-/*const patalpos = new NamasNuoma(
-  1,
-  25,
-  "gražus namas",
-  adresas2,
-  galerija,
-  agentas,
-  "45 kvadratiniai metrai",
-  3,
-  10,
-  "15 hektarų"
-);
+let isvedimasNuoma = new NamasNuoma(namas);
 
-const isvedimas = document.getElementById("namas");
+const isvedimas2 = document.getElementById("namas");
 
-isvedimas.append(patalpos.isvedimasPilnas(),patalpos.isvedimasTrumpas())*/
+isvedimas2.append(isvedimasNuoma.isvedimasPilnas(),isvedimasNuoma.isvedimasTrumpas())
