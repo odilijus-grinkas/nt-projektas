@@ -78,59 +78,5 @@ class Agentas {
   }
 }
 
-// static isvedimasAgentuSarasui(agentai){
-//   const sarasas = document.createElement("div");
-//   sarasas.classList.add("agentu-sarasas");
-//   for(let a = 0; a < agentai.length; a++){
-//     console.log(agentai[a])
-//     let div = document.createElement("div");
-//     div.classList.add("agentas");
-//     const vardas = document.createElement("p");
-//     const pavarde = document.createElement("p");
-//     const foto = document.createElement("img");
-//     console.log((agentai[a].galerija)[0])
-//     foto.setAttribute("src", agentai[a].galerija);
-//     vardas.append(agentai[a].vardas);
-//     pavarde.append(agentai[a].pavarde);
-//     div.append(foto,vardas, pavarde);
-//     // div.append(agentas.vardas, agentas.regionas);
-//     sarasas.append(div);
-//   }
-//   return sarasas;
-// }
-// static isvedimasAgentuSarasui(agentai){
-  //   const sarasas = document.createElement("div");
-  //   sarasas.classList.add("agentu-sarasas");
-  //   for(let a = 0; a < agentai.length; a++){
-  //     console.log(agentai[a].vardas)
-  //     let div = document.createElement("div");
-  //     div.classList.add("agentas");
-  //     const vardas = document.createElement("p");
-  //     const pavarde = document.createElement("p");
-  //     vardas.append(agentai[a].vardas);
-  //     pavarde.append(agentai[a].pavarde);
-  //     div.append(vardas, pavarde);
-  //     // div.append(agentas.vardas, agentas.regionas);
-  //     sarasas.append(div);
-  //   }
-  //   return sarasas;
-  // }
-
-// class AgentuSarasas extends Agentas{
-//   // 
-//   static isvedimasAgentuSarasui(agentai){
-//     const sarasas = document.createElement("div");
-//     sarasas.classList.add("agentu-sarasas");
-//     for(let agentas in agentai){
-//       console.log(agentas.nt());
-//       // let div = document.createElement("div");
-//       // div.classList.add("agentas");
-//       // div.append(agentai[a]);
-//       // // div.append(agentas.vardas, agentas.regionas);
-//       // sarasas.append(div);
-//     };
-//     return sarasas;
-//   };
-// };
 
 export { Agentas };
