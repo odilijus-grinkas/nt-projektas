@@ -6,19 +6,21 @@ import {
  * Returns komercines patalpos
  */
 class KomercinesPatalpos extends NT {
-    /**
-     * 
-     * @param {number} id 1
-     * @param {number} kaina 100
-     * @param {string} aprasymas "lorem ipsum"
-     * @param {Object} adresas
-     * @param {Object} galerija 
-     * @param {Object} agentas 
-     * @param {number} patalpu_plotas
-     */
-    constructor(id, kaina, aprasymas, adresas, galerija, agentas, patalpu_plotas) {
-        super(...arguments)
-        this.patalpu_plotas = patalpu_plotas;
+  /**
+   * NT Class Constructor.
+   * @constructor
+   * @param {Object} data - The data object containing specific parameters.
+   * @param {string} data.id - The ID.
+   * @param {number} data.kaina - The price
+   * @param {string} data.aprasymas - The description
+   * @param {Adresas} data.adresas - The address info.
+   * @param {Array<string>} array array with imageURLs
+   * @param {Object} data.agentas - The agent object.
+   * @param {number} data.plotas - Plotas
+   */
+    constructor(data) {
+        super(data)
+        this.patalpu_plotas = data.plotas;
     }
     isvedimasPilnas() {
         const ntPilnas = document.createElement("div");
