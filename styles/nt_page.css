@@ -7,6 +7,7 @@ body{
   justify-content: space-between;
 }
 .nt-pilnas{
+  width: 25em;
   padding: 0 20%;
   display:grid;
   gap: 1em;
@@ -29,10 +30,10 @@ body{
   content: "Agentas:";
   font-size: 2em;
 }
-.nt-stats::before{
+/* .nt-stats::before{
   content:"Bruozai:";
   font-size: 2em;
-}
+} */
 .nt-aprasymas::before{
   content:"Aprasymas:";
   font-size: 2em;

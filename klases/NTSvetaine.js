@@ -1,12 +1,35 @@
-import { KomercinesPatalpos } from "./komercinepatalpa.js";
+// Nezinau kaip kitaip objektus sitai statinei klasei rasti
+import { objektai } from "../main.js";
+const main = document.getElementById("main");
+const mainHTML = `<div class="side-buttons">
+<a href="#" id="agentaiButton">Agentai</a>
+<a href="#" id="regionaiButton">Regionai</a>
+<a href="#" class='object-buttons'>Namai</a>
+<a href="#" class='object-buttons'>Butai</a>
+<a href="#" class='object-buttons'>Sklypai</a>
+<a href="#" class='object-buttons'>Komercines</a>
+<a href="#" class='object-buttons'>Gamybines</a>
+<a href="#" class='object-buttons'>Garažai</a>
+</div>
+<div class="right-side">
+<div class="pirkti-nuoma">
+  <a href="#" id="pirkti-button">Pirkti</a>
+  <a href="#" id="nuomai-button">Nuomai</a>
+</div>
+<div class="nt-katalogas">
+</div>
+</div>`;
+
 /**
  * Reikalingi globalus array: objektai, agentai, regionai
+ * Reikalingas div puslapyje su id="main"
  */
 class NTSvetaine {
   constructor() {}
   static menu() {
-    // add events here pls🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻
     main.innerHTML = mainHTML;
+    leftButtonObjectEvents();
+    pirkti_nuoma_buttonEvents();
   }
   static agentai() {
     return -1;
@@ -20,10 +43,14 @@ class NTSvetaine {
   }
   /**
    * Grazina masyva kazkokio NT pilnasIsrasimas() divus
-   * @param {string} Klase galimi: Namas, Butas, Sklypas, Sodybos, GamybinePatalpa, Garazas. Nuomom: NamasNuoma etc.
+   * @param {string} Klase galimi: Namas, Butas, Sklypas, Sodybos, KomercinesPatalpos, GamybinePatalpa, Garazas... Nuomom: NamasNuomai etc.
    * @param {number} kiekis 0 = visus isvesti(default)
    */
-  static objektai(klase, kiekis = 0) {
+  static objektai(klase, kiekis = 0, clear = true) {
+    if (clear) {
+      // clean nt-katalogas before adding
+      document.getElementsByClassName("nt-katalogas")[0].innerHTML = "";
+    }
     let filteredObjects = filterObjects(klase);
     insertObjects(filteredObjects, kiekis);
   }
@@ -35,32 +62,43 @@ class NTSvetaine {
       "Namas",
       "Butas",
       "Sklypas",
-      "KomercinePatalpa",
       "Sodybos",
+      "KomercinesPatalpos",
       "GamybinePatalpa",
       "Garazas",
     ];
-    // for each klases class run insertObject(klase,5)
-    return -1;
+    for (let klase of klases) {
+      this.objektai(klase, 5, false);
+      this.objektai(klase + "Nuomai", 5, false);
+    }
   }
 }
 
 function insertObjects(array, amount) {
   let index = 0;
-  if (array.length == 0) {
-    document
-      .getElementsByClassName("nt-katalogas")[0]
-      .append("Nera Objektu, blogas pavadinimas?");
-    index = Infinity;
-  } else if (amount == 0) {
+  if (amount == 0) {
     index = -Infinity;
   }
   for (let obj of array) {
     if (index >= amount) break;
     let div = obj.isvedimasKatalogui();
-    document.getElementsByClassName("nt-katalogas")[0].append(div);
+    let objectButton = document.createElement("button");
+    objectButton.innerText = "Apsilankyti";
+    objectButton.addEventListener("click", objectPilnasIsvedimasEvent(obj));
+    div.append(objectButton);
+    let katalogasDiv = document.getElementsByClassName("nt-katalogas")[0];
+    katalogasDiv.append(div);
     index++;
   }
+}
+
+function objectPilnasIsvedimasEvent(obj) {
+  return () => {
+    let katalogasDiv = document.getElementsByClassName("nt-katalogas")[0];
+    katalogasDiv.innerHTML = "";
+    katalogasDiv.append(obj.isvedimasPilnas());
+    hidePirktiNuomaButtons();
+  };
 }
 // Returns array of objects fully filtered
 function filterObjects(className) {
@@ -71,51 +109,55 @@ function filterObjects(className) {
       filteredObjects.push(obj);
     }
   }
+  if (filteredObjects.length == 0) {
+    console.log("No objects with this name: " + className);
+  }
   return filteredObjects;
 }
-let komercinesPatalposData = {
-  id: 1,
-  kaina: 1000,
-  aprasymas:
-    "  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, tempore id! Labore accusantium aspernatur molestiae ratione placeat. Iusto, quae esse!",
-  adresas: "adresasData",
-  galerija: [
-    "https://picsum.photos/id/20/500",
-    "https://picsum.photos/id/21/500",
-    "https://picsum.photos/id/22/500",
-  ],
-  agentas: {},
-  plotas: 100,
-};
-const mainHTML = `<div class="side-buttons">
-<a href="#">Agentai</a>
-<a href="#">Regionai</a>
-<a href="#">Namai</a>
-<a href="#">Butai</a>
-<a href="#">Sklypai</a>
-<a href="#">Komercines</a>
-<a href="#">Gamybines</a>
-<a href="#">Garažai</a>
-</div>
-<div class="right-side">
-<div class="pirkti-nuoma">
-  <a href="#">Pirkti</a>
-  <a href="#">Nuoma</a>
-</div>
-<div class="nt-katalogas">
-</div>
-</div>`;
-let komercine = new KomercinesPatalpos(komercinesPatalposData);
-let objektai = [komercine];
-let a = document.createElement("div");
-let b = document.createElement("div");
-a.append("obj1");
-b.append("obj2");
-objektai.push(a);
-objektai.push(b);
-objektai.push(new KomercinesPatalpos(komercinesPatalposData));
-objektai.push(new KomercinesPatalpos(komercinesPatalposData));
-objektai.push(new KomercinesPatalpos(komercinesPatalposData));
+// leftButtonObjectEvents()
+function leftButtonObjectEvents() {
+  let buttons = document.getElementsByClassName("object-buttons");
+  let classNames = [
+    "Namas",
+    "Butas",
+    "Sklypas",
+    "KomercinesPatalpos",
+    "GamybinePatalpa",
+    "Garazas",
+  ];
+  for (let i = 0; i < classNames.length; i++) {
+    buttons[i].addEventListener("click", () => {
+      NTSvetaine.objektai(classNames[i]);
+      NTSvetaine.objektai(classNames[i] + "Nuomai", 0, false);
+      document.getElementById("token").innerHTML = classNames[i];
+      hidePirktiNuomaButtons(false);
+    });
+  }
+}
+function pirkti_nuoma_buttonEvents() {
+  let pirkti = document.getElementById("pirkti-button");
+  let nuomai = document.getElementById("nuomai-button");
+  pirkti.addEventListener("click", () => {
+    if (token.innerHTML != "Neliesti") {
+      NTSvetaine.objektai(token.innerHTML, 0);
+    }
+  });
+  nuomai.addEventListener("click", () => {
+    if (token.innerHTML != "Neliesti") {
+      NTSvetaine.objektai(token.innerHTML + "Nuomai", 0);
+    }
+  });
+}
+function hidePirktiNuomaButtons(hide = true){
+  let buttons = document.getElementsByClassName("pirkti-nuoma")[0];
+  if (hide){
+    buttons.style.display = "none";
+  } else {
+    buttons.style.display = "flex";
+  }
+}
 
 NTSvetaine.menu();
-NTSvetaine.objektai("KomercinesPatalpos");
+NTSvetaine.titulinis();
+
+export { NTSvetaine };
