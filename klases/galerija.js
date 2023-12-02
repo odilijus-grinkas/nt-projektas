@@ -56,7 +56,7 @@ class Galerija {
     return img;
   }
   isvdeimasProfilis() {
-    return this.galerijaNT();
+    return imageGalleryImgDiv(this.imageArray[0]);
   }
 }
 
