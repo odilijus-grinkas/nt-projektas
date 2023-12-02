@@ -2,7 +2,6 @@ import { NTSvetaine } from "./klases/NTSvetaine.js";
 NTSvetaine.menu();
 NTSvetaine.titulinis();
 NTSvetaine.agentai();
-// NTSvetaine.agentas();
 
 import {
   KomercinesPatalpos,

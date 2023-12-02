@@ -67,7 +67,10 @@ class SklypasNuoma extends Sklypas {
     super(data);
   }
   kainaIsvedimas() {
-    return `${this.kaina}€/mėn.`;
+    let kainaDiv = document.createElement("div");
+    kainaDiv.classList.add("nt-kaina");
+    kainaDiv.append(`${this.kaina}€/men`);
+    return kainaDiv;  
   }
 }
 export { Sklypas, SklypasNuoma };

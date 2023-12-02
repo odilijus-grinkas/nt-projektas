@@ -3,6 +3,7 @@
   position: relative;
   display: flex;
   justify-content: center;
+  object-fit: cover;
 }
 .arrow {
   border-radius: 50%;

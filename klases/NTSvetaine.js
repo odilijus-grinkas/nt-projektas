@@ -33,7 +33,7 @@ class NTSvetaine {
   static menu() {
     main.innerHTML = mainHTML;
     leftButtonObjectEvents();
-    // pirkti_nuoma_buttonEvents();
+    pirkti_nuoma_buttonEvents();
   }
   static agentai() {
     agentuSarasoIsvedimas();
@@ -167,21 +167,22 @@ function agentuSarasoIsvedimas(){
   button.addEventListener("click", () => {
   document.getElementsByClassName("nt-katalogas")[0].innerHTML = Agentas.isvedimasVisiAgentai(agentai).innerHTML; 
   agentoProfilioIsvedimas();
+  hidePirktiNuomaButtons(true)
   });
 };
 
 function agentoProfilioIsvedimas(){
   let buttons = document.getElementsByClassName("profilis-btn");
-  for(let b = 0; b < buttons.length; b++){
-    buttons[b].addEventListener("click", (event) => {
-      let number = event.currentTarget.getAttribute("num");
-      for( let agentas of agentai){
-        if(agentas.id == number){
-          document.getElementsByClassName("nt-katalogas")[0].innerHTML = agentas.isvedimasPilnas().innerHTML; 
+    for(let b = 0; b < buttons.length; b++){
+      buttons[b].addEventListener("click", (event) => {
+        let number = event.currentTarget.getAttribute("num");
+        for( let agentas of agentai){
+          if(agentas.id == number){
+            document.getElementsByClassName("nt-katalogas")[0].innerHTML = agentas.isvedimasPilnas().innerHTML; 
+          };
         };
-      };
-    });
-  };
+      });
+    };
 };
 
 NTSvetaine.menu();
