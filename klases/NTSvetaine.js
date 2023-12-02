@@ -1,5 +1,5 @@
 // Nezinau kaip kitaip objektus sitai statinei klasei rasti
-import { objektai } from "../main.js";
+import { objektai } from "../created_objects/objektai.js";
 const main = document.getElementById("main");
 const mainHTML = `<div class="side-buttons">
 <a href="#" id="agentaiButton">Agentai</a>
@@ -158,8 +158,5 @@ function hidePirktiNuomaButtons(hide = true){
     buttons.style.display = "flex";
   }
 }
-
-NTSvetaine.menu();
-NTSvetaine.titulinis();
 
 export { NTSvetaine };
