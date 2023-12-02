@@ -9,7 +9,7 @@ const regionai = [
     aprasymas: "Trecias pagal dydi miestas Lietuvoje",
   },
 ];
-// priskiriame masyvo pirma elementa prie regionas
+// priskiriame masyvo elementa prie regionas
 const adresas2 = {
   regionas: regionai[0],
   rajonas: "Klaipėdos rajono savivaldybė",
@@ -239,11 +239,11 @@ class NamasNuoma extends Namas {
   }
 }
 
-let isvedimasNuoma = new NamasNuoma(namas);
+/*let isvedimasNuoma = new NamasNuoma(namas);
 
 const isvedimas2 = document.getElementById("namas");
 
 isvedimas2.append(
   isvedimasNuoma.isvedimasPilnas(),
   isvedimasNuoma.isvedimasTrumpas()
-);
+);*/
