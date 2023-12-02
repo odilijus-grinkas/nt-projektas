@@ -52,10 +52,11 @@ class Galerija {
   isvedimasKataloguiAgento() {
     let img = imageGalleryImgDiv(this.imageArray[0], "4em", "4em");
     img.classList.add('katalogui-agento');
+    img.style.objectFit = "cover"
     return img;
   }
   isvdeimasProfilis() {
-    return this.galerijaNT();
+    return imageGalleryImgDiv(this.imageArray[0]);
   }
 }
 

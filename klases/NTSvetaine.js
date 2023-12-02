@@ -1,20 +1,23 @@
 // Nezinau kaip kitaip objektus sitai statinei klasei rasti
+import { Agentas } from "./agentas.js";
+import { agentai } from "../created_objects/agentai.js";
 import { objektai } from "../created_objects/objektai.js";
+
 const main = document.getElementById("main");
 const mainHTML = `<div class="side-buttons">
-<a href="#" id="agentaiButton">Agentai</a>
-<a href="#" id="regionaiButton">Regionai</a>
-<a href="#" class='object-buttons'>Namai</a>
-<a href="#" class='object-buttons'>Butai</a>
-<a href="#" class='object-buttons'>Sklypai</a>
-<a href="#" class='object-buttons'>Komercines</a>
-<a href="#" class='object-buttons'>Gamybines</a>
-<a href="#" class='object-buttons'>Garažai</a>
+<div class='list-buttons' id="agentaiButton">Agentai</div>
+<div class='list-buttons' id="regionaiButton">Regionai</div>
+<div class='object-buttons'>Namai</div>
+<div class='object-buttons'>Butai</div>
+<div class='object-buttons'>Sklypai</div>
+<div class='object-buttons'>Komercines</div>
+<div class='object-buttons'>Gamybines</div>
+<div class='object-buttons'>Garažai</div>
 </div>
 <div class="right-side">
 <div class="pirkti-nuoma">
-  <a href="#" id="pirkti-button">Pirkti</a>
-  <a href="#" id="nuomai-button">Nuomai</a>
+  <div id="pirkti-button">Pirkti</div>
+  <div id="nuomai-button">Nuomai</div>
 </div>
 <div class="nt-katalogas">
 </div>
@@ -33,11 +36,11 @@ class NTSvetaine {
     pirkti_nuoma_buttonEvents();
   }
   static agentai() {
-    return -1;
+    agentuSarasoIsvedimas();
   }
   static agentas(id) {
     return -1;
-  }
+  }      
   static regionai() {
     // dominyko code
     return -1;
@@ -117,6 +120,7 @@ function filterObjects(className) {
 }
 // leftButtonObjectEvents()
 function leftButtonObjectEvents() {
+console.log(document.getElementsByClassName("object-buttons"))
   let buttons = document.getElementsByClassName("object-buttons");
   let classNames = [
     "Namas",
@@ -158,5 +162,32 @@ function hidePirktiNuomaButtons(hide = true){
     buttons.style.display = "flex";
   }
 }
+
+function agentuSarasoIsvedimas(){
+  let button = document.getElementById("agentaiButton");
+  button.addEventListener("click", () => {
+  document.getElementsByClassName("nt-katalogas")[0].innerHTML = Agentas.isvedimasVisiAgentai(agentai).innerHTML; 
+  agentoProfilioIsvedimas();
+  hidePirktiNuomaButtons(true)
+  });
+};
+
+function agentoProfilioIsvedimas(){
+  let buttons = document.getElementsByClassName("profilis-btn");
+    for(let b = 0; b < buttons.length; b++){
+      buttons[b].addEventListener("click", (event) => {
+        let number = event.currentTarget.getAttribute("num");
+        for( let agentas of agentai){
+          if(agentas.id == number){
+            document.getElementsByClassName("nt-katalogas")[0].innerHTML = agentas.isvedimasPilnas().innerHTML; 
+          };
+        };
+      });
+    };
+};
+
+NTSvetaine.menu();
+NTSvetaine.titulinis();
+
 
 export { NTSvetaine };
