@@ -1,5 +1,5 @@
 // Nezinau kaip kitaip objektus sitai statinei klasei rasti
-import { objektai } from "../main.js";
+import { objektai } from "../created_objects/objektai.js";
 const main = document.getElementById("main");
 const mainHTML = `<div class="side-buttons">
 <a href="#" id="agentaiButton">Agentai</a>
@@ -18,7 +18,8 @@ const mainHTML = `<div class="side-buttons">
 </div>
 <div class="nt-katalogas">
 </div>
-</div>`;
+</div>
+<div id="token" style="display:none">Neliesti</div>`;
 
 /**
  * Reikalingi globalus array: objektai, agentai, regionai
@@ -69,7 +70,7 @@ class NTSvetaine {
     ];
     for (let klase of klases) {
       this.objektai(klase, 5, false);
-      this.objektai(klase + "Nuomai", 5, false);
+      this.objektai(klase + "Nuoma", 5, false);
     }
   }
 }
@@ -128,7 +129,7 @@ function leftButtonObjectEvents() {
   for (let i = 0; i < classNames.length; i++) {
     buttons[i].addEventListener("click", () => {
       NTSvetaine.objektai(classNames[i]);
-      NTSvetaine.objektai(classNames[i] + "Nuomai", 0, false);
+      NTSvetaine.objektai(classNames[i] + "Nuoma", 0, false);
       document.getElementById("token").innerHTML = classNames[i];
       hidePirktiNuomaButtons(false);
     });
@@ -144,7 +145,8 @@ function pirkti_nuoma_buttonEvents() {
   });
   nuomai.addEventListener("click", () => {
     if (token.innerHTML != "Neliesti") {
-      NTSvetaine.objektai(token.innerHTML + "Nuomai", 0);
+      NTSvetaine.objektai(token.innerHTML + "Nuoma", 0);
+      console.log(token.innerHTML + "Nuoma")
     }
   });
 }
@@ -156,8 +158,5 @@ function hidePirktiNuomaButtons(hide = true){
     buttons.style.display = "flex";
   }
 }
-
-NTSvetaine.menu();
-NTSvetaine.titulinis();
 
 export { NTSvetaine };
