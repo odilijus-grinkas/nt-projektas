@@ -1,5 +1,5 @@
-import { Agentas } from "./agentas.js";
-import { foto_agentas } from "./img_agentai.js";
+import { Agentas } from "../klases/agentas.js";
+const foto_agentas = ["../../img/agentai/agentas_profile.jpg"];
 
 /**
  * array with agentai objects
