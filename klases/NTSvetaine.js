@@ -1,7 +1,7 @@
 // Nezinau kaip kitaip objektus sitai statinei klasei rasti
-import { objektai } from "../main.js";
 import { Agentas } from "./agentas.js";
-import { agentai } from "./agentai/agentai.js";
+import { agentai } from "../created_objects/agentai.js";
+import { objektai } from "../created_objects/objektai.js";
 
 const main = document.getElementById("main");
 const mainHTML = `<div class="side-buttons">
@@ -21,7 +21,8 @@ const mainHTML = `<div class="side-buttons">
 </div>
 <div class="nt-katalogas">
 </div>
-</div>`;
+</div>
+<div id="token" style="display:none">Neliesti</div>`;
 
 /**
  * Reikalingi globalus array: objektai, agentai, regionai
@@ -32,14 +33,14 @@ class NTSvetaine {
   static menu() {
     main.innerHTML = mainHTML;
     leftButtonObjectEvents();
-    pirkti_nuoma_buttonEvents();
+    // pirkti_nuoma_buttonEvents();
   }
   static agentai() {
-    return document.getElementsByClassName("nt-katalogas")[0].innerHTML = Agentas.isvedimasAgentuSarasui(agentai).innerHTML;
+    agentuSarasoIsvedimas();
   }
   static agentas(id) {
-    return -1
-  }
+    return -1;
+  }      
   static regionai() {
     // dominyko code
     return -1;
@@ -161,14 +162,30 @@ function hidePirktiNuomaButtons(hide = true){
   }
 }
 
-function agentuSarasoIsvedimas (){
-   let button = document.getElementById("agentaiButton");
-   button.addEventListener("click", () => {
-   NTSvetaine.agentai();
-   });
-}
+function agentuSarasoIsvedimas(){
+  let button = document.getElementById("agentaiButton");
+  button.addEventListener("click", () => {
+  document.getElementsByClassName("nt-katalogas")[0].innerHTML = Agentas.isvedimasVisiAgentai(agentai).innerHTML; 
+  agentoProfilioIsvedimas();
+  });
+};
+
+function agentoProfilioIsvedimas(){
+  let buttons = document.getElementsByClassName("profilis-btn");
+  for(let b = 0; b < buttons.length; b++){
+    buttons[b].addEventListener("click", (event) => {
+      let number = event.currentTarget.getAttribute("num");
+      for( let agentas of agentai){
+        if(agentas.id == number){
+          document.getElementsByClassName("nt-katalogas")[0].innerHTML = agentas.isvedimasPilnas().innerHTML; 
+        };
+      };
+    });
+  };
+};
+
 NTSvetaine.menu();
 NTSvetaine.titulinis();
-agentuSarasoIsvedimas ()
+
 
 export { NTSvetaine };

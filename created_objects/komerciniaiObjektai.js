@@ -1,9 +1,3 @@
-import { NTSvetaine } from "./klases/NTSvetaine.js";
-NTSvetaine.menu();
-NTSvetaine.titulinis();
-NTSvetaine.agentai();
-// NTSvetaine.agentas();
-
 import {
   KomercinesPatalpos,
   KomercinesPatalposNuoma,
@@ -11,22 +5,9 @@ import {
   GarazasNuoma,
   GamybinePatalpa,
   GamybinePatalpaNuoma,
-} from "./klases/komercinepatalpa.js";
-import { Sklypas, SklypasNuoma } from "./klases/sklypas.js";
-import { Agentas } from "./klases/agentas.js";
-
-let agentai = [
-  new Agentas("James", "Bond", "https://picsum.photos/id/69/150"),
-  new Agentas("Mister", "Holmes", "https://picsum.photos/id/72/150"),
-  new Agentas("Ninja", "Shredder", "https://picsum.photos/id/73/150"),
-];
-let adresasData = {
-  regionas: "Regionas Placeholder",
-  rajonas: "Rajonas",
-  miestas: "Miestas",
-  gatve: "gatviu g. 19",
-};
-let objektai = [
+} from "../klases/komercinepatalpa.js";
+import { agentai } from "./agentai.js";
+let komerciniaiObjektai = [
   new KomercinesPatalpos({
     id: 1,
     kaina: 1000,
@@ -217,24 +198,5 @@ let objektai = [
     agentas: agentai[2],
     plotas: 200,
   }),
-  new Sklypas({
-    id: 1,
-    kaina: 20000,
-    aprasymas:
-      "  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, tempore id! Labore accusantium aspernatur molestiae ratione placeat. Iusto, quae esse!",
-    adresas: {
-      regionas: "Regionas Placeholder",
-      rajonas: "Miskininkai",
-      miestas: "Laukymiskes",
-      gatve: "Pievu 5",
-    },
-    galerija: [
-      "https://picsum.photos/id/222/500",
-      "https://picsum.photos/id/21/500",
-      "https://picsum.photos/id/22/500",
-    ],
-    agentas: agentai[0],
-    plotas: 40,
-  })
 ];
-export { objektai };
+export { komerciniaiObjektai };
