@@ -4,18 +4,20 @@ import { NT } from "./nt.js";
  */
 class Sklypas extends NT {
   /**
-   *
-   * @param {number} id
-   * @param {number} kaina
-   * @param {string} aprasymas
-   * @param {object} adresas
-   * @param {number} sklypo_plotas
-   * @param {object} galerija
-   * @param {object} agentas
+   * NT Class Constructor.
+   * @constructor
+   * @param {Object} data - The data object containing specific parameters.
+   * @param {string} data.id - The ID.
+   * @param {number} data.kaina - The price
+   * @param {string} data.aprasymas - The description
+   * @param {Adresas} data.adresas - The address info.
+   * @param {Array<string>} galerija array with imageURLs
+   * @param {Agentas} data.agentas - The agent object.
+   * @param {string} data.plotas - plotas
    */
-  constructor(id, kaina, aprasymas, adresas, sklypo_plotas, galerija, agentas) {
-    super(id, kaina, aprasymas, adresas, galerija, agentas);
-    this.plotas = sklypo_plotas;
+  constructor(data) {
+    super(data);
+    this.plotas = data.sklypo_plotas;
   }
   /**
    * suformuoja komponenta su pilna informacija apie sklypa
@@ -61,8 +63,8 @@ class Sklypas extends NT {
   }
 }
 class SklypasNuoma extends Sklypas {
-  constructor(id, kaina, aprasymas, adresas, sklypo_plotas, galerija, agentas) {
-    super(id, kaina, aprasymas, adresas, sklypo_plotas, galerija, agentas);
+  constructor(data) {
+    super(data);
   }
   kainaIsvedimas() {
     return `${this.kaina}€/mėn.`;

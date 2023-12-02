@@ -1,4 +1,4 @@
-import { Agentas } from "./agentas.js";
+import { Agentas } from "../agentas.js";
 import { foto_agentas } from "./img_agentai.js";
 
 /**
@@ -6,7 +6,7 @@ import { foto_agentas } from "./img_agentai.js";
  */
 const agentai = [];
 
-agentai.push( new Agentas("Jonas", "Jomaitis", foto_agentas[0],
+agentai.push( new Agentas("Jonas", "Jonaitis", foto_agentas[0],
                             `Jonas turi 10 metu darbo patirties nekilnojamo turto rinkoje. Jis yra 32 metu ir pasizymi itin gerais bendravimo igudziais.`,
                             "Vilnius")
             );

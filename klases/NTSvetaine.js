@@ -1,5 +1,8 @@
 // Nezinau kaip kitaip objektus sitai statinei klasei rasti
 import { objektai } from "../main.js";
+import { Agentas } from "./agentas.js";
+import { agentai } from "./agentai/agentai.js";
+
 const main = document.getElementById("main");
 const mainHTML = `<div class="side-buttons">
 <a href="#" id="agentaiButton">Agentai</a>
@@ -32,10 +35,10 @@ class NTSvetaine {
     pirkti_nuoma_buttonEvents();
   }
   static agentai() {
-    return -1;
+    return document.getElementsByClassName("nt-katalogas")[0].innerHTML = Agentas.isvedimasAgentuSarasui(agentai).innerHTML;
   }
   static agentas(id) {
-    return -1;
+    return -1
   }
   static regionai() {
     // dominyko code
@@ -158,7 +161,14 @@ function hidePirktiNuomaButtons(hide = true){
   }
 }
 
+function agentuSarasoIsvedimas (){
+   let button = document.getElementById("agentaiButton");
+   button.addEventListener("click", () => {
+   NTSvetaine.agentai();
+   });
+}
 NTSvetaine.menu();
 NTSvetaine.titulinis();
+agentuSarasoIsvedimas ()
 
 export { NTSvetaine };

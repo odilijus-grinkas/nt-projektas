@@ -211,5 +211,24 @@ let objektai = [
     agentas: agentai[2],
     plotas: 200,
   }),
+  new Sklypas({
+    id: 1,
+    kaina: 20000,
+    aprasymas:
+      "  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, tempore id! Labore accusantium aspernatur molestiae ratione placeat. Iusto, quae esse!",
+    adresas: {
+      regionas: "Regionas Placeholder",
+      rajonas: "Miskininkai",
+      miestas: "Laukymiskes",
+      gatve: "Pievu 5",
+    },
+    galerija: [
+      "https://picsum.photos/id/222/500",
+      "https://picsum.photos/id/21/500",
+      "https://picsum.photos/id/22/500",
+    ],
+    agentas: agentai[0],
+    plotas: 40,
+  })
 ];
 export { objektai };
