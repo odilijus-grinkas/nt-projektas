@@ -18,7 +18,8 @@ const mainHTML = `<div class="side-buttons">
 </div>
 <div class="nt-katalogas">
 </div>
-</div>`;
+</div>
+<div id="token" style="display:none">Neliesti</div>`;
 
 /**
  * Reikalingi globalus array: objektai, agentai, regionai
