@@ -24,14 +24,14 @@ class Galerija {
   galerijaNT() {
     // Change default height & width of gallery if needed
     // Commented out width because the current nt_page.css requires it to have an unrestricted width
-    let height = "15em";
+    let height = "fit-content";
     // let width = "18em";
     const galleryDiv = document.createElement("div");
     galleryDiv.style.height = height;
     // galleryDiv.style.width = width;
     galleryDiv.classList.add("image-gallery","nt-galerija");
 
-    const imgDiv = imageGalleryImgDiv(this.imageArray[0]);
+    const imgDiv = imageGalleryImgDiv(this.imageArray[0], "35em", "45em");
     galleryDiv.append(imgDiv);
 
     const buttons = imageGalleryAddButtons(galleryDiv);
@@ -80,10 +80,13 @@ function imageGalleryReplace(imgDiv, newImageLink) {
 
 // Adds left and right arrow buttons to gallery div and returns [left,right] buttons
 function imageGalleryAddButtons(galleryDiv) {
-  const left = document.createElement("div");
-  const right = document.createElement("div");
-  left.append("◀");
-  right.append("▶");
+  const left = document.createElement("img");
+  left.setAttribute("src", "./img/components/left.svg")
+  const right = document.createElement("img");
+  right.setAttribute("src", "./img/components/right.svg")
+  // left.append(l_arrow);
+  // left.append("◀");
+  // right.append("▶");
   left.classList.add("arrow", "left-arrow");
   right.classList.add("arrow", "right-arrow");
 

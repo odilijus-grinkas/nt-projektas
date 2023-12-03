@@ -8,15 +8,18 @@ body{
 }
 .nt-pilnas{
   width: 25em;
-  padding: 0 20%;
+  /* padding: 0.5rem; */
   display:grid;
   gap: 1em;
   grid-template-areas: 
-  "kaina adresas adresas"
+  "galerija . ."
+  ". . ."
+  
+  /* "kaina adresas adresas"
   ". galerija ."
   "agentas agentas agentas"
   "stats stats stats"
-  "aprasymas aprasymas aprasymas"
+  "aprasymas aprasymas aprasymas" */
 }
 
 .nt-kaina{grid-area:kaina; font-size: 2.5em;}
