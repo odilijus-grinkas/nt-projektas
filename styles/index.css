@@ -147,6 +147,6 @@ main{
   }
   .isvedimai button:hover{
     text-decoration: underline;
-      color:  rgb(215, 228, 238);
+      color:  #d7e4ee;
       background-color: #893427;
   }

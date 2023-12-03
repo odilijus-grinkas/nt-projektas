@@ -7,13 +7,17 @@ body{
   justify-content: space-between;
 }
 .nt-pilnas{
-  width: 25em;
+  /* width: 50em; */
   /* padding: 0.5rem; */
   display:grid;
-  gap: 1em;
+  grid-template-columns:  47rem 1fr;
   grid-template-areas: 
-  "galerija . ."
-  ". . ."
+  "galerija kaina"
+  "galerija stats"
+  "galerija adresas"
+  "galerija adresas"
+  "galerija agentas"
+  "aprasymas agentas"
   
   /* "kaina adresas adresas"
   ". galerija ."
@@ -22,12 +26,45 @@ body{
   "aprasymas aprasymas aprasymas" */
 }
 
-.nt-kaina{grid-area:kaina; font-size: 2.5em;}
-.nt-adresas{grid-area: adresas;} 
-.nt-galerija{grid-area: galerija;}
-.nt-agentas{grid-area: agentas;}
-.nt-stats{grid-area: stats;}
-.nt-aprasymas{grid-area: aprasymas;}
+.nt-pilnas .nt-kaina{
+  grid-area: kaina;
+  font-size: 2.5em;
+  background-color: #9a9da0;
+  margin-left: -2rem;
+  padding-left: 3rem;
+  border-top-right-radius: 1rem;
+}
+.nt-pilnas .nt-adresas{
+  grid-area: adresas;
+  background-color: #9a9da0;
+  margin-left: -2rem;
+  padding-left: 3rem;
+  z-index: 3;
+} 
+.nt-pilnas .nt-galerija{grid-area: galerija; z-index: 5;}
+.nt-pilnas .nt-agentas{
+  grid-area: agentas;
+  background-color: #9a9da0;
+  margin-left: -2rem;
+  padding-left: 3rem;
+  z-index: 3;
+  border-bottom-right-radius: 1rem;
+}
+.nt-pilnas .nt-stats{
+  grid-area: stats;
+  background-color: #9a9da0;
+  margin-left: -2rem;
+  padding-left: 3rem;
+  z-index: 3;
+}
+.nt-pilnas .nt-aprasymas{
+  grid-area: aprasymas;
+  background-color: #5c6165;
+  margin-top: -2rem;
+  padding: 3rem 1rem 1rem;
+  z-index: 4;
+  border-radius: 0 0 1rem 1rem;
+}
 
 /* .nt-agentas::before{
   content: "Pardavimų agentas:";
@@ -38,7 +75,7 @@ body{
   content:"Bruozai:";
   font-size: 2em;
 } */
-.nt-aprasymas::before{
+/* .nt-aprasymas::before{
   content:"Aprasymas:";
   font-size: 2em;
-}
+} */

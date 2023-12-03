@@ -17,7 +17,7 @@ class Sklypas extends NT {
    */
   constructor(data) {
     super(data);
-    this.plotas = data.sklypo_plotas;
+    this.plotas = data.plotas;
   }
   /**
    * suformuoja komponenta su pilna informacija apie sklypa
@@ -39,7 +39,7 @@ class Sklypas extends NT {
     let galerija = this.galerija.galerijaNT();
     let agentas = this.agentas.nt();
 
-    nt_nouns.append("Plotas:");
+    nt_nouns.append(`Plotas:`);
     nt_numbers.append(`${this.plotas}a`);
     nt_stats.append(nt_nouns, nt_numbers);
     aprasymas.append(this.aprasymas);

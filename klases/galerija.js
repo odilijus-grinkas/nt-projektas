@@ -25,10 +25,11 @@ class Galerija {
     // Change default height & width of gallery if needed
     // Commented out width because the current nt_page.css requires it to have an unrestricted width
     let height = "fit-content";
+    let width = "fit-content"
     // let width = "18em";
     const galleryDiv = document.createElement("div");
     galleryDiv.style.height = height;
-    // galleryDiv.style.width = width;
+    galleryDiv.style.width = width;
     galleryDiv.classList.add("image-gallery","nt-galerija");
 
     const imgDiv = imageGalleryImgDiv(this.imageArray[0], "35em", "45em");
@@ -84,7 +85,6 @@ function imageGalleryAddButtons(galleryDiv) {
   left.setAttribute("src", "./img/components/left.svg")
   const right = document.createElement("img");
   right.setAttribute("src", "./img/components/right.svg")
-  // left.append(l_arrow);
   // left.append("◀");
   // right.append("▶");
   left.classList.add("arrow", "left-arrow");
