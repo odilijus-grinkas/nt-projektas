@@ -26,10 +26,11 @@ body{
 .nt-stats{grid-area: stats;}
 .nt-aprasymas{grid-area: aprasymas;}
 
-.nt-agentas::before{
-  /* content: "Agentas:"; */
-  font-size: 2em;
-}
+/* .nt-agentas::before{
+  content: "Pardavimų agentas:";
+  font-size: 0.9em;
+  text-align: center;
+} */
 /* .nt-stats::before{
   content:"Bruozai:";
   font-size: 2em;

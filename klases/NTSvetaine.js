@@ -98,6 +98,7 @@ function insertObjects(array, amount) {
   for (let obj of array) {
     if (index >= amount) break;
     let div = obj.isvedimasKatalogui();
+    div.classList.add("nt-katalogui");
     let objectButton = document.createElement("button"); // apsilankymo mygtukas
     objectButton.innerText = "Apsilankyti";
     objectButton.addEventListener("click", objectPilnasIsvedimasEvent(obj));

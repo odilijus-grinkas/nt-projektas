@@ -13,7 +13,7 @@ class Galerija {
    */
   isvedimasKataloguiNT() {
     //Change size values if needed
-    let imageDiv = imageGalleryImgDiv(this.imageArray[0],"10em","13em")
+    let imageDiv = imageGalleryImgDiv(this.imageArray[0],"15em","22em")
     imageDiv.classList.add("obj-katalogas-image");
     return imageDiv;
   }
@@ -52,7 +52,7 @@ class Galerija {
    * @returns small round img element
    */
   isvedimasKataloguiAgento() {
-    let img = imageGalleryImgDiv(this.imageArray[0], "4em", "4em");
+    let img = imageGalleryImgDiv(this.imageArray[0], "5em", "5em");
     img.classList.add('katalogui-agento');
     img.style.objectFit = "cover"
     return img;

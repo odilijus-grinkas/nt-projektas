@@ -53,7 +53,6 @@ class Sklypas extends NT {
    */
   isvedimasKatalogui() {
     let isvedimas = document.createElement("div");
-    isvedimas.className = "nt-katalogui";
     isvedimas.append(this.galerija.isvedimasKataloguiNT());
     isvedimas.append(this.kainaIsvedimas());
     isvedimas.append(this.adresas.isvedimasPilnas());
