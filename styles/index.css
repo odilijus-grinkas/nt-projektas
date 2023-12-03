@@ -73,7 +73,7 @@ main{
   background-color:#949799;
   text-decoration: underline;
 }
-.nt-katalogas{
+.isvedimai{
 
   display: flex;
   flex-direction: column;
@@ -82,14 +82,14 @@ main{
   /* margin-top: 1.75em; */
   /* background-color: #333; */
 }
-.nt-katalogas div{
+.isvedimai div{
   /* width: 30em; */
   /* display: flex; */
   justify-content: space-evenly;
   
 }
 /*  Button for object isvedimasPilnas()*/
-.nt-katalogas button{
+.isvedimai button{
   height: 3em;
   border: none;
   background-color: unset;
@@ -98,7 +98,32 @@ main{
   font-size: large;
   text-decoration: underline;
 }
-.nt-katalogas button:hover{
+.isvedimai button:hover{
   color: blue;
   cursor: pointer;
+}
+.objektu-katalogu-isvedimas{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.objektu-katalogu-isvedimas div{
+  font-size: 1em;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 1em;
+  justify-content: left;
+}
+.objektu-katalogu-isvedimas .obj-katalogas-image{
+  flex: 0 0 13em;
+}
+.objektu-katalogu-isvedimas .nt-agentas{
+  display: block
+}
+.objektu-katalogu-isvedimas .nt-kaina{
+  flex: 0 0 5em
+}
+.objektu-katalogu-isvedimas .nt-adresas{
+  display: block;
+  flex: 0 0 10em
 }

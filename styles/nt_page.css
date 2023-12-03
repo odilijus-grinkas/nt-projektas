@@ -27,7 +27,7 @@ body{
 .nt-aprasymas{grid-area: aprasymas;}
 
 .nt-agentas::before{
-  content: "Agentas:";
+  /* content: "Agentas:"; */
   font-size: 2em;
 }
 /* .nt-stats::before{

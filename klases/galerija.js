@@ -13,7 +13,9 @@ class Galerija {
    */
   isvedimasKataloguiNT() {
     //Change size values if needed
-    return imageGalleryImgDiv(this.imageArray[0],"10em","13em")
+    let imageDiv = imageGalleryImgDiv(this.imageArray[0],"10em","13em")
+    imageDiv.classList.add("obj-katalogas-image");
+    return imageDiv;
   }
   /**
    * Didele galerija NT puslapiui (Reikalinga galerija.css kad atvaizduotu gerai)
