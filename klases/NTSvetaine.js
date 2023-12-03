@@ -192,7 +192,6 @@ function pirkti_nuoma_buttonEvents() {
   nuomai.addEventListener("click", () => {
     if (token.innerHTML != "Neliesti") {
       NTSvetaine.objektai(token.innerHTML + "Nuoma", 0);
-      console.log(token.innerHTML + "Nuoma");
     }
   });
 }
