@@ -5,25 +5,24 @@ import { objektai } from "../created_objects/objektai.js";
 
 const main = document.getElementById("main");
 const mainHTML = `<div class="side-buttons">
-<div class='list-buttons' id="agentaiButton">Agentai</div>
-<div class='list-buttons' id="regionaiButton">Regionai</div>
-<div class='object-buttons'>Namai</div>
-<div class='object-buttons'>Butai</div>
-<div class='object-buttons'>Sklypai</div>
-<div class='object-buttons'>Sodybos</div>
-<div class='object-buttons'>Komercines</div>
-<div class='object-buttons'>Gamybines</div>
-<div class='object-buttons'>Garažai</div>
-</div>
-<div class="right-side">
-<div class="pirkti-nuoma">
-  <div id="pirkti-button">Pirkti</div>
-  <div id="nuomai-button">Nuomai</div>
-</div>
-<div class="isvedimai">
-</div>
-</div>
-<div id="token" style="display:none">Neliesti</div>`;
+                    <div class='list-buttons' id="agentaiButton">Agentai</div>
+                    <div class='list-buttons' id="regionaiButton">Regionai</div>
+                    <div class='object-buttons'>Namai</div>
+                    <div class='object-buttons'>Butai</div>
+                    <div class='object-buttons'>Sklypai</div>
+                    <div class='object-buttons'>Sodybos</div>
+                    <div class='object-buttons'>Komercines</div>
+                    <div class='object-buttons'>Gamybines</div>
+                    <div class='object-buttons'>Garažai</div>
+                  </div>
+                  <div class="right-side">
+                    <div class="pirkti-nuoma">
+                      <div id="pirkti-button">Pirkti</div>
+                      <div id="nuomai-button">Nuomai</div>
+                    </div>
+                    <div class="isvedimai"></div>
+                  </div>
+                  <div id="token" style="display:none">Neliesti</div>`;
 
 /**
  * Reikalingi globalus array: objektai, agentai, regionai
@@ -222,7 +221,7 @@ function agentoProfilioIsvedimas() {
       for (let agentas of agentai) {
         if (agentas.id == number) {
           document.getElementsByClassName("isvedimai")[0].innerHTML =
-            agentas.isvedimasPilnas().innerHTML;
+          agentas.isvedimasPilnas().innerHTML;
         }
       }
     });
