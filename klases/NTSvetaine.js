@@ -10,6 +10,7 @@ const mainHTML = `<div class="side-buttons">
 <div class='object-buttons'>Namai</div>
 <div class='object-buttons'>Butai</div>
 <div class='object-buttons'>Sklypai</div>
+<div class='object-buttons'>Sodybos</div>
 <div class='object-buttons'>Komercines</div>
 <div class='object-buttons'>Gamybines</div>
 <div class='object-buttons'>Garažai</div>
@@ -124,6 +125,7 @@ function removeNuomaFromName(className) {
     "NamasNuoma",
     "ButasNuoma",
     "SklypasNuoma",
+    "SodybaNuoma",
     "KomercinesPatalposNuoma",
     "GamybinePatalpaNuoma",
     "GarazasNuoma",
@@ -165,6 +167,7 @@ function leftButtonObjectEvents() {
     "Namas",
     "Butas",
     "Sklypas",
+    "Sodyba",
     "KomercinesPatalpos",
     "GamybinePatalpa",
     "Garazas",
