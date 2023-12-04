@@ -1,3 +1,4 @@
+
 class Regionas {
   /**
    *
@@ -22,51 +23,17 @@ class Regionas {
     );
     return regionas_katalogui;
   }
-  agentai() {
-    const regionai_agentai = document.createElement("div")
-    for (const agentas in agentai) {
-      if ((agentai[agentas].regionas === this.pavadinimas)) {
-        return regionai_agentai.append(agentai[agentas].vardas, agentai[agentas].pavarde);
-      }
-    }
+  /**
+   * 
+   * @param {Array} agentai 
+   * @returns agentus pasirinktame regione
+   * isfiltruoja is agentai array visus agentus,kurie dirba pasirinktame regione
+   */  
+  agentai(agentai) {
+    const agentsInRegion = agentai.filter(agentas => agentas.regionas === this.pavadinimas);
+    return agentsInRegion;
   }
 }
 
+
 export { Regionas };
-
-//testavimas
-
-/*const regionas = {
-    pavadinimas: "Vilnius",
-    aprasymas: "Sostine"
-}
-
-const regionai_isvedimai = new Regionas(regionas)
-
-const isvedimas = document.getElementById("namas");
-
-isvedimas.append(regionai_isvedimai.isvedimas())*/
-
-const agentai = [
-  {
-    vardas: "Jonas",
-    pavarde: "Bond",
-    regionas: "Vilnius",
-  },
-  {
-    regionas: "Kaunas",
-  },
-  {
-    regionas: "Klaipeda",
-  },
-];
-const regionas = {
-  pavadinimas: "Vilnius",
-  aprasymas: "Sostine",
-};
-
-const regionai_isvedimai = new Regionas(regionas);
-
-const isvedimas = document.getElementById("agentai");
-
-isvedimas.append(regionai_isvedimai.agentai());

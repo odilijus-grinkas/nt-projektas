@@ -17,8 +17,8 @@ class Adresas {
   constructor(data) {
     this.regionas = new Regionas(data.regionas);
     this.rajonas = data.rajonas;
-    this.miestas = data.miestas;
     this.gatve = data.gatve;
+    this.miestas = data.miestas;
     this.namo_nr = data.namo_nr;
     this.buto_nr = data.buto_nr;
     this.koordinates = data.koordinates;
@@ -69,11 +69,9 @@ class Adresas {
   isvedimasKatalogui() {
     let adresas_katalogui = document.createElement("div");
     adresas_katalogui.classList.add("adresas-katalogui");
+    adresas_katalogui.append(this.gatve, document.createElement("br"));
     adresas_katalogui.append(this.miestas);
-    adresas_katalogui += "<br>";
-    adresas_katalogui.append(this.rajonas);
-    adresas_katalogui += "<br>";
-    adresas_katalogui.append(this.gatve);
+    return adresas_katalogui
   }
 }
 export { Adresas };

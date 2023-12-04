@@ -40,6 +40,7 @@ class NTSvetaine {
   }
   static regionai() {
     // dominyko code
+    
     return -1;
   }
   /**

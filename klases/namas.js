@@ -1,30 +1,5 @@
 import { NT } from "../klases/nt.js";
 import { Adresas } from "../klases/adresas.js";
-import { Agentas } from "../klases/agentas.js";
-
-//sukuriame regionu masiva su objektais
-const regionai = [
-  {
-    pavadinimas: "Vilnius",
-    aprasymas: "Trecias pagal dydi miestas Lietuvoje",
-  },
-];
-// priskiriame masyvo elementa prie regionas
-const adresas2 = {
-  regionas: regionai[0],
-  rajonas: "Klaipėdos rajono savivaldybė",
-  miestas: "Klaipėda",
-  gatve: "Puodžių g. 10",
-  //koordinates: "82828, 8828582",
-  namo_nr: 5,
-  //buto_nr: 5
-};
-
-const agentas = new Agentas(
-  "Jonas",
-  "Jonaitis",
-  "https://upload.wikimedia.org/wikipedia/en/e/ee/Agent_J_MIB11.jpg"
-);
 
 class Namas extends NT {
   /**
@@ -95,13 +70,10 @@ class Namas extends NT {
       document.createElement("br")
     );
     ntAprasymas.append(this.aprasymas);
-    const ntAdresas = this.adresas.nt();
-    ntAdresas.append(this.regionai.nt());
     ntStats.append(ntNumbers, ntNouns);
     ntPilnas.append(
       ntStats,
       ntAprasymas,
-      ntAdresas,
       this.galerija.galerijaNT(),
       this.kainaIsvedimas(),
       this.adresas.isvedimasPilnas(),
@@ -109,47 +81,17 @@ class Namas extends NT {
     );
     return ntPilnas;
   }
-  isvedimasTrumpas() {
+  isvedimasKatalogui() {
     let katalogas = document.createElement("div");
-    katalogas.append(this.adresas.isvedimasPilnas());
+    katalogas.append(this.galerija.isvedimasKataloguiNT());
     katalogas.append(this.kainaIsvedimas());
-    katalogas.append(
-      this.galerija.isvedimasKataloguiNT(),
-      document.createElement("br")
-    );
-    katalogas.append(this.patalpu_plotas);
+    katalogas.append(this.adresas.isvedimasKatalogui());
+    katalogas.append(this.agentas.nt());
     return katalogas;
   }
 }
 
-const namas = {
-  id: 1,
-  kaina: 25,
-  aprasymas: "gražus namas",
-  adresas: adresas2,
-  galerija: [
-    "https://images7.alphacoders.com/436/thumb-1920-436350.jpg",
-    "https://wallpapers.com/images/featured/house-u7pcf18vqolaatio.jpg",
-    "https://w.forfun.com/fetch/06/06e40a0a673edfcb9aaa5194cfb684a3.jpeg",
-  ],
-  agentas: agentas,
-  patalpu_plotas: "45 kvadratiniai metrai",
-  aukstu_sk: 3,
-  kambariu_sk: 10,
-  sklypo_plotas: "15 hektarų",
-};
 
-//testavimas
-
-/*let NamasIsvedimas = new Namas(namas);
-
-const isvedimas = document.getElementById("namas");
-
-isvedimas.append(NamasIsvedimas.isvedimasTrumpas());*/
-
-/**
- * NamasNuoma klasė, kuri pakeičia namas klasę, kad rodytų nuomos kainą.
- */
 class NamasNuoma extends Namas {
   /**
    * @constructor
@@ -215,7 +157,8 @@ class NamasNuoma extends Namas {
       document.createElement("br")
     );
     ntAprasymas.append(this.aprasymas);
-    ntStats.append(ntNumbers, ntNouns);
+    ntStats.append(ntNouns);
+    ntStats.append(ntNumbers)
     ntPilnas.append(
       ntStats,
       ntAprasymas,
@@ -226,24 +169,14 @@ class NamasNuoma extends Namas {
     );
     return ntPilnas;
   }
-  isvedimasTrumpas() {
+  isvedimasKatalogui() {
     let katalogas = document.createElement("div");
-    katalogas.append(this.adresas.isvedimasPilnas());
+    katalogas.append(this.galerija.isvedimasKataloguiNT());
     katalogas.append(this.kainaIsvedimas());
-    katalogas.append(
-      this.galerija.isvedimasKataloguiNT(),
-      document.createElement("br")
-    );
-    katalogas.append(this.patalpu_plotas);
+    katalogas.append(this.adresas.isvedimasKatalogui());
+    katalogas.append(this.agentas.nt());
     return katalogas;
   }
 }
+export {Namas, NamasNuoma};
 
-/*let isvedimasNuoma = new NamasNuoma(namas);
-
-const isvedimas2 = document.getElementById("namas");
-
-isvedimas2.append(
-  isvedimasNuoma.isvedimasPilnas(),
-  isvedimasNuoma.isvedimasTrumpas()
-);*/
