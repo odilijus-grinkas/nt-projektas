@@ -40,7 +40,7 @@ class Sklypas extends NT {
     let agentas = this.agentas.nt();
 
     nt_nouns.append(`Plotas:`);
-    nt_numbers.append(`${this.plotas}a`);
+    nt_numbers.append(`${this.plotas}a.`);
     nt_stats.append(nt_nouns, nt_numbers);
     aprasymas.append(this.aprasymas);
     isvedimas.append(kaina, adresas, nt_stats, aprasymas, galerija, agentas);
@@ -68,7 +68,7 @@ class SklypasNuoma extends Sklypas {
   kainaIsvedimas() {
     let kainaDiv = document.createElement("div");
     kainaDiv.classList.add("nt-kaina");
-    kainaDiv.append(`${this.kaina}€/men`);
+    kainaDiv.append(`${this.kaina}€/mėn.`);
     return kainaDiv;  
   }
 }

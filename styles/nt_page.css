@@ -8,14 +8,15 @@ body{
 }
 .nt-pilnas{
   /* width: 50em; */
-  /* padding: 0.5rem; */
+  background-color: #9a9da0;
+  border-radius: 1rem;
   display:grid;
   grid-template-columns:  47rem 1fr;
   grid-template-areas: 
   "galerija kaina"
+  "galerija adresas"
+  "galerija adresas"
   "galerija stats"
-  "galerija adresas"
-  "galerija adresas"
   "galerija agentas"
   "aprasymas agentas"
   
@@ -27,34 +28,52 @@ body{
 }
 
 .nt-pilnas .nt-kaina{
+  height: fit-content;
   grid-area: kaina;
-  font-size: 2.5em;
-  background-color: #9a9da0;
-  margin-left: -2rem;
-  padding-left: 3rem;
+  font-size: 4em;
+  font-style: italic;
+  /* background-color: #9a9da0; */
+  /* margin-left: -2rem; */
+  padding: 1rem 1rem 0 1rem;
   border-top-right-radius: 1rem;
+  border-bottom: 1px solid white;
 }
 .nt-pilnas .nt-adresas{
+  height: fit-content;
   grid-area: adresas;
-  background-color: #9a9da0;
-  margin-left: -2rem;
-  padding-left: 3rem;
+  /* background-color: #9a9da0; */
+  margin: -5.2rem 0 0 -0;
+  padding: 1rem 0 1rem 1rem;
+  font-size: 1.3rem;
+  font-style: italic;
   z-index: 3;
+  border-bottom: 1px solid white;
 } 
 .nt-pilnas .nt-galerija{grid-area: galerija; z-index: 5;}
 .nt-pilnas .nt-agentas{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
   grid-area: agentas;
-  background-color: #9a9da0;
-  margin-left: -2rem;
-  padding-left: 3rem;
+  /* background-color: #9a9da0; */
+  /* margin-left: -2rem; */
+  padding:0 0 1rem 1rem;
   z-index: 3;
   border-bottom-right-radius: 1rem;
+  font-size: 1.4rem;
+}
+.nt-pilnas .nt-agentas .katalogui-agento{
+  margin-left: 1rem;
 }
 .nt-pilnas .nt-stats{
+  display: flex;
+  justify-content: start;
+  gap: 0.5rem;
+  font-size: 1.5rem;
   grid-area: stats;
-  background-color: #9a9da0;
-  margin-left: -2rem;
-  padding-left: 3rem;
+  /* background-color: #9a9da0; */
+  margin: -10.3rem 0 0 0;
+  padding: 2rem 0 0 1rem;
   z-index: 3;
 }
 .nt-pilnas .nt-aprasymas{
@@ -64,6 +83,7 @@ body{
   padding: 3rem 1rem 1rem;
   z-index: 4;
   border-radius: 0 0 1rem 1rem;
+  font-size: 1.2rem;
 }
 
 /* .nt-agentas::before{

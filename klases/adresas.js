@@ -21,7 +21,7 @@ class Adresas {
     ntAdresas.classList.add("nt-adresas");
     ntAdresas.append(this.regionas);
     ntAdresas.innerHTML += "<br>";
-    ntAdresas.append(this.rajonas);
+    ntAdresas.append(`${this.rajonas} raj.`);
     ntAdresas.innerHTML += "<br>";
     ntAdresas.append(this.miestas);
     ntAdresas.innerHTML += "<br>";
