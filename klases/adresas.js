@@ -15,7 +15,7 @@ class Adresas {
    * @param {string} data.koordinates - sito, gali ir nebuti jei reikia galima prirasyt
    */
   constructor(data) {
-    this.regionas = new Regionas(data.regionas);
+    this.regionas = data.regionas;
     this.rajonas = data.rajonas;
     this.gatve = data.gatve;
     this.miestas = data.miestas;

@@ -3,36 +3,41 @@ import { Regionas } from "../klases/regionas.js";
 const regionai = [];
 
 const regionas1 = {
-  pavadinimas: "Vilnius",
-  aprasymas: "Lietuvos sostinė",
+  pavadinimas: "Vilnius apskritis",
+  aprasymas: `valstybinio lygmens administracinis teritorinis vienetas pietryčių Lietuvoje,
+  aplink Vilniaus miestą, tiek pagal teritoriją, tiek ir pagal gyventojų skaičių didžiausia iš dešimties Lietuvos apskričių.`,
 };
 const regionas2 = {
-  pavadinimas: "Panevezys",
-  aprasymas: "Miestas",
+  pavadinimas: "Klaipėdos apskritis",
+  aprasymas: `1995-2010 m. valstybinio lygmens administracinis teritorinis vienetas Vakarų Lietuvoje,
+  vienintelė, kurios krantus skalauja Baltijos jūra ir Kuršių marios.`,
 };
 const regionas3 = {
-  pavadinimas: "Siauliai",
-  aprasymas: "miestas",
+  pavadinimas: "Panevėžio apskritis",
+  aprasymas: ` Lietuvos Respublikos administracinis teritorinis vienetas Lietuvos šiaurės rytinėje dalyje,
+  abipus Nevėžio. Apskrities centras - Panevėžys.`,
 };
 const regionas4 = {
-  pavadinimas: "Klaipeda",
-  aprasymas: "Miestas",
+  pavadinimas: "Šiaulių apskritis",
+  aprasymas: `Centras - Šiauliai. Apskritis šiaurėje ribojasi su Latvijos teritorija, vakaruose su Telšių apskritimi,
+  pietvakariuose su Tauragės apskritimi, pietuose su Kauno apskritimi ir rytuose su Panevėžio apskritimi.`,
 };
 const regionas5 = {
-  pavadinimas: "Moletai",
-  aprasymas: "Miestas",
+  pavadinimas: "Tauragės apskritis ",
+  aprasymas: `teritorinis vienetas vidurio vakarų Lietuvoje, į pietryčius nuo Klaipėdos. Centras - Tauragė.`,
 };
 const regionas6 = {
-  pavadinimas: "Mazeikiai",
-  aprasymas: "Miestas",
+  pavadinimas: "Kauno apskritis",
+  aprasymas: `Apskrities centras - Kaunas. Ribojasi su Alytaus, Vilniaus, Panevėžio, Šiaulių, Tauragės ir Marijampolės apskritimis.`,
 };
 const regionas7 = {
-  pavadinimas: "Kaunas",
-  aprasymas: "Miestas",
+  pavadinimas: "Utenos apskritis",
+  aprasymas: ` valstybinio lygmens administracinis teritorinis vienetas šiaurės rytų Lietuvoje. Centras - Utena.`,
 };
 const regionas8 = {
-  pavadinimas: "Druskininkai",
-  aprasymas: "Miestas",
+  pavadinimas: "Telšių apskritis",
+  aprasymas: `Apskritis šiaurėje ribojasi su Latvijos teritorija, vakaruose su Klaipėdos apskritimi,
+  rytuose su Šiaulių apskritimi, pietuose su Tauragės apskritimi.`,
 };
 
 regionai.push(new Regionas(regionas1));
