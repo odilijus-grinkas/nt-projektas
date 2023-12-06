@@ -4,70 +4,70 @@ import { Adresas } from "../klases/adresas.js";
 import { regionai } from "./regionai.js";
 
 let adresasobject1 = {
-  regionas: regionai[0],
+  regionas: regionai[0].nt(),
   rajonas: "Vilniaus rajono savivaldybė",
   miestas: "Vilnius",
   gatve: "Gėlių g. 59",
   namo_nr: 59,
 };
 let adresasobject2 = {
-  regionas: regionai[1],
+  regionas: regionai[1].nt(),
   rajonas: "Klaipėdos rajono savivaldybė",
   miestas: "Klaipėda",
   gatve: "Medžių g. 55",
   namo_nr: 55,
 };
 let adresasobject3 = {
-  regionas: regionai[1],
+  regionas: regionai[1].nt(),
   rajonas: "Klaipėdos rajono savivaldybė",
   miestas: "Klaipėda",
   gatve: "Rožių g. 122",
   namo_nr: 122,
 };
 let adresasobject4 = {
-  regionas: regionai[2],
+  regionas: regionai[2].nt(),
   rajonas: "Panevėžio miesto savivaldybė",
   miestas: "Panevėžys",
   gatve: "Žirgų g. 25",
   namo_nr: 25,
 };
 let adresasobject5 = {
-  regionas: regionai[3],
+  regionas: regionai[3].nt(),
   rajonas: "Šiaulių miesto savivaldybė",
   miestas: "Šiaulių",
   gatve: "Kopūstų g. 5",
   namo_nr: 5,
 };
 let adresasobject6 = {
-  regionas: regionai[4],
+  regionas: regionai[4].nt(),
   rajonas: "Tauragės rajono savivaldybė",
   miestas: "Tauragė",
   gatve: "Lenkų g. 45",
   namo_nr: 45,
 };
 let adresasobject7 = {
-  regionas: regionai[5],
+  regionas: regionai[5].nt(),
   rajonas: "Kauno miesto savivaldybė",
   miestas: "Kaunas",
   gatve: "Malūnų g. 69",
   namo_nr: 69,
 };
 let adresasobject8 = {
-  regionas: regionai[1],
+  regionas: regionai[1].nt(),
   rajonas: "Klaipėdos rajono savivaldybė",
   miestas: "Klaipėda",
   gatve: "Puodų g. 75",
   namo_nr: 75,
 };
 let adresasobject9 = {
-  regionas: regionai[8],
+  regionas: regionai[7].nt(),
   rajonas: "Utenos rajono savivaldybė",
   miestas: "Utena",
   gatve: "Tulpių g. 89",
   namo_nr: 89,
 };
 let adresasobject10 = {
-  regionas: regionai[5],
+  regionas: regionai[5].nt(),
   rajonas: "Kauno rajono savivaldybė",
   miestas: "Kaunas",
   gatve: "Meilės g. 45",

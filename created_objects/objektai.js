@@ -1,8 +1,7 @@
 // Cia visi NT objektai bus sujungiami ir exportuojami
 // Visi cia importuoti objektai turi buti masyve
 import { komerciniaiObjektai } from "./komerciniaiObjektai.js";
-import { namai } from "./namai.js";
-
+import { namai } from "./namaiObjektai.js";
 import { sklypai } from "./sklypaiObjektai.js"
 
 const sujungtiObjektai = [];

@@ -2,6 +2,7 @@
 import { Agentas } from "./agentas.js";
 import { agentai } from "../created_objects/agentai.js";
 import { objektai } from "../created_objects/objektai.js";
+import { regionai } from "../created_objects/regionai.js";
 
 const main = document.getElementById("main");
 const mainHTML = `<div class="side-buttons">
@@ -35,6 +36,9 @@ class NTSvetaine {
     main.innerHTML = mainHTML;
     leftButtonObjectEvents();
     pirkti_nuoma_buttonEvents();
+    document.getElementById("regionaiButton").addEventListener("click", () => {
+    NTSvetaine.regionai();
+    });
   }
   static agentai() {
     agentuSarasoIsvedimas();
@@ -43,9 +47,34 @@ class NTSvetaine {
     return -1;
   }
   static regionai() {
-    // dominyko code
-    
-    return -1;
+    const isvedimaiDiv = document.querySelector('.isvedimai');
+    isvedimaiDiv.innerHTML = '';
+  
+    for (const regionas of regionai) {
+      const regionoIsvedimas = regionas.isvedimas();
+      const agentsInRegion = regionas.agentai(agentai);
+  
+      const regionContainer = document.createElement('div');
+      regionContainer.appendChild(regionoIsvedimas);
+  
+      if (agentsInRegion.length > 0) {
+        const agentsDiv = document.createElement('div');
+        agentsDiv.classList.add('agentai-regione');
+        agentsDiv.innerHTML = `<strong>Agentai šiame regione:</strong><br>`;
+        
+        for (const agentas of agentsInRegion) {
+          agentsDiv.innerHTML += `Agentas: ${agentas.vardas}<br>`;
+        }
+  
+        regionContainer.appendChild(agentsDiv);
+      } else {
+        regionContainer.innerHTML += `Nera agentų regione`;
+      }
+  
+      isvedimaiDiv.appendChild(regionContainer);
+    }
+  
+    hidePirktiNuomaButtons(true);
   }
   /**
    * Grazina masyva kazkokio NT pilnasIsrasimas() divus

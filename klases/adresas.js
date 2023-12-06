@@ -29,7 +29,7 @@ class Adresas {
   isvedimasPilnas() {
     let ntAdresas = document.createElement("div");
     ntAdresas.classList.add("nt-adresas");
-    ntAdresas.append(this.regionas.nt());
+    ntAdresas.append(this.regionas);
     ntAdresas.innerHTML += "<br>";
     ntAdresas.append(this.rajonas);
     ntAdresas.innerHTML += "<br>";
@@ -68,7 +68,7 @@ class Adresas {
   }
   isvedimasKatalogui() {
     let adresas_katalogui = document.createElement("div");
-    adresas_katalogui.classList.add("adresas-katalogui");
+    adresas_katalogui.classList.add("nt-adresas");
     adresas_katalogui.append(this.gatve, document.createElement("br"));
     adresas_katalogui.append(this.miestas);
     return adresas_katalogui
