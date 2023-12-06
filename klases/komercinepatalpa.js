@@ -55,7 +55,7 @@ class KomercinesPatalpos extends NT {
     let div = document.createElement("div");
     div.append(this.galerija.isvedimasKataloguiNT());
     div.append(this.kainaIsvedimas());
-    div.append(this.adresas.miestas+" "); // <<<<<<<<<<<< TESTING
+    div.append(this.adresas.isvedimasPilnas()); // <<<<<<<<<<<< TESTING
     div.append(this.agentas.nt());
     return div;
   }

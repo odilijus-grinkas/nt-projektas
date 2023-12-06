@@ -1,22 +1,26 @@
 // Nezinau kaip kitaip objektus sitai statinei klasei rasti
+import { Agentas } from "./agentas.js";
+import { agentai } from "../created_objects/agentai.js";
 import { objektai } from "../created_objects/objektai.js";
+
 const main = document.getElementById("main");
 const mainHTML = `<div class="side-buttons">
-<a href="#" id="agentaiButton">Agentai</a>
-<a href="#" id="regionaiButton">Regionai</a>
-<a href="#" class='object-buttons'>Namai</a>
-<a href="#" class='object-buttons'>Butai</a>
-<a href="#" class='object-buttons'>Sklypai</a>
-<a href="#" class='object-buttons'>Komercines</a>
-<a href="#" class='object-buttons'>Gamybines</a>
-<a href="#" class='object-buttons'>Garažai</a>
+<div class='list-buttons' id="agentaiButton">Agentai</div>
+<div class='list-buttons' id="regionaiButton">Regionai</div>
+<div class='object-buttons'>Namai</div>
+<div class='object-buttons'>Butai</div>
+<div class='object-buttons'>Sklypai</div>
+<div class='object-buttons'>Sodybos</div>
+<div class='object-buttons'>Komercines</div>
+<div class='object-buttons'>Gamybines</div>
+<div class='object-buttons'>Garažai</div>
 </div>
 <div class="right-side">
 <div class="pirkti-nuoma">
-  <a href="#" id="pirkti-button">Pirkti</a>
-  <a href="#" id="nuomai-button">Nuomai</a>
+  <div id="pirkti-button">Pirkti</div>
+  <div id="nuomai-button">Nuomai</div>
 </div>
-<div class="nt-katalogas">
+<div class="isvedimai">
 </div>
 </div>
 <div id="token" style="display:none">Neliesti</div>`;
@@ -33,7 +37,7 @@ class NTSvetaine {
     pirkti_nuoma_buttonEvents();
   }
   static agentai() {
-    return -1;
+    agentuSarasoIsvedimas();
   }
   static agentas(id) {
     return -1;
@@ -50,8 +54,8 @@ class NTSvetaine {
    */
   static objektai(klase, kiekis = 0, clear = true) {
     if (clear) {
-      // clean nt-katalogas before adding
-      document.getElementsByClassName("nt-katalogas")[0].innerHTML = "";
+      // clean isvedimai before adding
+      document.getElementsByClassName("isvedimai")[0].innerHTML = "";
     }
     let filteredObjects = filterObjects(klase);
     insertObjects(filteredObjects, kiekis);
@@ -77,6 +81,18 @@ class NTSvetaine {
 }
 
 function insertObjects(array, amount) {
+  let isvedimai = document.getElementsByClassName("isvedimai")[0];
+  let objectDiv;
+  if (
+    document.getElementsByClassName("objektu-katalogu-isvedimas").length == 0
+  ) {
+    objectDiv = document.createElement("div"); // idetas nes noriu stilius uzdeti katalogams, kad nepaveiktu kitu stiliu
+    objectDiv.classList.add("objektu-katalogu-isvedimas");
+  } else {
+    objectDiv = document.getElementsByClassName(
+      "objektu-katalogu-isvedimas"
+    )[0];
+  }
   let index = 0;
   if (amount == 0) {
     index = -Infinity;
@@ -84,21 +100,50 @@ function insertObjects(array, amount) {
   for (let obj of array) {
     if (index >= amount) break;
     let div = obj.isvedimasKatalogui();
-    let objectButton = document.createElement("button");
+    let objectButton = document.createElement("button"); // apsilankymo mygtukas
     objectButton.innerText = "Apsilankyti";
     objectButton.addEventListener("click", objectPilnasIsvedimasEvent(obj));
+    addObjectClassNameToAddress(div, obj.constructor.name);
     div.append(objectButton);
-    let katalogasDiv = document.getElementsByClassName("nt-katalogas")[0];
-    katalogasDiv.append(div);
+    objectDiv.append(div);
     index++;
   }
+  isvedimai.append(objectDiv);
+}
+// Prijungs klases pavadinima pvz Namas virs adreso kad aiskiau butu
+function addObjectClassNameToAddress(obj, className) {
+  let adresasDiv = obj.getElementsByClassName("nt-adresas")[0];
+  let classNameDiv = document.createElement("p");
+  classNameDiv.classList.add("katalogas-class-name");
+  classNameDiv.append(removeNuomaFromName(className));
+  let hr = document.createElement("hr");
+  adresasDiv.prepend(hr);
+  adresasDiv.prepend(classNameDiv);
+}
+
+function removeNuomaFromName(className) {
+  let possibleNames = [
+    "NamasNuoma",
+    "ButasNuoma",
+    "SklypasNuoma",
+    "SodybaNuoma",
+    "KomercinesPatalposNuoma",
+    "GamybinePatalpaNuoma",
+    "GarazasNuoma",
+  ];
+  for (let name of possibleNames){
+    if (className == name){
+      return className.slice(0,className.length-5)
+    }
+  }
+  return className;
 }
 
 function objectPilnasIsvedimasEvent(obj) {
   return () => {
-    let katalogasDiv = document.getElementsByClassName("nt-katalogas")[0];
-    katalogasDiv.innerHTML = "";
-    katalogasDiv.append(obj.isvedimasPilnas());
+    let isvedimai = document.getElementsByClassName("isvedimai")[0];
+    isvedimai.innerHTML = "";
+    isvedimai.append(obj.isvedimasPilnas());
     hidePirktiNuomaButtons();
   };
 }
@@ -123,6 +168,7 @@ function leftButtonObjectEvents() {
     "Namas",
     "Butas",
     "Sklypas",
+    "Sodyba",
     "KomercinesPatalpos",
     "GamybinePatalpa",
     "Garazas",
@@ -147,17 +193,44 @@ function pirkti_nuoma_buttonEvents() {
   nuomai.addEventListener("click", () => {
     if (token.innerHTML != "Neliesti") {
       NTSvetaine.objektai(token.innerHTML + "Nuoma", 0);
-      console.log(token.innerHTML + "Nuoma")
     }
   });
 }
-function hidePirktiNuomaButtons(hide = true){
+function hidePirktiNuomaButtons(hide = true) {
   let buttons = document.getElementsByClassName("pirkti-nuoma")[0];
-  if (hide){
+  if (hide) {
     buttons.style.display = "none";
   } else {
     buttons.style.display = "flex";
   }
 }
+
+function agentuSarasoIsvedimas() {
+  let button = document.getElementById("agentaiButton");
+  button.addEventListener("click", () => {
+    document.getElementsByClassName("isvedimai")[0].innerHTML =
+      Agentas.isvedimasVisiAgentai(agentai).innerHTML;
+    agentoProfilioIsvedimas();
+    hidePirktiNuomaButtons(true);
+  });
+}
+
+function agentoProfilioIsvedimas() {
+  let buttons = document.getElementsByClassName("profilis-btn");
+  for (let b = 0; b < buttons.length; b++) {
+    buttons[b].addEventListener("click", (event) => {
+      let number = event.currentTarget.getAttribute("num");
+      for (let agentas of agentai) {
+        if (agentas.id == number) {
+          document.getElementsByClassName("isvedimai")[0].innerHTML =
+            agentas.isvedimasPilnas().innerHTML;
+        }
+      }
+    });
+  }
+}
+
+NTSvetaine.menu();
+NTSvetaine.titulinis();
 
 export { NTSvetaine };

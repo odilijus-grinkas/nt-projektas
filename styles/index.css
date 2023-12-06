@@ -3,75 +3,93 @@ body{
   color: white;
 }
 header{
+  width: 100%;
   font-size: 3em;
   text-align: center;
+  border-bottom: solid 3px  #bfc2c4;
+  background-color: #333;
+  position: fixed;
+  z-index: 1;
+}
+.center{
+  height: 100vh;
 }
 main{
+  /* height: 100vh; */
+  position:relative;
+  top: 59px;
   display: grid;
-  grid-template-columns: 1fr 6fr;
+  grid-template-columns: 408px 8fr;
+  background-color:#bfc2c4;
+}
+.right-side{
+  position: relative;
+  background-color: #333;
+  padding: 1rem;
+  grid-column: 2/3;
 }
 .side-buttons{
+  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1em;
-  margin-top: 1.75em;
-  margin-right: 1em;
+  grid-column: 1/2;
 }
-.side-buttons a{
-  border: solid black;
-  border-radius: 0.5em;
-  padding: 0.2em;
-  text-decoration: none;
+.object-buttons, .list-buttons{
+  width: 100%;
+  border-bottom:  1px solid #bfc2c4;
+  padding: 1rem 154px ;
   color: white;
-  background-color: chocolate;
+  background-color:#333;
   width: 5em;
   text-align: center;
+  font-size: 1.2rem;
+  transition: 0.2s;
+  cursor: pointer;
 }
-.side-buttons a:hover{
-  background-color: brown;
+.object-buttons:hover, .list-buttons:hover{
+  background-color: #893427;
 }
 .pirkti-nuoma{
-  border-bottom: none;
+  /* border-bottom: none; */
   display: flex;
   justify-content: left;
-  gap: 2em;
-  margin-top: 1.75em;
+  gap: 2px;
+  /* margin-top: 1.75em; */
 }
-.pirkti-nuoma a{
-  width: 4em;
-  padding: 0.3em 0;
+#pirkti-button, #nuomai-button{
+  width: 8rem;
+  padding: 0.5rem 0 ;
+  margin: -0.2rem 1rem 1rem 0;
   text-align: center;
-  background-color: rgb(38, 64, 159);
-  border: solid 2px black;
-  border-radius: 1em;
-  text-decoration: none;
-  color: white;
-  box-shadow: 1px 2px 3px black;
+  background-color: #bfc2c4;
+  color:#333;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.2s;
 }
-.center{
-  /* display: flex;
-  justify-content: center; */
-  padding: 0 10em;
+#pirkti-button:hover, #nuomai-button:hover{
+  background-color:#949799;
+  text-decoration: underline;
 }
-.pirkti-nuoma a:hover{
-  background-color: brown;
-}
-.nt-katalogas{
+.isvedimai{
+
   display: flex;
   flex-direction: column;
   align-items: left;
   gap: 1em;
-  margin-top: 1.75em;
+  /* margin-top: 1.75em; */
+  /* background-color: #333; */
 }
-.nt-katalogas div{
+.isvedimai div{
   /* width: 30em; */
   /* display: flex; */
   justify-content: space-evenly;
   
 }
 /*  Button for object isvedimasPilnas()*/
-.nt-katalogas button{
+.isvedimai button{
   height: 3em;
   border: none;
   background-color: unset;
@@ -80,7 +98,32 @@ main{
   font-size: large;
   text-decoration: underline;
 }
-.nt-katalogas button:hover{
+.isvedimai button:hover{
   color: blue;
   cursor: pointer;
+}
+.objektu-katalogu-isvedimas{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.objektu-katalogu-isvedimas div{
+  font-size: 1em;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 1em;
+  justify-content: left;
+}
+.objektu-katalogu-isvedimas .obj-katalogas-image{
+  flex: 0 0 13em;
+}
+.objektu-katalogu-isvedimas .nt-agentas{
+  display: block
+}
+.objektu-katalogu-isvedimas .nt-kaina{
+  flex: 0 0 5em
+}
+.objektu-katalogu-isvedimas .nt-adresas{
+  display: block;
+  flex: 0 0 10em
 }
