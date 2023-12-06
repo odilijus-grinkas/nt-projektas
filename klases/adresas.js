@@ -1,9 +1,15 @@
 import { Regionas } from "./regionas.js";
-/**
- * UNFINISHED
- */
+
 class Adresas {
-  /**
+  /**naudojimas:reikia sukurti atskira adresas objekta pvz.:let adresasobject3 = {
+  regionas: regionai[1].nt(),
+  rajonas: "Klaipėdos rajono savivaldybė",
+  miestas: "Klaipėda",
+  gatve: "Rožių g. 122",
+  namo_nr: 122,
+};
+objekta reikia priskirti prie adreso klases let adresas1 = new Adresas(adresasobject1) ir priskirti prie pvz. prie namai objektu.
+prie savo klasių dar prideti adreso metodus.
    * @constructor
    * @param {Object} data - The data object containing specific parameters.
    * @param {Regionas} data.regionas - The ID.
