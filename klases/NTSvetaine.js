@@ -203,7 +203,7 @@ function hidePirktiNuomaButtons(hide = true) {
     buttons.style.display = "flex";
   }
 }
-
+//function for displaiyng list of short profile agentai 
 function agentuSarasoIsvedimas() {
   let button = document.getElementById("agentaiButton");
   button.addEventListener("click", () => {
@@ -213,7 +213,7 @@ function agentuSarasoIsvedimas() {
     hidePirktiNuomaButtons(true);
   });
 }
-
+//function for displaiyng a ful profile on agentas
 function agentoProfilioIsvedimas() {
   let buttons = document.getElementsByClassName("profilis-btn");
   for (let b = 0; b < buttons.length; b++) {
@@ -221,8 +221,9 @@ function agentoProfilioIsvedimas() {
       let number = event.currentTarget.getAttribute("num");
       for (let agentas of agentai) {
         if (agentas.id == number) {
-          document.getElementsByClassName("isvedimai")[0].innerHTML =
-          agentas.isvedimasPilnas().innerHTML;
+          let div = document.createElement("div");
+          div.append(agentas.isvedimasPilnas());
+          document.getElementsByClassName("isvedimai")[0].innerHTML = div.innerHTML;
         }
       }
     });
