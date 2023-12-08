@@ -1,9 +1,9 @@
-body{
-  background-color: #333;
-  color: white;
+body, html{
+  background-color:  #bfc2c4;
 }
 header{
   width: 100%;
+  height: 70px;
   font-size: 3em;
   text-align: center;
   border-bottom: solid 3px  #bfc2c4;
@@ -15,9 +15,9 @@ header{
   height: 100vh;
 }
 main{
-  /* height: 100vh; */
+  height: calc(100% - 72px);
   position:relative;
-  top: 59px;
+  top: 72px;
   display: grid;
   grid-template-columns: 408px 8fr;
   background-color:#bfc2c4;
@@ -51,11 +51,9 @@ main{
   background-color: #893427;
 }
 .pirkti-nuoma{
-  /* border-bottom: none; */
   display: flex;
   justify-content: left;
   gap: 2px;
-  /* margin-top: 1.75em; */
 }
 #pirkti-button, #nuomai-button{
   width: 8rem;
@@ -79,51 +77,76 @@ main{
   flex-direction: column;
   align-items: left;
   gap: 1em;
-  /* margin-top: 1.75em; */
-  /* background-color: #333; */
 }
 .isvedimai div{
   /* width: 30em; */
   /* display: flex; */
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   
-}
-/*  Button for object isvedimasPilnas()*/
-.isvedimai button{
-  height: 3em;
-  border: none;
-  background-color: unset;
-  color: orange;
-  font-style: italic;
-  font-size: large;
-  text-decoration: underline;
-}
-.isvedimai button:hover{
-  color: blue;
-  cursor: pointer;
 }
 .objektu-katalogu-isvedimas{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 1em;
 }
-.objektu-katalogu-isvedimas div{
-  font-size: 1em;
-  display: flex;
-  flex: 0 0 auto;
-  gap: 1em;
-  justify-content: left;
+.nt-katalogui{
+  width: 710px;
+  color: #333;
+  background-color: #bfc2c4;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: 1fr 2fr 1fr;
+  gap: 0.5rem;
+  box-shadow: 10px 10px 15px 2px rgb(41, 41, 41, 0.5);
 }
 .objektu-katalogu-isvedimas .obj-katalogas-image{
-  flex: 0 0 13em;
+  grid-column: 1/2;
+  grid-row: 1/4;
+  object-fit: cover;
+  border-radius: 0.7rem;
+  
 }
 .objektu-katalogu-isvedimas .nt-agentas{
-  display: block
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items:center;
+  grid-column: 3/4;
+  grid-row: 2/4;
+  font-size: 1.3rem;
+  /* margin-left: 2rem; */
+
 }
 .objektu-katalogu-isvedimas .nt-kaina{
-  flex: 0 0 5em
+  grid-column: 2/3;
+  grid-row: 1/2;
 }
 .objektu-katalogu-isvedimas .nt-adresas{
-  display: block;
-  flex: 0 0 10em
+  grid-column: 2/3;
+  grid-row: 2/3;
 }
+  /*  Button for object isvedimasPilnas()*/
+  .isvedimai button{
+    height: 2.5rem;
+    width: 8rem;
+    font-size: 1.2rem;
+    margin: 0.7rem 0 0;
+    color:  rgb(190, 194, 197);
+    text-align: center;
+    text-decoration: none;
+    background-color:   rgb(66, 65, 65);
+    border-radius: 2rem;
+    border: none;
+    transition: 0.3s;
+    cursor: pointer;
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+  .isvedimai button:hover{
+    text-decoration: underline;
+      color:  #d7e4ee;
+      background-color: #893427;
+  }

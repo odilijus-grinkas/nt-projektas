@@ -2,28 +2,28 @@
 import { Agentas } from "./agentas.js";
 import { agentai } from "../created_objects/agentai.js";
 import { objektai } from "../created_objects/objektai.js";
+import { regionai } from "../created_objects/regionai.js";
 
 const main = document.getElementById("main");
 const mainHTML = `<div class="side-buttons">
-<div class='list-buttons' id="agentaiButton">Agentai</div>
-<div class='list-buttons' id="regionaiButton">Regionai</div>
-<div class='object-buttons'>Namai</div>
-<div class='object-buttons'>Butai</div>
-<div class='object-buttons'>Sklypai</div>
-<div class='object-buttons'>Sodybos</div>
-<div class='object-buttons'>Komercines</div>
-<div class='object-buttons'>Gamybines</div>
-<div class='object-buttons'>Garažai</div>
-</div>
-<div class="right-side">
-<div class="pirkti-nuoma">
-  <div id="pirkti-button">Pirkti</div>
-  <div id="nuomai-button">Nuomai</div>
-</div>
-<div class="isvedimai">
-</div>
-</div>
-<div id="token" style="display:none">Neliesti</div>`;
+                    <div class='list-buttons' id="agentaiButton">Agentai</div>
+                    <div class='list-buttons' id="regionaiButton">Regionai</div>
+                    <div class='object-buttons'>Namai</div>
+                    <div class='object-buttons'>Butai</div>
+                    <div class='object-buttons'>Sklypai</div>
+                    <div class='object-buttons'>Sodybos</div>
+                    <div class='object-buttons'>Komercines</div>
+                    <div class='object-buttons'>Gamybines</div>
+                    <div class='object-buttons'>Garažai</div>
+                  </div>
+                  <div class="right-side">
+                    <div class="pirkti-nuoma">
+                      <div id="pirkti-button">Pirkti</div>
+                      <div id="nuomai-button">Nuomai</div>
+                    </div>
+                    <div class="isvedimai"></div>
+                  </div>
+                  <div id="token" style="display:none">Neliesti</div>`;
 
 /**
  * Reikalingi globalus array: objektai, agentai, regionai
@@ -35,6 +35,9 @@ class NTSvetaine {
     main.innerHTML = mainHTML;
     leftButtonObjectEvents();
     pirkti_nuoma_buttonEvents();
+    document.getElementById("regionaiButton").addEventListener("click", () => {
+    NTSvetaine.regionai();
+    });
   }
   static agentai() {
     agentuSarasoIsvedimas();
@@ -43,8 +46,34 @@ class NTSvetaine {
     return -1;
   }
   static regionai() {
-    // dominyko code
-    return -1;
+    const isvedimaiDiv = document.querySelector('.isvedimai');
+    isvedimaiDiv.innerHTML = '';
+  
+    for (const regionas of regionai) {
+      const regionoIsvedimas = regionas.isvedimas();
+      const agentsInRegion = regionas.agentai(agentai);
+  
+      const regionContainer = document.createElement('div');
+      regionContainer.appendChild(regionoIsvedimas);
+  
+      if (agentsInRegion.length > 0) {
+        const agentsDiv = document.createElement('div');
+        agentsDiv.classList.add('agentai-regione');
+        agentsDiv.innerHTML = `<strong>Agentai šiame regione:</strong><br>`;
+        
+        for (const agentas of agentsInRegion) {
+          agentsDiv.innerHTML += `Agentas: ${agentas.vardas}<br>`;
+        }
+  
+        regionContainer.appendChild(agentsDiv);
+      } else {
+        regionContainer.innerHTML += `Nera agentų regione`;
+      }
+  
+      isvedimaiDiv.appendChild(regionContainer);
+    }
+  
+    hidePirktiNuomaButtons(true);
   }
   /**
    * Grazina masyva kazkokio NT pilnasIsrasimas() divus
@@ -99,6 +128,7 @@ function insertObjects(array, amount) {
   for (let obj of array) {
     if (index >= amount) break;
     let div = obj.isvedimasKatalogui();
+    div.classList.add("nt-katalogui");
     let objectButton = document.createElement("button"); // apsilankymo mygtukas
     objectButton.innerText = "Apsilankyti";
     objectButton.addEventListener("click", objectPilnasIsvedimasEvent(obj));
@@ -203,7 +233,7 @@ function hidePirktiNuomaButtons(hide = true) {
     buttons.style.display = "flex";
   }
 }
-
+//function for displaiyng list of short profile agentai 
 function agentuSarasoIsvedimas() {
   let button = document.getElementById("agentaiButton");
   button.addEventListener("click", () => {
@@ -213,7 +243,7 @@ function agentuSarasoIsvedimas() {
     hidePirktiNuomaButtons(true);
   });
 }
-
+//function for displaiyng a ful profile on agentas
 function agentoProfilioIsvedimas() {
   let buttons = document.getElementsByClassName("profilis-btn");
   for (let b = 0; b < buttons.length; b++) {
@@ -221,8 +251,9 @@ function agentoProfilioIsvedimas() {
       let number = event.currentTarget.getAttribute("num");
       for (let agentas of agentai) {
         if (agentas.id == number) {
-          document.getElementsByClassName("isvedimai")[0].innerHTML =
-            agentas.isvedimasPilnas().innerHTML;
+          let div = document.createElement("div");
+          div.append(agentas.isvedimasPilnas());
+          document.getElementsByClassName("isvedimai")[0].innerHTML = div.innerHTML;
         }
       }
     });
