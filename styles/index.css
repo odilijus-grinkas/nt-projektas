@@ -19,7 +19,7 @@ main{
   position:relative;
   top: 72px;
   display: grid;
-  grid-template-columns: 408px 8fr;
+  grid-template-columns: 299px 8fr;
   background-color:#bfc2c4;
 }
 .right-side{
@@ -38,7 +38,7 @@ main{
 .object-buttons, .list-buttons{
   width: 100%;
   border-bottom:  1px solid #bfc2c4;
-  padding: 1rem 154px ;
+  padding: 1rem 100px ;
   color: white;
   background-color:#333;
   width: 5em;

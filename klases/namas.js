@@ -70,7 +70,8 @@ class Namas extends NT {
       document.createElement("br")
     );
     ntAprasymas.append(this.aprasymas);
-    ntStats.append(ntNumbers, ntNouns);
+    ntStats.append(ntNouns);
+    ntStats.append(ntNumbers)
     ntPilnas.append(
       ntStats,
       ntAprasymas,
@@ -113,7 +114,7 @@ class NamasNuoma extends Namas {
   kainaIsvedimas() {
     let kainaDiv = document.createElement("div");
     kainaDiv.classList.add("nt-kaina");
-    kainaDiv.append(`${this.kaina}€ per mėnesį`);
+    kainaDiv.append(`${this.kaina}€/men`);
     return kainaDiv;
   }
   isvedimasPilnas() {
