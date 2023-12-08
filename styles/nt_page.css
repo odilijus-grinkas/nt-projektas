@@ -28,6 +28,7 @@ body{
 }
 
 .nt-pilnas .nt-kaina{
+  min-width: fit-content;
   height: fit-content;
   grid-area: kaina;
   font-size: 4em;
@@ -39,6 +40,7 @@ body{
   border-bottom: 1px solid white;
 }
 .nt-pilnas .nt-adresas{
+  min-width: fit-content;
   height: fit-content;
   grid-area: adresas;
   /* background-color: #9a9da0; */
@@ -66,6 +68,7 @@ body{
   margin-left: 1rem;
 }
 .nt-pilnas .nt-stats{
+  min-width: fit-content;
   display: flex;
   justify-content: start;
   gap: 0.5rem;
@@ -85,7 +88,10 @@ body{
   border-radius: 0 0 1rem 1rem;
   font-size: 1.2rem;
 }
+.nt-numbers, .nt-nouns{
+  min-width: fit-content;
 
+}
 /* .nt-agentas::before{
   content: "Pardavimų agentas:";
   font-size: 0.9em;
