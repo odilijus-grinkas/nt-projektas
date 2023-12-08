@@ -18,58 +18,6 @@ class Sodyba extends Namas {
   constructor(data) {
     super(data);
   }
-  isvedimasPilnas() {
-    const ntPilnas = document.createElement("div");
-    ntPilnas.classList.add("nt-pilnas");
-    const ntNouns = document.createElement("div");
-    ntNouns.classList.add("nt-nouns");
-    const ntNumbers = document.createElement("div");
-    ntNumbers.classList.add("nt-numbers");
-    const ntStats = document.createElement("div");
-    ntStats.classList.add("nt-stats");
-    const ntAprasymas = document.createElement("div");
-    ntAprasymas.classList.add("nt-aprasymas");
-    const ntNouns1 = document.createTextNode("ID:");
-    const ntNouns2 = document.createTextNode("Patalpų plotas:");
-    const ntNouns3 = document.createTextNode("Aukstu skaičius:");
-    const ntNouns4 = document.createTextNode("Kambarių skaičius:");
-    const ntNouns5 = document.createTextNode("Sklypo plotas:");
-    ntNouns.append(
-      ntNouns1,
-      document.createElement("br"),
-      ntNouns2,
-      document.createElement("br"),
-      ntNouns3,
-      document.createElement("br"),
-      ntNouns4,
-      document.createElement("br"),
-      ntNouns5,
-      document.createElement("br")
-    );
-    ntNumbers.append(
-      this.id,
-      document.createElement("br"),
-      this.patalpu_plotas,
-      document.createElement("br"),
-      this.aukstu_sk,
-      document.createElement("br"),
-      this.kambariu_sk,
-      document.createElement("br"),
-      this.sklypo_plotas,
-      document.createElement("br")
-    );
-    ntAprasymas.append(this.aprasymas);
-    ntStats.append(ntNumbers, ntNouns);
-    ntPilnas.append(
-      ntStats,
-      ntAprasymas,
-      this.galerija.galerijaNT(),
-      this.kainaIsvedimas(),
-      this.adresas.isvedimasPilnas(),
-      this.agentas.nt()
-    );
-    return ntPilnas;
-  }
 }
 class SodybaNuoma extends NamasNuoma {
   /**
