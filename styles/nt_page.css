@@ -90,7 +90,6 @@ body{
 }
 .nt-numbers, .nt-nouns{
   min-width: fit-content;
-
 }
 /* .nt-agentas::before{
   content: "Pardavimų agentas:";
