@@ -1,5 +1,9 @@
-import { Galerija } from "./galerija.js";
-import { Adresas } from "./adresas.js";
+import {
+  Galerija
+} from "./galerija.js";
+import {
+  Adresas
+} from "./adresas.js";
 class NT {
   /**
    * NT Class Constructor.
@@ -28,4 +32,7 @@ class NT {
   }
 }
 
-export { NT };
+export {
+  NT
+};
+
