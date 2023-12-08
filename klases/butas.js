@@ -28,20 +28,54 @@ class Butas extends NT {
         this.kambariu_sk = objektas.kambariu_sk;
     }
     isvedimasPilnas() {
-        let div = document.createElement("div");
-        div.append(this.kaina);
-        this.galerija = new Galerija();
-        this.adresas = new Adresas();
-        this.agentas = new Agentas();
-        div.append(this.patalpu_plotas);
-        div.append(this.aukstas);
-        div.append(this.kambariu_sk);
-        div.append(this.aprasymas);
-        return div;
+        const ntPilnas = document.createElement("div");
+        ntPilnas.classList.add("nt-pilnas");
+        const ntKaina = this.kainaIsvedimas();
+        const ntAprasymas = document.createElement("div");
+        ntAprasymas.classList.add("nt-aprasymas");
+        const ntNumbers = document.createElement("div");
+        ntNumbers.classList.add("nt-numbers");
+        const ntNouns = document.createElement("div");
+        ntNouns.classList.add("nt-nouns");
+        const ntStats = document.createElement("div");
+        ntStats.classList.add("nt-stats");
+        const ntAdresas = this.adresas.isvedimasPilnas();
+        const ntGalerija = this.galerija.galerijaNT();
+        const ntAgentas = this.agentas.nt();
+
+        ntNouns.append("Plotas:");
+        ntNouns.innerHTML += "<br>";
+        ntNumbers.append(`${this.patalpu_plotas}m²`);
+        ntNumbers.innerHTML += "<br>";
+
+        ntNouns.append("Aukštas:");
+        ntNouns.innerHTML += "<br>";
+        ntNumbers.append(`${this.aukstas}`);
+        ntNumbers.innerHTML += "<br>";
+
+        ntNouns.append("Kambarių skaičius:");
+        ntNouns.innerHTML += "<br>";
+        ntNumbers.append(`${this.kambariu_sk}`);
+        ntNumbers.innerHTML += "<br>";
+
+        ntAprasymas.append(this.aprasymas);
+        ntStats.append(ntNouns, ntNumbers);
+        ntPilnas.append(
+            ntKaina,
+            ntAprasymas,
+            ntStats,
+            ntAdresas,
+            ntGalerija,
+            ntAgentas
+        );
+        return ntPilnas;
     }
     isvedimasKatalogui() {
         let div = document.createElement("div");
         div.append(this.kainaIsvedimas());
+        div.append(this.galerija.isvedimasKataloguiNT());
+        div.append(this.adresas.isvedimasPilnas());
+        div.append(this.agentas.nt());
         return div;
     }
 }
@@ -55,17 +89,31 @@ class ButasNuoma extends Butas {
     }
 }
 
-// let butoObjektas = new Butas(
-//     "100,000$",
-//     "blablabla",
-//     "Pieniu gatve, Kaunas",
-//     "galerija",
-//     "Petriukas",
-//     "332",
-//     "patalpu_plotas",
-//     "aukstas",
-//     "3"
-// );
+// class Butas extends NT {
+//     constructor(objektas) {
+//         super(objektas)
+//         this.patalpu_plotas = objektas.patalpu_plotas;
+//         this.aukstas = objektas.aukstas;
+//         this.kambariu_sk = objektas.kambariu_sk;
+//     }
+//     isvedimasPilnas() {
+//         let div = document.createElement("div");
+//         div.append(this.kaina);
+//         this.galerija = new Galerija();
+//         this.adresas = new Adresas();
+//         this.agentas = new Agentas();
+//         div.append(this.patalpu_plotas);
+//         div.append(this.aukstas);
+//         div.append(this.kambariu_sk);
+//         div.append(this.aprasymas);
+//         return div;
+//     }
+//     isvedimasKatalogui() {
+//         let div = document.createElement("div");
+//         div.append(this.kainaIsvedimas());
+//         return div;
+//     }
+// }
 
 export {
     Butas,
