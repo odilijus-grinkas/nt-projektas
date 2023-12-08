@@ -12,7 +12,7 @@ import Agentas from "agentas.js";
 // @param {number} aukstas
 // @param {number} kambariu_sk
 // @param {string} aprasymas
-// ?  @param {Array<string>} imageURLs
+// @param {Array<string>} imageURLs
 
 class Butas extends NT {
     constructor(objektas) {
