@@ -11,10 +11,10 @@ class Namas extends NT {
    * @param {Adresas} data.adresas - The address info.
    * @param {Array<string>} array array with imageURLs
    * @param {Object} data.agentas - The agent object.
-   * @param {number} data.sklypo_plotas - Plotas
+   * @param {string} data.sklypo_plotas - Plotas su matavimo vienetais
    * @param {number} data.aukstu_sk - Aukstu skaicius
    * @param {number} kambariu_sk - kambariu skaicius
-   * @param {string} sklypo_plotas - sklypo plotas su matavimo vienetais(hektarais)
+   * @param {string} sklypo_plotas - sklypo plotas su matavimo vienetais
    */
   constructor(data) {
     super(data);
@@ -40,14 +40,11 @@ class Namas extends NT {
     ntStats.classList.add("nt-stats");
     const ntAprasymas = document.createElement("div");
     ntAprasymas.classList.add("nt-aprasymas");
-    const ntNouns1 = document.createTextNode("ID:");
     const ntNouns2 = document.createTextNode("Patalpų plotas:");
     const ntNouns3 = document.createTextNode("Aukstu skaičius:");
     const ntNouns4 = document.createTextNode("Kambarių skaičius:");
     const ntNouns5 = document.createTextNode("Sklypo plotas:");
     ntNouns.append(
-      ntNouns1,
-      document.createElement("br"),
       ntNouns2,
       document.createElement("br"),
       ntNouns3,
@@ -58,8 +55,6 @@ class Namas extends NT {
       document.createElement("br")
     );
     ntNumbers.append(
-      this.id,
-      document.createElement("br"),
       this.patalpu_plotas,
       document.createElement("br"),
       this.aukstu_sk,
@@ -71,7 +66,7 @@ class Namas extends NT {
     );
     ntAprasymas.append(this.aprasymas);
     ntStats.append(ntNouns);
-    ntStats.append(ntNumbers)
+    ntStats.append(ntNumbers);
     ntPilnas.append(
       ntStats,
       ntAprasymas,
@@ -103,10 +98,10 @@ class NamasNuoma extends Namas {
    * @param {Adresas} data.adresas - The address info.
    * @param {Array<string>} array array with imageURLs
    * @param {Object} data.agentas - The agent object.
-   * @param {number} data.patalpu_plotas- Plotas
+   * @param {string} data.patalpu_plotas- Plotas su matavimo vienetais
    * @param {number} data.aukstu_sk - Aukstu skaicius
    * @param {number} data.kambariu_sk - kambariu skaicius
-   * @param {string} data.sklypo_plotas - sklypo plotas su matavimo vienetais(hektarais)
+   * @param {string} data.sklypo_plotas - sklypo plotas su matavimo vienetais
    */
   constructor(data) {
     super(data);
@@ -114,7 +109,7 @@ class NamasNuoma extends Namas {
   kainaIsvedimas() {
     let kainaDiv = document.createElement("div");
     kainaDiv.classList.add("nt-kaina");
-    kainaDiv.append(`${this.kaina}€/men`);
+    kainaDiv.append(`${this.kaina} €/mėn.`);
     return kainaDiv;
   }
   isvedimasPilnas() {
@@ -128,14 +123,11 @@ class NamasNuoma extends Namas {
     ntStats.classList.add("nt-stats");
     const ntAprasymas = document.createElement("div");
     ntAprasymas.classList.add("nt-aprasymas");
-    const ntNouns1 = document.createTextNode("ID:");
     const ntNouns2 = document.createTextNode("Patalpų plotas:");
     const ntNouns3 = document.createTextNode("Aukstu skaičius:");
     const ntNouns4 = document.createTextNode("Kambarių skaičius:");
     const ntNouns5 = document.createTextNode("Sklypo plotas:");
     ntNouns.append(
-      ntNouns1,
-      document.createElement("br"),
       ntNouns2,
       document.createElement("br"),
       ntNouns3,
@@ -146,8 +138,6 @@ class NamasNuoma extends Namas {
       document.createElement("br")
     );
     ntNumbers.append(
-      this.id,
-      document.createElement("br"),
       this.patalpu_plotas,
       document.createElement("br"),
       this.aukstu_sk,
@@ -159,7 +149,7 @@ class NamasNuoma extends Namas {
     );
     ntAprasymas.append(this.aprasymas);
     ntStats.append(ntNouns);
-    ntStats.append(ntNumbers)
+    ntStats.append(ntNumbers);
     ntPilnas.append(
       ntStats,
       ntAprasymas,
@@ -180,4 +170,3 @@ class NamasNuoma extends Namas {
   }
 }
 export {Namas, NamasNuoma};
-

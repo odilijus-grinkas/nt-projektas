@@ -12,8 +12,7 @@ let sodybaObjektai = [
       regionas: regionai[0].nt(),
       rajonas: "Vilniaus",
       miestas: "Vilnius",
-      gatve: "Vilniaus g. 10",
-      namo_nr: 10,
+      gatve: "Vilniaus g. 10"
     },
     galerija: [
       "https://aruodas-img.dgn.lt/object_62_112722757/vilniaus-r-sav-suzioniu-k.jpg",
@@ -35,8 +34,7 @@ let sodybaObjektai = [
       regionas: regionai[6].nt(),
       rajonas: "Anykščių",
       miestas: "Viešintai",
-      gatve: "Vilniaus g. 20",
-      namo_nr: 20,
+      gatve: "Vilniaus g. 20"
     },
     galerija: [
       "https://aruodas-img.dgn.lt/object_62_114245132/anyksciu-r-sav-viesintu-mstl-paezerio-g.jpg",
@@ -58,8 +56,7 @@ let sodybaObjektai = [
       regionas: regionai[0].nt(),
       rajonas: "Elektrėnų",
       miestas: "Elektrėnai",
-      gatve: "Šiaulių g. 10",
-      namo_nr: 10
+      gatve: "Šiaulių g. 10"
     },
     galerija: [
       "https://aruodas-img.dgn.lt/object_62_114314128/elektrenu-sav-balandiskiu-k.jpg",
@@ -81,8 +78,7 @@ let sodybaObjektai = [
       regionas: regionai[5].nt(),
       rajonas: "Kaišiadorių",
       miestas: "Kaunas",
-      gatve: "Jonavos g. 4",
-      namo_nr: 4
+      gatve: "Jonavos g. 4"
     },
     galerija: [
       "https://aruodas-img.dgn.lt/object_62_111570516/kaisiadoriu-r-sav-geguzines-k-jonavos-g.jpg",
@@ -104,8 +100,7 @@ let sodybaObjektai = [
       regionas: regionai[4].nt(),
       rajonas: "Jurbarko",
       miestas: "Jurbarkas",
-      gatve: "Pikčiūnų g. 10",
-      namo_nr: 10
+      gatve: "Pikčiūnų g. 10"
     },
     galerija: [
       "https://aruodas-img.dgn.lt/object_62_113520584/jurbarko-r-sav-klausuciu-k-pikciunu-g.jpg",
@@ -127,8 +122,7 @@ let sodybaObjektai = [
       regionas: regionai[6].nt(),
       rajonas: "Molėtų",
       miestas: "Giedraičiai",
-      gatve: "Kauno g. 4",
-      namo_nr: 4
+      gatve: "Kauno g. 4"
     },
     galerija: [
       "https://aruodas-img.dgn.lt/object_62_97952381/moletu-r-sav-giedraiciu-mstl.jpg",
@@ -150,8 +144,7 @@ let sodybaObjektai = [
       regionas: regionai[6].nt(),
       rajonas: "Molėtų",
       miestas: "Molėtai",
-      gatve: "Giedraičių g. 94",
-      namo_nr: 94
+      gatve: "Giedraičių g. 94"
     },
     galerija: [
       "https://aruodas-img.dgn.lt/object_62_67516099/moletu-r-sav-miezoniu-k-giedraiciu-g.jpg",
@@ -173,8 +166,7 @@ let sodybaObjektai = [
       regionas: regionai[6].nt(),
       rajonas: "Anykščių",
       miestas: "Anykščiai",
-      gatve: "Grikiapelių g. 5",
-      namo_nr: 5
+      gatve: "Grikiapelių g. 5"
     },
     galerija: [
       "https://aruodas-img.dgn.lt/object_62_111294753/anyksciu-r-sav-grikiapeliu-k.jpg",
@@ -196,8 +188,7 @@ let sodybaObjektai = [
       regionas: regionai[0].nt(),
       rajonas: "Vilniaus",
       miestas: "Vilnius",
-      gatve: "Liepų g. 48",
-      namo_nr: 48
+      gatve: "Liepų g. 48"
     },
     galerija: [
       "https://aruodas-img.dgn.lt/object_62_114044220/vilnius-antakalnis-kankliu-g.jpg",
@@ -219,8 +210,7 @@ let sodybaObjektai = [
       regionas: regionai[5].nt(),
       rajonas: "Kauno",
       miestas: "Kaunas",
-      gatve: "Mosėdžio g. 15",
-      namo_nr: 15
+      gatve: "Mosėdžio g. 15"
     },
     galerija: [
       "https://aruodas-img.dgn.lt/object_62_114434268/kaunas-silainiai-mosedzio-g.jpg",

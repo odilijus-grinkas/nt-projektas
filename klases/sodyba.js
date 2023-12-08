@@ -10,10 +10,10 @@ class Sodyba extends Namas {
    * @param {Adresas} data.adresas - The address info.
    * @param {Array<string>} array array with imageURLs
    * @param {Object} data.agentas - The agent object.
-   * @param {number} data.sklypo_plotas - Plotas
+   * @param {string} data.sklypo_plotas - Plotas su matavimo vienetais
    * @param {number} data.aukstu_sk - Aukstu skaicius
    * @param {number} kambariu_sk - kambariu skaicius
-   * @param {string} sklypo_plotas - sklypo plotas su matavimo vienetais(hektarais)
+   * @param {string} sklypo_plotas - sklypo plotas su matavimo vienetais
    */
   constructor(data) {
     super(data);
@@ -29,10 +29,10 @@ class SodybaNuoma extends NamasNuoma {
    * @param {Adresas} data.adresas - The address info.
    * @param {Array<string>} array array with imageURLs
    * @param {Object} data.agentas - The agent object.
-   * @param {number} data.patalpu_plotas- Plotas
+   * @param {string} data.patalpu_plotas- Plotas su matavimo vienetais
    * @param {number} data.aukstu_sk - Aukstu skaicius
    * @param {number} data.kambariu_sk - kambariu skaicius
-   * @param {string} data.sklypo_plotas - sklypo plotas su matavimo vienetais(hektarais)
+   * @param {string} data.sklypo_plotas - sklypo plotas su matavimo vienetais
    */
   constructor(data) {
     super(data);
