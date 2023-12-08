@@ -70,7 +70,8 @@ class Namas extends NT {
       document.createElement("br")
     );
     ntAprasymas.append(this.aprasymas);
-    ntStats.append(ntNumbers, ntNouns);
+    ntStats.append(ntNouns);
+    ntStats.append(ntNumbers)
     ntPilnas.append(
       ntStats,
       ntAprasymas,
