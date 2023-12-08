@@ -114,7 +114,7 @@ class NamasNuoma extends Namas {
   kainaIsvedimas() {
     let kainaDiv = document.createElement("div");
     kainaDiv.classList.add("nt-kaina");
-    kainaDiv.append(`${this.kaina}€ per mėnesį`);
+    kainaDiv.append(`${this.kaina}€/men`);
     return kainaDiv;
   }
   isvedimasPilnas() {
