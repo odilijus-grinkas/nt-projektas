@@ -14,9 +14,6 @@ let sklypai = [
           gatve: "Palaukiu 2",
           koordinates: "41.40338, 2.17403"
         },
-        // koordinates: {
-        //   koordinates: `41.40338, 2.17403`
-        // },
         galerija: [
           "https://picsum.photos/id/20/500",
           "https://picsum.photos/id/21/500",
@@ -35,6 +32,7 @@ let sklypai = [
           rajonas: "Kasyklos",
           miestas: "Karjeriskes",
           gatve: "Smilties g. 2",
+          koordinates: "41.40338, 2.17403"
         },
         galerija: [
           "https://picsum.photos/id/20/500",
@@ -54,6 +52,7 @@ let sklypai = [
           rajonas: "Tragija",
           miestas: "Vardonys",
           gatve: "Butvydo g. 5",
+          koordinates: "41.40338, 2.17403"
         },
         galerija: [
           "https://picsum.photos/id/20/500",
@@ -73,6 +72,7 @@ let sklypai = [
           rajonas: "Prabangenai",
           miestas: "Piliskes",
           gatve: "Karunos g. 1",
+          koordinates: "41.40338, 2.17403"
         },
         galerija: [
           "https://picsum.photos/id/20/500",
@@ -92,6 +92,7 @@ let sklypai = [
           rajonas: "Nekazkonys",
           miestas: "Skurdiskenai",
           gatve: "Lauzo g. 6",
+          koordinates: "41.40338, 2.17403"
         },
         galerija: [
           "https://picsum.photos/id/20/500",
@@ -111,6 +112,7 @@ let sklypai = [
           rajonas: "Zemdirbiai",
           miestas: "Ukininkeliai",
           gatve: "Pudymu",
+          koordinates: "41.40338, 2.17403"  
         },
         galerija: [
           "https://picsum.photos/id/20/500",
@@ -130,6 +132,7 @@ let sklypai = [
           rajonas: "Zemdirbiai",
           miestas: "Ukininkeliai",
           gatve: "Pudymu",
+          koordinates: "41.40338, 2.17403"
         },
         galerija: [
           "https://picsum.photos/id/20/500",
@@ -149,6 +152,7 @@ let sklypai = [
           rajonas: "Zemdirbiai",
           miestas: "Ukininkeliai",
           gatve: "Pudymu",
+          koordinates: "41.40338, 2.17403"
         },
         galerija: [
           "https://picsum.photos/id/20/500",
@@ -168,6 +172,7 @@ let sklypai = [
           rajonas: "Zemdirbiai",
           miestas: "Ukininkeliai",
           gatve: "Pudymu",
+          koordinates: "41.40338, 2.17403"
         },
         galerija: [
           "https://picsum.photos/id/20/500",
@@ -187,6 +192,7 @@ let sklypai = [
           rajonas: "Zemdirbiai",
           miestas: "Ukininkeliai",
           gatve: "Pudymu",
+          koordinates: "41.40338, 2.17403"
         },
         galerija: [
           "https://picsum.photos/id/20/500",
