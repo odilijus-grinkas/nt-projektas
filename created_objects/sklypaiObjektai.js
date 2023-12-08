@@ -12,7 +12,11 @@ let sklypai = [
           rajonas: "Pasilio",
           miestas: "Miskenai",
           gatve: "Palaukiu 2",
+          koordinates: "41.40338, 2.17403"
         },
+        // koordinates: {
+        //   koordinates: `41.40338, 2.17403`
+        // },
         galerija: [
           "https://picsum.photos/id/20/500",
           "https://picsum.photos/id/21/500",

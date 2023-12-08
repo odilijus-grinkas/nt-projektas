@@ -61,7 +61,7 @@ prie savo klasių dar prideti adreso metodus.
       this.koordinates
     ) {
       ntAdresas.innerHTML += "<br>";
-      ntAdresas.append("Koordinates: ",this.koordinates);
+      ntAdresas.append(this.koordinates);
       return ntAdresas;
     } else if (
       this.koordinates === undefined &&

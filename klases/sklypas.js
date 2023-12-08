@@ -18,6 +18,7 @@ class Sklypas extends NT {
   constructor(data) {
     super(data);
     this.plotas = data.plotas;
+    this.koordinates = data.koordinates;
   }
   /**
    * suformuoja komponenta su pilna informacija apie sklypa
@@ -28,6 +29,8 @@ class Sklypas extends NT {
     isvedimas.className = "nt-pilnas";
     let kaina = this.kainaIsvedimas();
     let adresas = this.adresas.isvedimasPilnas();
+    // let koordinates = this.adresas.isvedimasKoordinaciu();
+
     let nt_stats = document.createElement("div");
     nt_stats.classList.add("nt-stats");
     let nt_nouns = document.createElement("div");
