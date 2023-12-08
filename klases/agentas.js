@@ -62,8 +62,7 @@ class Agentas {
     pavarde.classList.add("pavarde");
     const regionai = document.createElement("div");
     regionai.classList.add("regionas");
-    let objektai_btn = document.createElement("div");
-    objektai_btn.classList.add("objektai-btn");
+    
     let profilis_btn = document.createElement("div");
     profilis_btn.classList.add("profilis-btn");
     profilis_btn.setAttribute("num", this.id )
@@ -71,14 +70,13 @@ class Agentas {
     vardas.append(this.vardas);
     pavarde.append(this.pavarde);
     regionai.append(`Regionas: ${this.regionas}`);
-    objektai_btn.append("Objektai");
     profilis_btn.append("Profilis");
     
     //rezervuota kodui kuris pasakys kiek objektu turi agentas.
     //kodas pereis per visus nt objektus ir grazins tuos objektus kur yra jo vardas(arba ju suma arba sarasa (ul list))
     //gali buti ir kazkoks statinis klases metodas kuris tai padarys. mes gi objekti mokomes :))
 
-    div.append(foto, vardas, pavarde, regionai, profilis_btn, objektai_btn);
+    div.append(foto, vardas, pavarde, regionai, profilis_btn);
 
     return div;
   }

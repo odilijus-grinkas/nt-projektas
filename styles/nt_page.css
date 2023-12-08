@@ -7,34 +7,95 @@ body{
   justify-content: space-between;
 }
 .nt-pilnas{
-  width: 25em;
-  padding: 0 20%;
+  /* width: 50em; */
+  background-color: #9a9da0;
+  border-radius: 1rem;
   display:grid;
-  gap: 1em;
+  grid-template-columns:  47rem 1fr;
   grid-template-areas: 
-  "kaina adresas adresas"
+  "galerija kaina"
+  "galerija adresas"
+  "galerija adresas"
+  "galerija stats"
+  "galerija agentas"
+  "aprasymas agentas"
+  
+  /* "kaina adresas adresas"
   ". galerija ."
   "agentas agentas agentas"
   "stats stats stats"
-  "aprasymas aprasymas aprasymas"
+  "aprasymas aprasymas aprasymas" */
 }
 
-.nt-kaina{grid-area:kaina; font-size: 2.5em;}
-.nt-adresas{grid-area: adresas;} 
-.nt-galerija{grid-area: galerija;}
-.nt-agentas{grid-area: agentas;}
-.nt-stats{grid-area: stats;}
-.nt-aprasymas{grid-area: aprasymas;}
-
-.nt-agentas::before{
-  /* content: "Agentas:"; */
-  font-size: 2em;
+.nt-pilnas .nt-kaina{
+  height: fit-content;
+  grid-area: kaina;
+  font-size: 4em;
+  font-style: italic;
+  /* background-color: #9a9da0; */
+  /* margin-left: -2rem; */
+  padding: 1rem 1rem 0 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom: 1px solid white;
 }
+.nt-pilnas .nt-adresas{
+  height: fit-content;
+  grid-area: adresas;
+  /* background-color: #9a9da0; */
+  margin: -5.2rem 0 0 -0;
+  padding: 1rem 0 1rem 1rem;
+  font-size: 1.3rem;
+  font-style: italic;
+  z-index: 3;
+  border-bottom: 1px solid white;
+} 
+.nt-pilnas .nt-galerija{grid-area: galerija; z-index: 5;}
+.nt-pilnas .nt-agentas{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  grid-area: agentas;
+  /* background-color: #9a9da0; */
+  /* margin-left: -2rem; */
+  padding:0 0 1rem 1rem;
+  z-index: 3;
+  border-bottom-right-radius: 1rem;
+  font-size: 1.4rem;
+}
+.nt-pilnas .nt-agentas .katalogui-agento{
+  margin-left: 1rem;
+}
+.nt-pilnas .nt-stats{
+  display: flex;
+  justify-content: start;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  grid-area: stats;
+  /* background-color: #9a9da0; */
+  margin: -10.3rem 0 0 0;
+  padding: 2rem 0 0 1rem;
+  z-index: 3;
+}
+.nt-pilnas .nt-aprasymas{
+  grid-area: aprasymas;
+  background-color: #5c6165;
+  margin-top: -2rem;
+  padding: 3rem 1rem 1rem;
+  z-index: 4;
+  border-radius: 0 0 1rem 1rem;
+  font-size: 1.2rem;
+}
+
+/* .nt-agentas::before{
+  content: "Pardavimų agentas:";
+  font-size: 0.9em;
+  text-align: center;
+} */
 /* .nt-stats::before{
   content:"Bruozai:";
   font-size: 2em;
 } */
-.nt-aprasymas::before{
+/* .nt-aprasymas::before{
   content:"Aprasymas:";
   font-size: 2em;
-}
+} */
