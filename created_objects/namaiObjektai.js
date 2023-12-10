@@ -7,71 +7,61 @@ let adresasobject1 = {
   regionas: regionai[0].nt(),
   rajonas: "Vilniaus rajono savivaldybė",
   miestas: "Vilnius",
-  gatve: "Gėlių g. 59",
-  namo_nr: 59,
+  gatve: "Gėlių g. 59"
 };
 let adresasobject2 = {
   regionas: regionai[1].nt(),
   rajonas: "Klaipėdos rajono savivaldybė",
   miestas: "Klaipėda",
-  gatve: "Medžių g. 55",
-  namo_nr: 55,
+  gatve: "Medžių g. 55"
 };
 let adresasobject3 = {
   regionas: regionai[1].nt(),
   rajonas: "Klaipėdos rajono savivaldybė",
   miestas: "Klaipėda",
-  gatve: "Rožių g. 122",
-  namo_nr: 122,
+  gatve: "Rožių g. 122"
 };
 let adresasobject4 = {
   regionas: regionai[2].nt(),
   rajonas: "Panevėžio miesto savivaldybė",
   miestas: "Panevėžys",
-  gatve: "Žirgų g. 25",
-  namo_nr: 25,
+  gatve: "Žirgų g. 25"
 };
 let adresasobject5 = {
   regionas: regionai[3].nt(),
   rajonas: "Šiaulių miesto savivaldybė",
   miestas: "Šiaulių",
-  gatve: "Kopūstų g. 5",
-  namo_nr: 5,
+  gatve: "Kopūstų g. 5"
 };
 let adresasobject6 = {
   regionas: regionai[4].nt(),
   rajonas: "Tauragės rajono savivaldybė",
   miestas: "Tauragė",
-  gatve: "Lenkų g. 45",
-  namo_nr: 45,
+  gatve: "Lenkų g. 45"
 };
 let adresasobject7 = {
   regionas: regionai[5].nt(),
   rajonas: "Kauno miesto savivaldybė",
   miestas: "Kaunas",
-  gatve: "Malūnų g. 69",
-  namo_nr: 69,
+  gatve: "Malūnų g. 60"
 };
 let adresasobject8 = {
   regionas: regionai[1].nt(),
   rajonas: "Klaipėdos rajono savivaldybė",
   miestas: "Klaipėda",
-  gatve: "Puodų g. 75",
-  namo_nr: 75,
+  gatve: "Puodų g. 75"
 };
 let adresasobject9 = {
   regionas: regionai[7].nt(),
   rajonas: "Utenos rajono savivaldybė",
   miestas: "Utena",
-  gatve: "Tulpių g. 89",
-  namo_nr: 89,
+  gatve: "Tulpių g. 89"
 };
 let adresasobject10 = {
   regionas: regionai[5].nt(),
   rajonas: "Kauno rajono savivaldybė",
   miestas: "Kaunas",
-  gatve: "Meilės g. 45",
-  namo_nr: 5,
+  gatve: "Meilės g. 5"
 };
 let adresas1 = new Adresas(adresasobject1)
 let adresas2 = new Adresas(adresasobject2)
@@ -99,10 +89,10 @@ let namai = [
       "https://aruodas-img.dgn.lt/object_62_114207940/vilniaus-r-sav-geleziu-k-vanagu-g.jpg",
     ],
     agentas: agentai[0],
-    patalpu_plotas: "149.25 kvadratiniai metrai",
+    patalpu_plotas: "149.25 m²",
     aukstu_sk: 1,
     kambariu_sk: 4,
-    sklypo_plotas: "8.65 arai",
+    sklypo_plotas: "8.65 a",
   }),
   new Namas({
     id: 2,
@@ -116,10 +106,10 @@ let namai = [
       "https://aruodas-img.dgn.lt/object_62_114259006/kauno-r-sav-karmelavos-ii-k-pilies-g.jpg",
     ],
     agentas: agentai[1],
-    patalpu_plotas: "133.93 kv. m. + 40 kv. m. stoginė automobiliams",
+    patalpu_plotas: "173 m²",
     aukstu_sk: 2,
     kambariu_sk: 8,
-    sklypo_plotas: "6.83 arai",
+    sklypo_plotas: "6.83 a",
   }),
   new Namas({
     id: 3,
@@ -133,7 +123,7 @@ let namai = [
       "https://static.capital.lt/files/39/photos/003/084/544/files/for_export.jpg",
     ],
     agentas: agentai[5],
-    patalpu_plotas: "703.35 kvadratiniai metrai",
+    patalpu_plotas: "703.35 m²",
     aukstu_sk: 3,
     kambariu_sk: 20,
     sklypo_plotas: "15,01 a",
@@ -152,7 +142,7 @@ let namai = [
       "https://static.capital.lt/files//photos/003/950/465/files/for_export.jpg",
     ],
     agentas: agentai[5],
-    patalpu_plotas: "80 kvadratiniai metrai",
+    patalpu_plotas: "80 m²",
     aukstu_sk: 2,
     kambariu_sk: 4,
     sklypo_plotas: "4,36 a",
@@ -170,7 +160,7 @@ let namai = [
       "https://static.capital.lt/files/39/photos/003/950/193/files/for_export.jpg",
     ],
     agentas: agentai[3],
-    patalpu_plotas: "130 kvadratiniai metrai",
+    patalpu_plotas: "130 m²",
     aukstu_sk: 2,
     kambariu_sk: 4,
     sklypo_plotas: "6 a",
@@ -189,10 +179,10 @@ let namai = [
       "https://aruodas-img.dgn.lt/object_62_112775733/vilnius-senamiestis-pylimo-g.jpg",
     ],
     agentas: agentai[1],
-    patalpu_plotas: "139,95 kv. m. +  a garage for 2 cars",
+    patalpu_plotas: "189,95 m²",
     aukstu_sk: 2,
     kambariu_sk: 10,
-    sklypo_plotas: "3 arai",
+    sklypo_plotas: "3 a",
   }),
   new NamasNuoma({
     id: 7,
@@ -205,10 +195,10 @@ let namai = [
       "https://aruodas-img.dgn.lt/object_62_110716585/kauno-r-sav-uzliedziu-k-aitvaru-g.jpg",
     ],
     agentas: agentai[4],
-    patalpu_plotas: "160 kv. m.",
+    patalpu_plotas: "160 m²",
     aukstu_sk: 2,
     kambariu_sk: 5,
-    sklypo_plotas: "3 arai",
+    sklypo_plotas: "3 a",
   }),
   new NamasNuoma({
     id: 8,
@@ -222,10 +212,10 @@ let namai = [
       "https://static.capital.lt/files/39/photos/003/484/466/files/for_export.jpg",
     ],
     agentas: agentai[4],
-    patalpu_plotas: "323,96 kv. m.",
+    patalpu_plotas: "323,96 m²",
     aukstu_sk: 2,
     kambariu_sk: 5,
-    sklypo_plotas: "25 arai",
+    sklypo_plotas: "25 a",
   }),
   new NamasNuoma({
     id: 9,
@@ -240,10 +230,10 @@ let namai = [
       "https://static.capital.lt/files/39/photos/003/919/593/files/for_export.jpg",
     ],
     agentas: agentai[7],
-    patalpu_plotas: "78 kv. m.",
+    patalpu_plotas: "78 m²",
     aukstu_sk: 2,
     kambariu_sk: 4,
-    sklypo_plotas: "92.52 arai",
+    sklypo_plotas: "92.52 a",
   }),
   new NamasNuoma({
     id: 10,
@@ -258,10 +248,10 @@ let namai = [
       "https://static.capital.lt/files//photos/003/940/468/files/for_export.jpg",
     ],
     agentas: agentai[2],
-    patalpu_plotas: "154 kv. m.",
+    patalpu_plotas: "154 m²",
     aukstu_sk: 2,
     kambariu_sk: 4,
-    sklypo_plotas: "4,78 arai",
+    sklypo_plotas: "4,78 a",
   }),
 ];
 
