@@ -21,7 +21,7 @@ let butaiObjektai = [
             namo_nr: 59,
             buto_nr: 1
         },
-        galerija: ["https://images.pexels.com/photos/9989558/pexels-photo-9989558.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        galerija: ["https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fexternal-preview.redd.it%2FhNoBT0dXMJv3sQpVVI1GBrsLv0odZ1onHK3eQz8ZDj8.jpg%3Fauto%3Dwebp%26s%3D75c7e42584f64631eb6f141138d6797f4473275c&f=1&nofb=1&ipt=1332609669289abf7253d0ff84445217746a95a265b33a05c1f341b245afebee&ipo=images",
             "https://images.pexels.com/photos/9901507/pexels-photo-9901507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "https://images.pexels.com/photos/8100784/pexels-photo-8100784.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         ],
@@ -42,7 +42,7 @@ let butaiObjektai = [
             namo_nr: 122,
             buto_nr: 9
         },
-        galerija: ["https://images.pexels.com/photos/12000602/pexels-photo-12000602.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        galerija: ["https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpropertymanagementselect.com%2Fwp-content%2Fuploads%2F2015%2F04%2Fsacramento-property-management-apartments.jpg&f=1&nofb=1&ipt=bed446c80bf537249cd7eec3e1424b7496250cca5822f09c10ec004b051b090e&ipo=images",
             "https://images.pexels.com/photos/2903268/pexels-photo-2903268.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "https://images.pexels.com/photos/19294804/pexels-photo-19294804/free-photo-of-aerial-view-of-seaside-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         ],
@@ -193,9 +193,9 @@ let butaiObjektai = [
             buto_nr: 2
         },
         galerija: [
+            "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.mvshbhlbDUste9EZLtphGgHaE7%26pid%3DApi&f=1&ipt=87179e3928807bcf731b7098e0533ec66e5b1a6d69a6bae34a541f143a646e32&ipo=images",
             "https://images.pexels.com/photos/2903268/pexels-photo-2903268.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "https://images.pexels.com/photos/12000602/pexels-photo-12000602.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "https://images.pexels.com/photos/19294804/pexels-photo-19294804/free-photo-of-aerial-view-of-seaside-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         ],
         agentas: agentai[1],
         patalpu_plotas: 150,
