@@ -82,7 +82,7 @@ class Butas extends NT {
         let div = document.createElement("div");
         div.append(this.galerija.isvedimasKataloguiNT());
         div.append(this.kainaIsvedimas());
-        div.append(this.adresas.isvedimasPilnas());
+        div.append(this.adresas.isvedimasKatalogui());
         div.append(this.agentas.nt());
         return div;
     }
@@ -96,32 +96,6 @@ class ButasNuoma extends Butas {
         return `${this.kaina}€/mėn.`
     }
 }
-
-// class Butas extends NT {
-//     constructor(objektas) {
-//         super(objektas)
-//         this.patalpu_plotas = objektas.patalpu_plotas;
-//         this.aukstas = objektas.aukstas;
-//         this.kambariu_sk = objektas.kambariu_sk;
-//     }
-//     isvedimasPilnas() {
-//         let div = document.createElement("div");
-//         div.append(this.kaina);
-//         this.galerija = new Galerija();
-//         this.adresas = new Adresas();
-//         this.agentas = new Agentas();
-//         div.append(this.patalpu_plotas);
-//         div.append(this.aukstas);
-//         div.append(this.kambariu_sk);
-//         div.append(this.aprasymas);
-//         return div;
-//     }
-//     isvedimasKatalogui() {
-//         let div = document.createElement("div");
-//         div.append(this.kainaIsvedimas());
-//         return div;
-//     }
-// }
 
 export {
     Butas,

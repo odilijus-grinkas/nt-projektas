@@ -114,6 +114,116 @@ let butaiObjektai = [
         kambariu_sk: 5,
         buto_nr: 1
     }),
+    new ButasNuoma({
+        id: 6,
+        kaina: 590,
+        aprasymas: "Aukštos lubos, dirbtinio šviesos srautas ir industrijos detalės suteikia namui šiuolaikišką ir stilingą atmosferą.",
+        adresas: {
+            regionas: regionai[4].nt(),
+            rajonas: "Klaipedos rajono savivaldybė",
+            miestas: "Klaipeda",
+            gatve: "Paupio g. 45",
+            namo_nr: 33,
+        },
+        galerija: [
+            "https://images.pexels.com/photos/1089441/pexels-photo-1089441.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "https://images.pexels.com/photos/10621549/pexels-photo-10621549.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "https://images.pexels.com/photos/10621051/pexels-photo-10621051.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        ],
+        agentas: agentai[4],
+        patalpu_plotas: 340,
+        aukstas: 4,
+        kambariu_sk: 5,
+        buto_nr: 2
+    }),
+    new ButasNuoma({
+        id: 7,
+        kaina: 490,
+        aprasymas: "Šis namas yra naujausias projektas centre. Butai yra šviesūs, su aukštos kokybės baldais ir virtuvėmis. Kiekvienam butui priklauso terasa su puikiu miesto vaizdu.",
+        adresas: {
+            regionas: regionai[3].nt(),
+            rajonas: "Kretingos miesto savivaldybė",
+            miestas: "Kretinga",
+            gatve: "Vakaro g. 5",
+            namo_nr: 3,
+        },
+        galerija: [
+            "https://images.pexels.com/photos/10621548/pexels-photo-10621548.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "https://images.pexels.com/photos/3712510/pexels-photo-3712510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "https://images.pexels.com/photos/1993691/pexels-photo-1993691.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        ],
+        agentas: agentai[3],
+        patalpu_plotas: 440,
+        aukstas: 5,
+        kambariu_sk: 4,
+        buto_nr: 19
+    }),
+    new ButasNuoma({
+        id: 8,
+        kaina: 351,
+        aprasymas: "Terasa su židiniu ir atviru virtuvės-daugiafunkciniu kambariu daro šį namą puikiu šeimyninio gyvenimo erdvė.",
+        adresas: {
+            regionas: regionai[2].nt(),
+            rajonas: "Taurages miesto savivaldybė",
+            miestas: "Taurage",
+            gatve: "Žirnių g. 15",
+            namo_nr: 23,
+        },
+        galerija: [
+            "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "https://images.pexels.com/photos/323776/pexels-photo-323776.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        ],
+        agentas: agentai[2],
+        patalpu_plotas: 157,
+        aukstas: 5,
+        kambariu_sk: 3,
+        buto_nr: 8
+    }),
+    new ButasNuoma({
+        id: 9,
+        kaina: 420,
+        aprasymas: "Išsiskiria prabangiu dizainu ir išskirtinėmis architektūrinėmis detalėmis. Kiekvienas kambarys turi unikalų stilių, o kiemas yra ramus paslapties kampelis.",
+        adresas: {
+            regionas: regionai[1].nt(),
+            rajonas: "Vilniaus rajono savivaldybė",
+            miestas: "Vilnius",
+            gatve: "Briedziu g. 122",
+            namo_nr: 12,
+            buto_nr: 2
+        },
+        galerija: [
+            "https://images.pexels.com/photos/2903268/pexels-photo-2903268.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "https://images.pexels.com/photos/12000602/pexels-photo-12000602.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "https://images.pexels.com/photos/19294804/pexels-photo-19294804/free-photo-of-aerial-view-of-seaside-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        ],
+        agentas: agentai[1],
+        patalpu_plotas: 150,
+        aukstas: 6,
+        kambariu_sk: 3
+    }),
+    new ButasNuoma({
+        id: 10,
+        kaina: 242,
+        aprasymas: "Išsiskiria prabangiu dizainu ir išskirtinėmis architektūrinėmis detalėmis. Kiekvienas kambarys turi unikalų stilių, o kiemas yra ramus paslapties kampelis.",
+        adresas: {
+            regionas: regionai[1].nt(),
+            rajonas: "Taurages rajono savivaldybė",
+            miestas: "Taurage",
+            gatve: "Gruodzio g. 122",
+            namo_nr: 20,
+            buto_nr: 19
+        },
+        galerija: [
+            "https://images.pexels.com/photos/19294804/pexels-photo-19294804/free-photo-of-aerial-view-of-seaside-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "https://images.pexels.com/photos/12000602/pexels-photo-12000602.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "https://images.pexels.com/photos/2903268/pexels-photo-2903268.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        ],
+        agentas: agentai[1],
+        patalpu_plotas: 350,
+        aukstas: 2,
+        kambariu_sk: 2
+    }),
 ];
 
 export {
