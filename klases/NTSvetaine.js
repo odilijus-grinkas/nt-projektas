@@ -77,7 +77,7 @@ class NTSvetaine {
   }
   /**
    * Grazina masyva kazkokio NT pilnasIsrasimas() divus
-   * @param {string} Klase galimi: Namas, Butas, Sklypas, Sodybos, KomercinesPatalpos, GamybinePatalpa, Garazas... Nuomom: NamasNuomai etc.
+   * @param {string} Klase galimi: Namas, Butas, Sklypas, Sodyba, KomercinesPatalpos, GamybinePatalpa, Garazas... Nuomom: NamasNuomai etc.
    * @param {number} kiekis 0 = visus isvesti(default)
    */
   static objektai(klase, kiekis = 0, clear = true) {
@@ -96,7 +96,7 @@ class NTSvetaine {
       "Namas",
       "Butas",
       "Sklypas",
-      "Sodybos",
+      "Sodyba",
       "KomercinesPatalpos",
       "GamybinePatalpa",
       "Garazas",
