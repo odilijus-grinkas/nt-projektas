@@ -1,12 +1,6 @@
 import {
     NT
 } from "./nt.js";
-import {
-    Galerija
-} from "./galerija.js";
-import {
-    Agentas
-} from "./agentas.js";
 
 // @class
 // @constructor
@@ -21,6 +15,20 @@ import {
 // @param {Array<string>} imageURLs
 
 class Butas extends NT {
+  /**
+   * Butas Class Constructor.
+   * @constructor
+   * @param {Object} data - The data object containing specific parameters.
+    * @param {string} data.id - The ID.
+    * @param {number} data.kaina - The price
+    * @param {string} data.aprasymas - The description
+    * @param {Adresas} data.adresas - The address info.
+    * @param {Array<string>} galerija array with imageURLs
+    * @param {Agentas} data.agentas - The agent object.
+    * @param {number} patalpu_plotas
+    * @param {number} aukstas
+    * @param {number} kambariu_sk
+   */
     constructor(objektas) {
         super(objektas)
         this.patalpu_plotas = objektas.patalpu_plotas;
@@ -72,8 +80,8 @@ class Butas extends NT {
     }
     isvedimasKatalogui() {
         let div = document.createElement("div");
-        div.append(this.kainaIsvedimas());
         div.append(this.galerija.isvedimasKataloguiNT());
+        div.append(this.kainaIsvedimas());
         div.append(this.adresas.isvedimasPilnas());
         div.append(this.agentas.nt());
         return div;
