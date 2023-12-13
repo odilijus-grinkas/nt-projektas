@@ -54,6 +54,7 @@ class NTSvetaine {
       const agentsInRegion = regionas.agentai(agentai);
   
       const regionContainer = document.createElement('div');
+      regionContainer.classList.add('regionai');
       regionContainer.appendChild(regionoIsvedimas);
   
       if (agentsInRegion.length > 0) {
