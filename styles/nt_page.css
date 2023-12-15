@@ -90,3 +90,28 @@ body{
   content:"Aprasymas:";
   font-size: 2em;
 } */
+.regionai{
+  background-color: rgb(191, 194, 196);
+  border-radius: 1rem;
+  color: black;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template: 
+  "a t t t t"
+  "a t t t t"
+  ;
+}
+.agentai-regione{
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  grid-area: a;
+  text-align: center;
+  width: 150px;
+}
+.regionas-katalogui{
+  grid-area: t;
+  text-align: end;
+}
