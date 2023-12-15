@@ -1,6 +1,7 @@
 import { Adresas } from "../klases/adresas.js";
 import { Sklypas, SklypasNuoma } from "../klases/sklypas.js";
 import { agentai } from "./agentai.js";
+import { regionai } from "./regionai.js"
 
 let sklypai = [
     new Sklypas({
@@ -12,7 +13,7 @@ let sklypai = [
           Jokūbavo gyvenvėtėj yra mokykla, darželis, biblioteka, kulturos centras, draugiška bendruomenė.
           Geras susisiekimas viešuoju transportu, iki Klaipėdos 17km., iki Kretingos 9km., iki automagistralės Klaipėda-Kaunas A1 11km.`,
         adresas: {
-          regionas: "Regionas Placeholder",
+          regionas: regionai[4].nt(),
           rajonas: "Pasilio",
           miestas: "Miskenai",
           gatve: "Palaukiu 2",
@@ -32,7 +33,7 @@ let sklypai = [
         aprasymas:
           `Namų valdos sklypas nuostabiame pušyne ir naujai besikuriančioje gyvenvietėje.`,
         adresas: {
-          regionas: "Regionas Placeholder",
+          regionas: regionai[1].nt(),
           rajonas: "Kasyklos",
           miestas: "Karjeriskes",
           gatve: "Smilties g. 2",
@@ -52,7 +53,7 @@ let sklypai = [
         aprasymas:
           `Vilniaus rajone, Ąžuolinės k. Tapelių g. 41, parduodamas 90 arų žemės sklypas su jame esančiais dviem pastatais.`,
         adresas: {
-          regionas: "Regionas Placeholder",
+          regionas: regionai[3].nt(),
           rajonas: "Tragija",
           miestas: "Vardonys",
           gatve: "Butvydo g. 5",
@@ -77,7 +78,7 @@ let sklypai = [
           ir be papildomų rūpesčių. Šalia įsikūrusi privati Valdorfo žalioji mokykla, o už keleto kilometrų
           - naujai pastatyta valstybinė Ažulaukės mokykla. Ateityje planuojama išasfaltuoti kelius bei įrengti gatvių apšvietimą.`,
         adresas: {
-          regionas: "Regionas Placeholder",
+          regionas: regionai[7].nt(),
           rajonas: "Prabangenai",
           miestas: "Piliskes",
           gatve: "Karunos g. 1",
@@ -97,7 +98,7 @@ let sklypai = [
         aprasymas:
           "Parduodamas 11,5 arų namų valdos sklypas ramioje vietoje,naujai besiformuojančioje gyvenvietėje Vilniuje, K. Bradūno gatvėje. Sklypas yra taisyklingos formos. Patogus asfaltuotas privažiavimas iki gyvenvietės, prie sklypo tik 250 metrų neasfaltuoto kelio.",
         adresas: {
-          regionas: "Regionas Placeholder",
+          regionas: regionai[7].nt(),
           rajonas: "Nekazkonys",
           miestas: "Skurdiskenai",
           gatve: "Lauzo g. 6",
@@ -125,7 +126,7 @@ let sklypai = [
           su ūkiniu pastatu, kuriame galima įrengti administracines 
           patalpas. nuomos kaina 2350 + mokesčiai`,
         adresas: {
-          regionas: "Regionas Placeholder",
+          regionas: regionai[1].nt(),
           rajonas: "Zemdirbiai",
           miestas: "Ukininkeliai",
           gatve: "Pudymu",
@@ -147,7 +148,7 @@ let sklypai = [
           teritorija aptverta, apšviesta, įrengtos vaizdo stebėjimo kameros, 
           kanalizacija, Biotualetas.`,
         adresas: {
-          regionas: "Regionas Placeholder",
+          regionas: regionai[4].nt(),
           rajonas: "Zemdirbiai",
           miestas: "Ukininkeliai",
           gatve: "Pudymu",
@@ -167,7 +168,7 @@ let sklypai = [
         aprasymas:
           "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, tempore id! Labore accusantium aspernatur molestiae ratione placeat. Iusto, quae esse!",
         adresas: {
-          regionas: "Regionas Placeholder",
+          regionas: regionai[6].nt(),
           rajonas: "Zemdirbiai",
           miestas: "Ukininkeliai",
           gatve: "Pudymu",
@@ -188,7 +189,7 @@ let sklypai = [
         `išnuomojamas 21 aro sklypas Pelėdų gatvėje. Sklypas tinkamas vigdyti prekybos ar paslaugu veikla. sklypas gerai matomas nuo intensyvaus eismo magistralinio kelio Vilnius-Molėtai-Utena A14.
         Sklype pradėtas formuoti aikšteles pagrindas.`,
         adresas: {
-          regionas: "Regionas Placeholder",
+          regionas: regionai[5].nt(),
           rajonas: "Zemdirbiai",
           miestas: "Ukininkeliai",
           gatve: "Pudymu",
@@ -209,7 +210,7 @@ let sklypai = [
           Komercinėje zonoje, prie pat Vilniaus miesto ribos 
           nuomojame komercinės paskirties sklypą: visą arba jo dalį`,
         adresas: {
-          regionas: "Regionas Placeholder",
+          regionas: regionai[0].nt(),
           rajonas: "Zemdirbiai",
           miestas: "Ukininkeliai",
           gatve: "Pudymu",
