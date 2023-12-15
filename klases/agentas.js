@@ -33,14 +33,22 @@ class Agentas {
     const ntAgentas = document.createElement("div");
     ntAgentas.classList.add("pilnas-agentas");
     const vardas = document.createElement("p");
+    vardas.className = "agent_vardas";
     const pavarde = document.createElement("p");
+    pavarde.className = "agent_pavarde";
     const aprasas = document.createElement("p");
+    aprasas.className = "agent_aprasas";
+    const foto = document.createElement("div");
+    foto.className = "agent_foto";
+    const regionas = document.createElement("div");
+    regionas.className = "agent_regionas";
 
-    
     vardas.append(this.vardas);
     pavarde.append(this.pavarde);
-    aprasas.append(`Priziurimas regionas: ${this.aprasas}`);
-    ntAgentas.append(this.galerija.isvdeimasProfilis(), vardas, pavarde, this.regionas, aprasas);
+    aprasas.append(this.aprasas);
+    foto.append(this.galerija.isvdeimasProfilis());
+    regionas.append(`Prižiūrimas regionas: ${this.regionas}`);
+    ntAgentas.append(foto, vardas, pavarde, regionas, aprasas);
 
     return ntAgentas
   };

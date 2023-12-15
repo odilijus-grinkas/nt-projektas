@@ -5,19 +5,21 @@ header{
   width: 100%;
   height: 70px;
   font-size: 3em;
-  text-align: center;
+  text-align: start;
   border-bottom: solid 3px  #bfc2c4;
   background-color: #333;
   position: fixed;
   z-index: 1;
+  padding: 1rem 0 0 1rem;
 }
 .center{
   height: 100vh;
 }
 main{
+  min-width: max-content;
   height: calc(100% - 72px);
   position:relative;
-  top: 72px;
+  top: 88px;
   display: grid;
   grid-template-columns: 299px 8fr;
   background-color:#bfc2c4;
@@ -86,8 +88,8 @@ main{
 }
 .objektu-katalogu-isvedimas{
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
   gap: 1em;
 }
 .nt-katalogui{
